@@ -9,5 +9,14 @@
         android:id="@+id/mainSplashFragment"
         android:name="com.example.pointer.fragments.MainSplashFragment"
         android:label="fragment_main_splash"
-        tools:layout="@layout/fragment_main_splash" />
+        tools:layout="@layout/fragment_main_splash" >
+        <action
+            android:id="@+id/action_mainSplashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.pointer.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
