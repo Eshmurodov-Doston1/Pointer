@@ -28,21 +28,6 @@ class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
     private val binding by viewBinding(FragmentMainSplashBinding::bind)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        requireActivity().window.setFlags(
-            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-        )
-
-//        if (Build.VERSION.SDK_INT < 16) {
-//            requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN)
-//        }else{
-//            val decorView: View = requireActivity().window.decorView
-//            val uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
-//            decorView.systemUiVisibility = uiOptions
-//        }
-
         binding.apply {
             handler = Handler(Looper.getMainLooper())
             text.visibility = View.INVISIBLE

@@ -6,14 +6,4 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="15dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/newsImage1" />
-
-    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-        android:layout_width="match_parent"
-        android:id="@+id/view_pager"
-
-        android:layout_height="match_parent" />
 </androidx.cardview.widget.CardView>
