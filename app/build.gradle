@@ -50,4 +50,8 @@ dependencies {
     implementation 'com.github.Zhuinden:fragmentviewbindingdelegate-kt:1.0.0'
     //sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
 }
