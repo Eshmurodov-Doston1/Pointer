@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#F7F7FC"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.LoginFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/pointer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:src="@drawable/pointer_name"
+        app:layout_constraintWidth_percent="0.75"
+        android:padding="@dimen/_10sdp"
+        android:scaleType="centerCrop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/text"
+        app:layout_constraintTop_toBottomOf="@id/pointer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="@dimen/_18sdp"
+        android:text="Akkauntingizga kiring"
+        app:layout_constraintWidth_percent="0.75"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/login"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@drawable/editetext"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintVertical_bias="0.1"
+        android:hint="Login"
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

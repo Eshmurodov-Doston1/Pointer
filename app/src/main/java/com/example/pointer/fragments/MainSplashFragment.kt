@@ -33,7 +33,9 @@ class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
                     text.animation = loadAnimation1
                     text.visibility = View.VISIBLE
                     textPointer.visibility = View.VISIBLE
-                    findNavController()
+                    handler.postDelayed({
+                        findNavController().navigate(R.id.action_mainSplashFragment_to_loginFragment)
+                    },1500)
                 },1000)
             },1000)
         }
