@@ -41,8 +41,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.08"
-        app:layout_constraintWidth_percent="0.93"
-        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.94"
+        app:layout_constraintHeight_percent="0.11"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:radius="100dp"
@@ -53,14 +53,14 @@
         app:shadowSpread="1">
 
         <com.blure.complexview.ComplexView
-            app:shadow="true"
-            app:shadowColor="#AFB2B5"
-            app:shadowPosition="bottom"
-            app:shadowAlpha="80"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:color="#fdfcfc"
-            app:radius="10dp">
+            app:radius="10dp"
+            app:shadow="true"
+            app:shadowAlpha="80"
+            app:shadowColor="#AFB2B5"
+            app:shadowPosition="bottom">
 
             <EditText
                 android:id="@+id/login"
@@ -90,8 +90,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.01"
-        app:layout_constraintWidth_percent="0.93"
-        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.94"
+        app:layout_constraintHeight_percent="0.11"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:radius="100dp"
@@ -130,8 +130,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintWidth_percent="0.96"
-        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.97"
+        app:layout_constraintHeight_percent="0.12"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:radius="100dp"
