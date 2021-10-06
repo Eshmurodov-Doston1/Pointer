@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_layout"
+    android:background="#E5E5E5"
     tools:context=".fragments.NewsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:id="@+id/view_pager"
+        app:icvp_center_page_scale_offset="10dp"
+        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        app:icvp_max_page_scale="0.8"
+        app:icvp_medium_scaled="false"
+        app:icvp_min_page_scale="0.55"
+        app:icvp_min_page_scale_offset="5dp"
+        app:icvp_scroll_duration="250"
         android:layout_width="match_parent"
+       android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        tools:ignore="MissingClass" />
+</RelativeLayout>

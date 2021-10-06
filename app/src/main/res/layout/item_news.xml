@@ -4,16 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cardCornerRadius="16dp"
-    app:cardElevation="15dp">
+    app:cardElevation="4dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/newsImage1" />
+        android:layout_height="match_parent">
 
-    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-        android:layout_width="match_parent"
-        android:id="@+id/view_pager"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/news_image1" />
 
-        android:layout_height="match_parent" />
+        <io.alterac.blurkit.BlurLayout
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:blk_blurRadius="20"
+            app:blk_downscaleFactor="0.12"
+            app:blk_fps="60"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        </io.alterac.blurkit.BlurLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

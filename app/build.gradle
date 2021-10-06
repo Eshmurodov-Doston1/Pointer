@@ -54,4 +54,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
+
+    //blur
+    implementation 'io.alterac.blurkit:blurkit:1.1.0'
 }
