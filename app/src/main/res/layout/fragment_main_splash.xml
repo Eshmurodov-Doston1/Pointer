@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.MainSplashFragment">
+    tools:context=".fragments.splashFragments.MainSplashFragment">
     <ImageView
         android:id="@+id/image_pointer"
         android:src="@drawable/pointer"
