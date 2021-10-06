@@ -12,10 +12,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_bias="0.15"
         android:src="@drawable/pointer_name"
         app:layout_constraintWidth_percent="0.75"
-        android:padding="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
         android:scaleType="centerCrop"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
@@ -34,24 +34,142 @@
         app:layout_constraintWidth_percent="0.75"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/login"
+    <com.blure.complexview.ComplexView
+        android:id="@+id/login_com"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:padding="@dimen/_10sdp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        android:background="@drawable/editetext"
-        android:elevation="@dimen/_1sdp"
-        app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintVertical_bias="0.1"
-        android:hint="Login"
-        android:textSize="@dimen/_15sdp"
-        android:textColor="@color/black"
-        android:textStyle="normal"
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintWidth_percent="0.93"
+        app:layout_constraintHeight_percent="0.12"
         android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        app:radius="100dp"
+        app:shadow="true"
+        app:shadowPosition="bottom"
+        app:shadowAlpha="80"
+        app:shadowColor="#AFB2B5"
+        app:shadowSpread="1">
 
+        <com.blure.complexview.ComplexView
+            app:shadow="true"
+            app:shadowColor="#AFB2B5"
+            app:shadowPosition="bottom"
+            app:shadowAlpha="80"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:color="#fdfcfc"
+            app:radius="10dp">
+
+            <EditText
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/editetext"
+                android:hint="Login"
+                android:padding="@dimen/_10sdp"
+                android:shadowColor="@color/black"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text"
+                app:layout_constraintVertical_bias="0.1"
+                app:layout_constraintWidth_percent="0.9" />
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
+
+    <com.blure.complexview.ComplexView
+        android:id="@+id/password_com"
+        app:layout_constraintTop_toBottomOf="@id/login_com"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintWidth_percent="0.93"
+        app:layout_constraintHeight_percent="0.12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:radius="100dp"
+        app:shadow="true"
+        app:shadowPosition="bottom"
+        app:shadowAlpha="80"
+        app:shadowColor="#AFB2B5"
+        app:shadowSpread="1">
+        <com.blure.complexview.ComplexView
+            android:layout_width="match_parent"
+            app:shadow="true"
+            app:shadowColor="#AFB2B5"
+            app:shadowPosition="bottom"
+            app:shadowAlpha="80"
+            android:layout_height="match_parent"
+            app:radius="10dp">
+
+            <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                android:id="@+id/simplePassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/editetext"
+                android:fontFamily="@font/montserrat"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintLeft_toLeftOf="@id/login"
+                app:layout_constraintTop_toBottomOf="@id/login" />
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
+
+    <com.blure.complexview.ComplexView
+        android:id="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@id/password_com"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintWidth_percent="0.96"
+        app:layout_constraintHeight_percent="0.13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:radius="100dp"
+        app:shadow="true"
+        app:shadowPosition="bottom"
+        app:shadowAlpha="80"
+        app:shadowColor="#01D8D0"
+        app:shadowSpread="2">
+
+        <com.blure.complexview.ComplexView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:radius="10dp"
+            app:shadow="true"
+            app:shadowAlpha="100"
+            app:shadowColor="#01D8D0"
+            app:shadowSpread="1"
+            app:shadowPosition="bottom">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tizimga kirish"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
 </androidx.constraintlayout.widget.ConstraintLayout>

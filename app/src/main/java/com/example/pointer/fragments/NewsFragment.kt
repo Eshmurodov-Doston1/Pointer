@@ -31,7 +31,7 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
     private fun initData() {
         newsList = ArrayList()
-        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+        newsList.add(News(R.drawable.click1, "", 11, "", ""))
         newsList.add(News(R.drawable.click1, "", 11, "", ""))
         newsList.add(News(R.drawable.click2, "", 11, "", ""))
         newsList.add(News(R.drawable.click3, "", 11, "", ""))

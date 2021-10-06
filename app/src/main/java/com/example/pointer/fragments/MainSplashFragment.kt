@@ -1,5 +1,7 @@
 package com.example.pointer.fragments
 
+import android.app.ActionBar
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,12 +9,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentMainSplashBinding
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
+
+
+
+
+
+
 
 class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
     lateinit var handler:Handler
@@ -36,8 +45,8 @@ class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
                     handler.postDelayed({
                         findNavController().navigate(R.id.action_mainSplashFragment_to_loginFragment)
                     },1500)
-                },1000)
-            },1000)
+                },300)
+            },600)
         }
     }
 }
