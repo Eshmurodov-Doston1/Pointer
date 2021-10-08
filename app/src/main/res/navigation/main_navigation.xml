@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/newsFragment">
+    app:startDestination="@id/calendarFragment">
 
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.pointer.fragments.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/lessonTableFragment"
+        android:name="com.example.pointer.fragments.lessontable.LessonTableFragment"
+        android:label="LessonTableFragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.pointer.fragments.lessontable.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
 </navigation>
