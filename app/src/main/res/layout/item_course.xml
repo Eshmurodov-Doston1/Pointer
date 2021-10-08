@@ -63,7 +63,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
-           android:background="#01D8D0"
+           android:background="@color/white"
+            android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
