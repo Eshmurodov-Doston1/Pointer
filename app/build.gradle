@@ -52,11 +52,20 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
-
+    //blur
+    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
     //blur
     implementation 'io.alterac.blurkit:blurkit:1.1.0'
     //shadow
     implementation 'com.github.BluRe-CN:ComplexView:1.1'
     //password
     implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
+    //circleButton
+    implementation 'com.github.markushi:circlebutton:1.1'
+    //Expansion
+    implementation 'com.github.florent37:expansionpanel:1.2.4'
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //circle Imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
