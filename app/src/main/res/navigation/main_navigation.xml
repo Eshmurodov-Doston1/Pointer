@@ -34,4 +34,10 @@
         android:name="com.example.pointer.fragments.lessontable.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/trainingMainFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingMainFragment"
+        android:label="fragment_training_main"
+        tools:layout="@layout/fragment_training_main" />
+
 </navigation>
