@@ -32,8 +32,6 @@ class SplashActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
-
-
     }
     private fun setWindowFlag(bits: Int, on: Boolean) {
         val win = window

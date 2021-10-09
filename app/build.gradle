@@ -12,7 +12,6 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -60,7 +59,4 @@ dependencies {
     implementation 'com.github.BluRe-CN:ComplexView:1.1'
     //password
     implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
-
-    //circle Imageview
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

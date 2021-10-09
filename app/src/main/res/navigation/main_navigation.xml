@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
+    app:startDestination="@id/myCourceFragment">
     app:startDestination="@id/calendarFragment">
 
     <fragment
@@ -10,6 +11,20 @@
         android:name="com.example.pointer.fragments.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/myCourceFragment"
+        android:name="com.example.pointer.fragments.student.MyCourceFragment"
+        android:label="fragment_my_cource"
+        tools:layout="@layout/fragment_my_cource" >
+        <action
+            android:id="@+id/action_myCourceFragment_to_studentInformationFragment"
+            app:destination="@id/studentInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentInformationFragment"
+        android:name="com.example.pointer.fragments.student.StudentInformationFragment"
+        android:label="fragment_student_information"
+        tools:layout="@layout/fragment_student_information" />
     <fragment
         android:id="@+id/lessonTableFragment"
         android:name="com.example.pointer.fragments.lessontable.LessonTableFragment"

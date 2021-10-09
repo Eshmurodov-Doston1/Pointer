@@ -14,14 +14,29 @@
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_table.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_course.xml" value="0.33" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_news.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/drawable/button.xml" value="0.3388888888888889" />
+        <entry key="app/src/main/res/drawable/course_name.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/course_number.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/editetext.xml" value="0.3388888888888889" />
+        <entry key="app/src/main/res/drawable/ic_group_3.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/ic_left.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/ic_vector.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/ic_vector1.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/shadow.xml" value="0.3388888888888889" />
         <entry key="app/src/main/res/drawable/text_anim.xml" value="0.3388888888888889" />
         <entry key="app/src/main/res/layout-v23/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.32395833333333335" />
+        <entry key="app/src/main/res/layout/child_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_course_view_pager.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_course_viewpager.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main_splash.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_my_cource.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_student_information.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_course_student.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/layout/item_rv.xml" value="0.25" />
       </map>
     </option>
   </component>
