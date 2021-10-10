@@ -9,5 +9,14 @@
         android:id="@+id/newsFragment"
         android:name="com.example.pointer.fragments.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/news_to_fullNews"
+            app:destination="@id/fullNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.example.pointer.fragments.FullNewsFragment"
+        android:label="fragment_full_news"
+        tools:layout="@layout/fragment_full_news" />
 </navigation>

@@ -16,10 +16,10 @@
         app:icvp_medium_scaled="false"
         app:icvp_min_page_scale="0.55"
         app:icvp_min_page_scale_offset="5dp"
-        app:icvp_scroll_duration="250"
+        app:icvp_scroll_duration="500"
         android:layout_width="match_parent"
-       android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
+       android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:layout_height="match_parent"
         tools:ignore="MissingClass" />
 </RelativeLayout>
