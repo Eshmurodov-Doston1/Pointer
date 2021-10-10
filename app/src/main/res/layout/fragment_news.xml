@@ -16,10 +16,20 @@
         app:icvp_medium_scaled="false"
         app:icvp_min_page_scale="0.55"
         app:icvp_min_page_scale_offset="5dp"
-        app:icvp_scroll_duration="500"
+        app:icvp_scroll_duration="250"
         android:layout_width="match_parent"
-       android:layout_marginBottom="50dp"
-        android:layout_marginTop="50dp"
+       android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
         android:layout_height="match_parent"
         tools:ignore="MissingClass" />
+
+    <Button
+
+
+        android:id="@+id/gotocalendar"
+        android:layout_margin="@dimen/_10sdp"
+        android:textSize="@dimen/_18sdp"
+        android:text="Go to Calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

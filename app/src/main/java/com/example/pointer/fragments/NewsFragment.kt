@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.NewsAdapter
 import com.example.pointer.databinding.FragmentNewsBinding
@@ -27,6 +29,9 @@ class NewsFragment : Fragment(R.layout.fragment_news), NewsAdapter.PosterDelegat
         binding = FragmentNewsBinding.bind(view)
 
 
+        binding.gotocalendar.setOnClickListener {
+            findNavController().navigate(R.id.calendarFragment)
+        }
         initData()
         newsAdapter = NewsAdapter(this, requireContext(), newsList)
         binding.viewPager.adapter = newsAdapter
@@ -34,6 +39,11 @@ class NewsFragment : Fragment(R.layout.fragment_news), NewsAdapter.PosterDelegat
 //
 //
 //        }
+        newsAdapter.setOnCLickListener {
+
+
+
+        }
     }
 
     private fun initData() {

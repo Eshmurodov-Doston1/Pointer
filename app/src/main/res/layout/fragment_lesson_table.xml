@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/cl"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="#F4F5F9"
+        app:layout_constraintVertical_bias="0"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+
+            android:id="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            android:src="@drawable/vector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/back"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColor="#373737"
+            android:fontFamily="@font/montserrat"
+            android:text="Dars jadvali"
+            android:textSize="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+
+        android:id="@+id/time"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="#BDBDBD"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/montserrat"
+        android:text="Vaqti"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+
+        android:id="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:src="@drawable/icon"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+  <TextView
+
+      app:layout_constraintTop_toTopOf="@id/time"
+      app:layout_constraintBottom_toBottomOf="@id/time"
+      app:layout_constraintLeft_toRightOf="@id/time"
+      app:layout_constraintHorizontal_bias="0"
+      android:layout_marginStart="@dimen/_32sdp"
+      android:textColor="#BDBDBD"
+      android:textSize="@dimen/_14sdp"
+      android:fontFamily="@font/montserrat"
+      android:text="Kurs"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+
+        android:id="@+id/rv"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        tools:listitem="@layout/item_course"
+        android:layout_marginTop="@dimen/_7sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+
+        android:id="@+id/linear"
+        app:layout_constraintTop_toBottomOf="@id/cl"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/_70sdp">
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/bir"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/dushanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="DU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day1"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/ikki"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+                <TextView
+
+                    android:id="@+id/seshanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Se"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day2"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/uch"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/chorshanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Chor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day3"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/tort"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/payshanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day4"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/besh"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/juma"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Ju"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day5"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/olti"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/shanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Sha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day6"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:gravity="center"
+                android:id="@+id/yetti"
+                android:orientation="vertical"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_55sdp">
+
+
+                <TextView
+
+                    android:id="@+id/yakshanba"
+                    android:textColor="#BCC1CD"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Yak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+
+                    android:id="@+id/day7"
+                    android:textColor="#212525"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

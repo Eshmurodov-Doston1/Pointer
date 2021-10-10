@@ -1,17 +1,11 @@
-package com.example.pointer.fragments
+package com.example.pointer.fragments.splashFragments
 
-import android.app.ActionBar
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentMainSplashBinding
@@ -28,6 +22,8 @@ class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
     private val binding by viewBinding(FragmentMainSplashBinding::bind)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         binding.apply {
             handler = Handler(Looper.getMainLooper())
             text.visibility = View.INVISIBLE

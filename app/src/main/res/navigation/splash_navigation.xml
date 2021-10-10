@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainSplashFragment"
-        android:name="com.example.pointer.fragments.MainSplashFragment"
+        android:name="com.example.pointer.fragments.splashFragments.MainSplashFragment"
         android:label="fragment_main_splash"
         tools:layout="@layout/fragment_main_splash" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.pointer.fragments.LoginFragment"
+        android:name="com.example.pointer.fragments.splashFragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 </navigation>

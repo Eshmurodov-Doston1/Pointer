@@ -19,4 +19,34 @@
         android:name="com.example.pointer.fragments.FullNewsFragment"
         android:label="fragment_full_news"
         tools:layout="@layout/fragment_full_news" />
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/myCourceFragment"
+        android:name="com.example.pointer.fragments.student.MyCourceFragment"
+        android:label="fragment_my_cource"
+        tools:layout="@layout/fragment_my_cource" >
+        <action
+            android:id="@+id/action_myCourceFragment_to_studentInformationFragment"
+            app:destination="@id/studentInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentInformationFragment"
+        android:name="com.example.pointer.fragments.student.StudentInformationFragment"
+        android:label="fragment_student_information"
+        tools:layout="@layout/fragment_student_information" />
+    <fragment
+        android:id="@+id/lessonTableFragment"
+        android:name="com.example.pointer.fragments.lessontable.LessonTableFragment"
+        android:label="LessonTableFragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.pointer.fragments.lessontable.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/trainingMainFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingMainFragment"
+        android:label="fragment_training_main"
+        tools:layout="@layout/fragment_training_main" />
+
 </navigation>
