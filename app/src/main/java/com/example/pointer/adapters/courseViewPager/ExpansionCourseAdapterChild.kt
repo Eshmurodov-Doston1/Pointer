@@ -9,10 +9,13 @@ import com.example.pointer.databinding.ChildItemBinding
 import com.example.pointer.databinding.ItemRvBinding
 import com.example.pointer.models.student.Course
 
-class ExpansionCourseAdapterChild:ListAdapter<String,ExpansionCourseAdapterChild.Vh>(MyDiffUtil()) {
+class ExpansionCourseAdapterChild(var onChildClick: ExpansionCourseAdapter.OnChildClick):ListAdapter<String,ExpansionCourseAdapterChild.Vh>(MyDiffUtil()) {
     inner class Vh(var childItemBinding: ChildItemBinding):RecyclerView.ViewHolder(childItemBinding.root){
         fun onBind(str:String,position: Int){
             childItemBinding.text.text = str
+            itemView.setOnClickListener {
+                onChildClick.onChildClick(str,childItemBinding)
+            }
         }
     }
 

@@ -71,14 +71,14 @@
                 android:textColor="@color/black"
                 android:text="Android Kursi"
                 android:textStyle="bold"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_16sdp"
                 android:textAllCaps="false"
                 android:maxLines="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cons1"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 app:layout_constraintTop_toBottomOf="@id/name_course"
                 app:layout_constraintLeft_toLeftOf="@id/name_course"
                 app:layout_constraintHeight_percent="0.15"
@@ -103,7 +103,7 @@
                         android:paddingTop="@dimen/_3sdp"
                         android:paddingLeft="@dimen/_5sdp"
                         android:paddingRight="@dimen/_5sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:textSize="@dimen/_9sdp"
                         android:textAllCaps="false"
                         android:textStyle="normal"
                         android:textColor="@color/white"
@@ -128,7 +128,7 @@
                         android:paddingTop="@dimen/_3sdp"
                         android:paddingLeft="@dimen/_5sdp"
                         android:paddingRight="@dimen/_5sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:textSize="@dimen/_9sdp"
                         android:textAllCaps="false"
                         android:textStyle="normal"
                         android:textColor="@color/white"
@@ -140,7 +140,7 @@
                 android:id="@+id/image_teacher"
                 app:layout_constraintTop_toBottomOf="@id/cons1"
                 app:layout_constraintLeft_toLeftOf="@id/cons1"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:src="@drawable/click4"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                 android:layout_width="@dimen/_40sdp"
@@ -159,7 +159,7 @@
                 app:layout_constraintHorizontal_bias="0.2"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:textSize="@dimen/_11sdp"
+                android:textSize="@dimen/_10sdp"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/full_name"
@@ -171,7 +171,7 @@
                 app:layout_constraintLeft_toLeftOf="@id/teacher_name"
                 app:layout_constraintBottom_toBottomOf="@id/image_teacher"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_9sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView

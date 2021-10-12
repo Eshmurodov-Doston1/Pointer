@@ -1,4 +1,4 @@
-package com.example.pointer.adapters.courseViewPager
+package com.example.pointer.fragments.student
 
 
 

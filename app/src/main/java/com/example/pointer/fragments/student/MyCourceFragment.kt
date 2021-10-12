@@ -61,7 +61,9 @@ class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_courc
                     var extras:FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
                         .addSharedElement(itemCourceStudentBinding.myCons,"my_image")
                         .build()
-                    findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,null,null,extras)
+                    var bundle = Bundle()
+                    bundle.putSerializable("studentCource",studentCourse)
+                    findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,bundle,null,extras)
                 }
 
             })

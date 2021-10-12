@@ -6,6 +6,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/child_card"
         app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="card"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintWidth_percent="0.95"

@@ -24,7 +24,11 @@
         android:id="@+id/studentInformationFragment"
         android:name="com.example.pointer.fragments.student.StudentInformationFragment"
         android:label="fragment_student_information"
-        tools:layout="@layout/fragment_student_information" />
+        tools:layout="@layout/fragment_student_information" >
+        <action
+            android:id="@+id/action_studentInformationFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lessonTableFragment"
         android:name="com.example.pointer.fragments.lessontable.LessonTableFragment"
@@ -34,4 +38,9 @@
         android:name="com.example.pointer.fragments.lessontable.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.example.pointer.fragments.student.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
 </navigation>

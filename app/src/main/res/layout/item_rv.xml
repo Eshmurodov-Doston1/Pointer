@@ -12,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintWidth_percent="1"
-        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintHeight_percent="0.1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:radius="20dp"
@@ -57,7 +57,7 @@
                             app:expansion_toggleOnClick="true">
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_40sdp">
+                                android:layout_height="@dimen/_35sdp">
                                 <TextView
                                     android:id="@+id/name"
                                     app:layout_constraintTop_toTopOf="parent"
@@ -70,7 +70,7 @@
                                     android:padding="@dimen/_5sdp"
                                     app:layout_constraintHorizontal_bias="0.1"
                                     android:text="@string/app_name"
-                                    android:textSize="@dimen/_14sdp"
+                                    android:textSize="@dimen/_12sdp"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"/>
                                 <androidx.appcompat.widget.AppCompatImageView
