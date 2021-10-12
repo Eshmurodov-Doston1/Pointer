@@ -24,6 +24,9 @@ class CalendarFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentCalendarBinding.inflate(inflater, container, false)
 
+        binding.training.setOnClickListener {
+            findNavController().navigate(R.id.trainingMainFragment)
+        }
 
         binding.calendar.setOnDateChangeListener { _, year, month, dayOfMonth ->
 

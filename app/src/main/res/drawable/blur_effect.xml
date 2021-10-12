@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--    android<item android:drawable="@drawable/fon" /> &lt;!&ndash; change @drawable/nature with your desired image &ndash;&gt;-->
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:radius="22dp">
+            </corners>
+            <!-- You can use from 1% transparency to 100% transparency, according to your need,-->
+            <solid
+                android:color="#80FFFFFF"/>  <!-- Here transparency level is 80%-->
+        </shape>
+        <transition android:opacity="opaque"/>
+
+    </item>
+</layer-list>

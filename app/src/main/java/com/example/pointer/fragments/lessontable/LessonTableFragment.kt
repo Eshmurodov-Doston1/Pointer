@@ -49,30 +49,41 @@ class LessonTableFragment : Fragment() {
         var activeWeek: LinearLayout? = null
 
         val weekClickListen = View.OnClickListener{
-            when (it.id) {
-                R.id.yetti -> {
 
-                    Toast.makeText(requireContext(), "Dam olish kuni", Toast.LENGTH_SHORT).show()
-                    adapter = TableRecyclerAdapter(requireContext(), initList5())}
-                R.id.bir -> {adapter = TableRecyclerAdapter(requireContext(), initList2())
+            if(activeWeek != it) {
+                when (it.id) {
+                    R.id.yetti -> {
+
+                        Toast.makeText(requireContext(), "Dam olish kuni", Toast.LENGTH_SHORT)
+                            .show()
+                        adapter = TableRecyclerAdapter(requireContext(), initList5())
+                    }
+                    R.id.bir -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList2())
+                    }
+                    R.id.ikki -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList3())
+                    }
+                    R.id.uch -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList())
+                    }
+                    R.id.tort -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList3())
+                    }
+                    R.id.besh -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList2())
+                    }
+                    R.id.olti -> {
+                        adapter = TableRecyclerAdapter(requireContext(), initList())
+                    }
                 }
-                R.id.ikki -> {adapter = TableRecyclerAdapter(requireContext(), initList3())
-                }
-                R.id.uch -> {adapter = TableRecyclerAdapter(requireContext(), initList())
-                }
-                R.id.tort -> {adapter = TableRecyclerAdapter(requireContext(), initList3())
-                }
-                R.id.besh -> {adapter = TableRecyclerAdapter(requireContext(), initList2())
-                }
-                R.id.olti -> {adapter = TableRecyclerAdapter(requireContext(), initList())
-                }
+
+                binding.rv.adapter = adapter
+                (it as LinearLayout).setBackgroundResource(R.drawable.back_style)
+                activeWeek?.setBackgroundResource(R.color.purple_200)
+                binding.rv.visibility = View.VISIBLE
+                activeWeek = it
             }
-
-            binding.rv.adapter = adapter
-            (it as LinearLayout).setBackgroundResource(R.drawable.back_style)
-            activeWeek?.setBackgroundResource(R.color.purple_200)
-            binding.rv.visibility = View.VISIBLE
-            activeWeek = it
         }
 
         binding.yetti.setOnClickListener(weekClickListen)

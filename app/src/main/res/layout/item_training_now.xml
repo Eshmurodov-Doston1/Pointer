@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_height="260dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+
+
+            android:id="@+id/image"
+            android:src="@drawable/click5"
+            android:scaleType="centerCrop"
+            android:foreground="@drawable/image_foreground"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="184dp"/>
+
+
+        <TextView
+
+            android:id="@+id/nameTraining"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginTop="124dp"
+            android:layout_marginStart="11dp"
+            android:textSize="15sp"
+            android:text="UX/UI bo’yicha master klass"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/card"
+            app:layout_constraintTop_toBottomOf="@id/nameTraining"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF2D55"
+            app:cardCornerRadius="6dp"
+            android:gravity="center"
+            android:layout_marginStart="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:id="@+id/time"
+                android:textSize="10sp"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:text="Live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+
+            android:id="@+id/address"
+            app:layout_constraintTop_toTopOf="@id/card"
+            app:layout_constraintBottom_toBottomOf="@id/card"
+            app:layout_constraintLeft_toRightOf="@id/card"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:textSize="13dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:text="Pointers academy"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+
+            android:id="@+id/imageSpeaker"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/click5"
+            android:layout_width="44dp"
+            android:layout_height="44dp"/>
+
+        <TextView
+
+
+            android:id="@+id/nameSpeaker"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:textSize="14sp"
+            android:textColor="#222B45"
+            android:fontFamily="@font/montserrat"
+            android:text="Bektayev Asadbek"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+
+            android:id="@+id/type"
+            app:layout_constraintTop_toBottomOf="@id/nameSpeaker"
+            app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:textSize="13sp"
+            android:textColor="#BDBDBD"
+            android:fontFamily="@font/montserrat"
+            android:text="Offlayn"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+
+            android:id="@+id/countMember"
+            app:layout_constraintTop_toBottomOf="@id/nameSpeaker"
+            app:layout_constraintLeft_toRightOf="@id/type"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:textSize="13sp"
+            android:textColor="#BDBDBD"
+            android:fontFamily="@font/montserrat"
+            android:text="200 ta joy"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/enter"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="17dp"
+            android:backgroundTint="#01D8D0"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="7dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="107dp"
+            android:layout_height="42dp">
+
+            <TextView
+
+                android:layout_gravity="center"
+                android:text="Ko’rish"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
