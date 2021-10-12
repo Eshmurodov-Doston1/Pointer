@@ -25,6 +25,7 @@ class TableRecyclerAdapter(var context: Context, var list: ArrayList<Table>): Re
         val imageStudent = itemView.findViewById<ImageView>(R.id.image_student)
         val name = itemView.findViewById<TextView>(R.id.student_name)
         val background = itemView.findViewById<ConstraintLayout>(R.id.back)
+        val image = itemView.findViewById<ImageView>(R.id.image)
 
         fun onBind(table: Table)
         {
@@ -59,6 +60,7 @@ class TableRecyclerAdapter(var context: Context, var list: ArrayList<Table>): Re
             holder.course.setTextColor(R.color.black)
             holder.name.setTextColor(R.color.black)
             holder.roomNumber.setTextColor(R.color.black)
+            holder.image.setImageResource(R.drawable.room2)
         }
     }
 

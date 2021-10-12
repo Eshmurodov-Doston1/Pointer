@@ -45,11 +45,17 @@ class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_courc
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     private val binding by viewBinding(FragmentMyCourceBinding::bind)
     lateinit var courseViewPagerAdapter: CourseViewPagerAdapter
     lateinit var listCource:ArrayList<StudentCourse>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.calendar.setOnClickListener {
+            findNavController().navigate(R.id.calendarFragment)
+        }
+
         binding.apply {
             loadCource()
             courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),object:CourseViewPagerAdapter.OnItemClickListener{

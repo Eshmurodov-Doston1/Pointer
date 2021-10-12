@@ -1,4 +1,4 @@
-package com.example.pointer.adapters
+package com.example.pointer.adapters.trainingAdapter
 
 import android.view.LayoutInflater
 import android.view.View

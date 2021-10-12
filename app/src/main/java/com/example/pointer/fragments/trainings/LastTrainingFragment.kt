@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.pointer.R
-import com.example.pointer.adapters.TrainingRecyclerAdapter
+import com.example.pointer.adapters.trainingAdapter.TrainingRecyclerAdapter
 import com.example.pointer.databinding.FragmentLastTrainingBinding
-import com.example.pointer.databinding.FragmentTrainingMainBinding
 import com.example.pointer.models.Training
 import java.util.ArrayList
 
@@ -23,7 +22,7 @@ class LastTrainingFragment : Fragment() {
     ): View? {
         binding = FragmentLastTrainingBinding.inflate(inflater, container, false)
 
-        binding.rv.adapter = TrainingRecyclerAdapter(initList()) {
+        binding.rv.adapter = TrainingRecyclerAdapter(requireContext(), initList()) {
             Toast.makeText(requireContext(), it.trainingName, Toast.LENGTH_SHORT).show()
         }
         return binding.root

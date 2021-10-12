@@ -3,12 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/button.xml" value="0.3388888888888889" />
-        <entry key="app/src/main/res/drawable/course_name.xml" value="0.33611111111111114" />
-        <entry key="app/src/main/res/drawable/course_number.xml" value="0.33611111111111114" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/drawable-v24/ic_baseline_play_circle_24.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/drawable-v24/thumb.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/drawable/thumb1.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/activity_play_video.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/child_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_calendar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_course_viewpager.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_last_training.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_lesson_table.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_my_cource.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_next_trainig.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_now_training.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_student_information.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_training_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/fragment_training_video.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_course.xml" value="0.18796296296296297" />
+        <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_rv.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training.xml" value="0.25" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_next.xml" value="0.25" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_now.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/drawable/button.xml" value="0.3388888888888889" />
+        <entry key="app/src/main/res/drawable/course_name.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/course_number.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/editetext.xml" value="0.3388888888888889" />
         <entry key="app/src/main/res/drawable/ic_group_3.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_left.xml" value="0.325" />

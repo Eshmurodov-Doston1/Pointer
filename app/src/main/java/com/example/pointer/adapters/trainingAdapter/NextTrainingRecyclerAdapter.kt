@@ -1,18 +1,16 @@
-package com.example.pointer.adapters
+package com.example.pointer.adapters.trainingAdapter
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pointer.R
 import com.example.pointer.models.Training
 
 
-class TrainingRecyclerAdapter(var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<TrainingRecyclerAdapter.ViewHolder>() {
+class NextTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<NextTrainingRecyclerAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun onBind(training: Training) {
@@ -44,7 +42,7 @@ class TrainingRecyclerAdapter(var list: ArrayList<Training>, val onClick: (train
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training_next, parent, false))
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position])

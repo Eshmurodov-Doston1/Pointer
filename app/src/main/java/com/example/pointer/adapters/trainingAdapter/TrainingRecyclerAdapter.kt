@@ -1,19 +1,30 @@
-package com.example.pointer.adapters
+package com.example.pointer.adapters.trainingAdapter
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pointer.R
 import com.example.pointer.models.Training
+import com.example.pointer.R
+import androidx.navigation.findNavController
+import com.example.pointer.PlayVideoActivity
 
 
-class NextTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<NextTrainingRecyclerAdapter.ViewHolder>() {
+class TrainingRecyclerAdapter(var context: Context,var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<TrainingRecyclerAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun onBind(training: Training) {
+
+
+        val enter = itemView.findViewById<CardView>(R.id.enter)
+              fun onBind(training: Training) {
             itemView.apply {
                 training.image?.let {
                     itemView.findViewById<ImageView>(R.id.image).setImageResource(
@@ -42,10 +53,18 @@ class NextTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training_next, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training, parent, false))
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position])
+
+
+        holder.enter.setOnClickListener {
+
+            val intent = Intent(context, PlayVideoActivity::class.java)
+            intent.putExtra("train", list[position])
+            context.startActivity(intent)
+        }
     }
     override fun getItemCount(): Int = list.size
 }
