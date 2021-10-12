@@ -22,7 +22,11 @@ class LastTrainingFragment : Fragment() {
     ): View? {
         binding = FragmentLastTrainingBinding.inflate(inflater, container, false)
 
-        binding.rv.adapter = TrainingRecyclerAdapter(requireContext(), initList()) {
+        binding.rv.adapter = TrainingRecyclerAdapter(object:TrainingRecyclerAdapter.OnButtonClick{
+            override fun onTraningClick(training: Training, position: Int) {
+                Toast.makeText(requireContext(), "CLikc", Toast.LENGTH_SHORT).show()
+            }
+        },requireContext(), initList()) {
             Toast.makeText(requireContext(), it.trainingName, Toast.LENGTH_SHORT).show()
         }
         return binding.root
