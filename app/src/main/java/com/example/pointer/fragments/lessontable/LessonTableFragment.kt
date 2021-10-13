@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
@@ -46,7 +47,11 @@ class LessonTableFragment : Fragment() {
         binding.day6.text = days[5]
         binding.day7.text = days[6]
 
+        binding.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
         var activeWeek: LinearLayout? = null
+        var textView: TextView? = null
 
         val weekClickListen = View.OnClickListener{
 

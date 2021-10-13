@@ -1,18 +1,22 @@
 package com.example.pointer.adapters.trainingAdapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pointer.R
 import com.example.pointer.models.Training
 
-class NowTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<NowTrainingRecyclerAdapter.ViewHolder>() {
+class NowTrainingRecyclerAdapter(
+    var onButtonClick: OnButtonClick, var context: Context,
+    var list: ArrayList<Training>, val onClick: (training: Training) -> Unit): RecyclerView.Adapter<NowTrainingRecyclerAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun onBind(training: Training) {
+        fun onBind(training: Training, position: Int) {
             itemView.apply {
                 training.image?.let {
                     itemView.findViewById<ImageView>(R.id.image).setImageResource(
@@ -31,6 +35,9 @@ class NowTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (t
                     itemView.findViewById<TextView>(R.id.address).text = training.address
                     itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.type).text = training.type
+                    itemView.findViewById<CardView>(R.id.enter).setOnClickListener {
+                        onButtonClick.onTraningClick(training,position)
+                    }
 
                 }
                 itemView.setOnClickListener()
@@ -44,7 +51,11 @@ class NowTrainingRecyclerAdapter (var list: ArrayList<Training>, val onClick: (t
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training_now, parent, false))
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(list[position], position)
     }
     override fun getItemCount(): Int = list.size
+
+    interface OnButtonClick{
+        fun onTraningClick(training: Training,position: Int)
+    }
 }

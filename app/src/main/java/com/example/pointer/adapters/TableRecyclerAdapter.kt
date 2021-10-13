@@ -51,19 +51,7 @@ class TableRecyclerAdapter(var context: Context, var list: ArrayList<Table>): Re
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position])
 
-        if(position == 0)
-        {
-            holder.background.setBackgroundResource(R.color.secondary_color)
-        }
-        else{
-            holder.group.setTextColor(R.color.black)
-            holder.course.setTextColor(R.color.black)
-            holder.name.setTextColor(R.color.black)
-            holder.roomNumber.setTextColor(R.color.black)
-            holder.image.setImageResource(R.drawable.room2)
-        }
     }
-
     override fun getItemCount() = list.size
 }
 

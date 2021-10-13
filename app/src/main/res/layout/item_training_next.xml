@@ -142,7 +142,7 @@
             android:textColor="#BDBDBD"
             android:fontFamily="@font/montserrat"
             android:text="Offlayn"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -161,14 +161,13 @@
             android:textColor="#BDBDBD"
             android:fontFamily="@font/montserrat"
             android:text="200 ta joy"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <androidx.cardview.widget.CardView
+        <com.blure.complexview.ComplexView
 
-            android:id="@+id/enter"
             app:layout_constraintTop_toBottomOf="@id/image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -176,24 +175,38 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintVertical_bias="0"
             android:layout_marginTop="17dp"
-            android:backgroundTint="#01D8D0"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="7dp"
-            android:layout_marginEnd="20dp"
+            app:radius="10dp"
+            app:shadow="true"
+            app:shadowAlpha="100"
+            app:shadowColor="#01D8D0"
+            app:shadowSpread="1"
+            android:gravity="center"
+            app:shadowPosition="bottom"
             android:layout_width="107dp"
-            android:layout_height="42dp">
+            android:layout_marginEnd="20dp"
+            android:layout_height="50dp">
 
-            <TextView
+            <androidx.cardview.widget.CardView
 
-                android:layout_gravity="center"
-                android:text="Ko’rish"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:id="@+id/enter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#01D8D0"
+                app:cardCornerRadius="@dimen/_8sdp">
 
-        </androidx.cardview.widget.CardView>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Ko'rish"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </com.blure.complexview.ComplexView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

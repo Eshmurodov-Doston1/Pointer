@@ -58,5 +58,10 @@
         android:name="com.example.pointer.fragments.student.CourseFragment"
         android:label="fragment_course"
         tools:layout="@layout/fragment_course" />
+    <fragment
+        android:id="@+id/trainingVideoFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingVideoFragment"
+        android:label="fragment_training_video"
+        tools:layout="@layout/fragment_training_video" />
 
 </navigation>

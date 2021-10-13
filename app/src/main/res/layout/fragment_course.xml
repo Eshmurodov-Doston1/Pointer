@@ -34,6 +34,8 @@
         android:textSize="@dimen/_18sdp"
         android:maxLines="2"
         android:layout_height="wrap_content"/>
+
+
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youtube"
         app:layout_constraintTop_toBottomOf="@id/close"
@@ -50,5 +52,6 @@
         app:showYouTubeButton="true"
         android:layout_width="match_parent"
         app:enableLiveVideoUi="false"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        tools:ignore="MissingClass" />
 </androidx.constraintlayout.widget.ConstraintLayout>
