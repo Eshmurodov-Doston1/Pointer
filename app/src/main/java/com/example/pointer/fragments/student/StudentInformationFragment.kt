@@ -108,7 +108,7 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
 
     private fun loadCourse1() {
         listCourseChild = ArrayList()
-        listCourseChild.add("1-Dars mkvsjnhdcsa;cjbsackjshcsjcsackjsacsocsapchsacsavsaifvsaifsaicadscisaohcsaicdsasahdisadcsudasdcuascsudasasih")
+        listCourseChild.add("1-Dars")
         listCourseChild.add("2-Dars")
         listCourseChild.add("3-Dars")
         listCourseChild.add("4-Dars")
