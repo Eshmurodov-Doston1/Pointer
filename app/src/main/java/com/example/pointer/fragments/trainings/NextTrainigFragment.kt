@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.pointer.R
-import com.example.pointer.adapters.NextTrainingRecyclerAdapter
-import com.example.pointer.adapters.TrainingRecyclerAdapter
+import com.example.pointer.adapters.trainingAdapter.NextTrainingRecyclerAdapter
 import com.example.pointer.databinding.FragmentNextTrainigBinding
-import com.example.pointer.databinding.FragmentTrainingMainBinding
 import com.example.pointer.models.Training
 import java.util.ArrayList
 

@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentContainer
-import com.example.pointer.R
-import com.example.pointer.adapters.TrainingViewPagerAdapter
+import com.example.pointer.adapters.trainingAdapter.TrainingViewPagerAdapter
 import com.example.pointer.databinding.FragmentTrainingMainBinding
 import com.example.training.animations.DepthPageTransformer
 

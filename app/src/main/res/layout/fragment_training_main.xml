@@ -78,7 +78,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         app:layout_constraintRight_toRightOf="parent"
-        android:background="#E5E5E5"
+        android:background="#F4F5F9"
         app:layout_constraintTop_toBottomOf="@id/cl1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

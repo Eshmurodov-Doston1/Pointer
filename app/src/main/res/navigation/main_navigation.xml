@@ -39,10 +39,10 @@
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
     <fragment
-        android:id="@+id/courseFragment"
-        android:name="com.example.pointer.fragments.student.CourseFragment"
-        android:label="fragment_course"
-        tools:layout="@layout/fragment_course" />
+        android:id="@+id/trainingMainFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingMainFragment"
+        android:label="fragment_training_main"
+        tools:layout="@layout/fragment_training_main" />
     <fragment
         android:id="@+id/lastTrainingFragment"
         android:name="com.example.pointer.fragments.trainings.LastTrainingFragment"
@@ -54,13 +54,9 @@
         android:label="fragment_next_trainig"
         tools:layout="@layout/fragment_next_trainig" />
     <fragment
-        android:id="@+id/nowTrainingFragment"
-        android:name="com.example.pointer.fragments.trainings.NowTrainingFragment"
-        android:label="fragment_now_training"
-        tools:layout="@layout/fragment_now_training" />
-    <fragment
-        android:id="@+id/trainingMainFragment"
-        android:name="com.example.pointer.fragments.trainings.TrainingMainFragment"
-        android:label="fragment_training_main"
-        tools:layout="@layout/fragment_training_main" />
+        android:id="@+id/courseFragment"
+        android:name="com.example.pointer.fragments.student.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
+
 </navigation>

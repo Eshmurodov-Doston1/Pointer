@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_150sdp"
-    android:background="#E5E5E5"
+    android:background="#F4F5F9"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
