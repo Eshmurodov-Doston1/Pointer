@@ -31,13 +31,13 @@
         android:textColor="@color/black"
         android:textStyle="normal"
         android:text="@string/app_name"
-        android:textSize="@dimen/_18sdp"
+        android:textSize="@dimen/_16sdp"
         android:maxLines="2"
         android:layout_height="wrap_content"/>
 
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/youtube"
+        android:id="@+id/youtube_player"
         app:layout_constraintTop_toBottomOf="@id/close"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,13 +45,13 @@
         app:layout_constraintWidth_percent="0.95"
         app:layout_constraintHeight_percent="0.35"
         app:layout_constraintVertical_bias="0.03"
-        app:videoId="Hbbb93tNY4Y"
-        app:autoPlay="true"
+        app:videoId="JJLvj1AnGkU"
+        app:autoPlay="false"
         app:useWebUi="true"
         android:focusedByDefault="false"
         app:showYouTubeButton="true"
+        android:elevation="@dimen/_3sdp"
         android:layout_width="match_parent"
         app:enableLiveVideoUi="false"
-        android:layout_height="0dp"
-        tools:ignore="MissingClass" />
+        android:layout_height="0dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

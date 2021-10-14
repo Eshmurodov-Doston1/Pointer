@@ -55,6 +55,9 @@ class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_courc
         binding.calendar.setOnClickListener {
             findNavController().navigate(R.id.calendarFragment)
         }
+        binding.videoCourse.setOnClickListener {
+            findNavController().navigate(R.id.videoCourcesFragment)
+        }
 
         binding.apply {
             loadCource()

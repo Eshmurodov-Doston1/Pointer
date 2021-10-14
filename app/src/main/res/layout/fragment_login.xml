@@ -134,7 +134,7 @@
         app:layout_constraintHeight_percent="0.12"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:radius="100dp"
+        app:radius="10dp"
         app:shadow="true"
         app:shadowPosition="bottom"
         app:shadowAlpha="80"
