@@ -5,7 +5,7 @@
     android:id="@+id/detail_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FullNewsFragment">
+    tools:context=".fragments.news.FullNewsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

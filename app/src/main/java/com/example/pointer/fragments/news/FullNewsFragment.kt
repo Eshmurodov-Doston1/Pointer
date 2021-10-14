@@ -1,4 +1,4 @@
-package com.example.pointer.fragments
+package com.example.pointer.fragments.news
 
 import android.os.Bundle
 import android.view.View
@@ -7,16 +7,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentFullNewsBinding
 import com.example.pointer.models.News
-import com.skydoves.transformationlayout.TransformationLayout
-import com.skydoves.transformationlayout.onTransformationEndContainer
 
 class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     private lateinit var binding: FragmentFullNewsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val params = arguments?.getParcelable<TransformationLayout.Params>(paramsKey)
-        onTransformationEndContainer(params)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

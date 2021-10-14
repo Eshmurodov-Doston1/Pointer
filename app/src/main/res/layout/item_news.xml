@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.skydoves.transformationlayout.TransformationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_poster_transformationLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:transformation_duration="500"
-    app:transformation_pathMode="arc">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -94,4 +88,3 @@
 <!--                    </LinearLayout>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</com.skydoves.transformationlayout.TransformationLayout>

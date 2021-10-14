@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relative_layout"
     android:background="#E5E5E5"
-    tools:context=".fragments.NewsFragment">
+    tools:context=".fragments.news.NewsFragment">
 
     <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
         android:id="@+id/view_pager"
