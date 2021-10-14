@@ -45,11 +45,20 @@ class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_courc
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     private val binding by viewBinding(FragmentMyCourceBinding::bind)
     lateinit var courseViewPagerAdapter: CourseViewPagerAdapter
     lateinit var listCource:ArrayList<StudentCourse>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.calendar.setOnClickListener {
+            findNavController().navigate(R.id.calendarFragment)
+        }
+        binding.videoCourse.setOnClickListener {
+            findNavController().navigate(R.id.videoCourcesFragment)
+        }
+
         binding.apply {
             loadCource()
             courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),object:CourseViewPagerAdapter.OnItemClickListener{
@@ -61,7 +70,9 @@ class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_courc
                     var extras:FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
                         .addSharedElement(itemCourceStudentBinding.myCons,"my_image")
                         .build()
-                    findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,null,null,extras)
+                    var bundle = Bundle()
+                    bundle.putSerializable("studentCource",studentCourse)
+                    findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,bundle,null,extras)
                 }
 
             })

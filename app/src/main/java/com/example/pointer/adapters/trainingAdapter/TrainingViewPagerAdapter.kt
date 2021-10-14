@@ -1,4 +1,4 @@
-package com.example.pointer.adapters
+package com.example.pointer.adapters.trainingAdapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

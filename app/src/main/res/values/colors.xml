@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#E5E5E5</color>
+    <color name="purple_200">#F4F5F9</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -10,4 +10,5 @@
     <color name="secondary_color">#01D8D0</color>
     <color name="click_green">#00B238</color>
     <color name="quantum_yellow500">#ffeb3b</color>
+    <color name="text_color">#303030</color>
 </resources>

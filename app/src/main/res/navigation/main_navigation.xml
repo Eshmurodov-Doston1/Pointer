@@ -34,7 +34,11 @@
         android:id="@+id/studentInformationFragment"
         android:name="com.example.pointer.fragments.student.StudentInformationFragment"
         android:label="fragment_student_information"
-        tools:layout="@layout/fragment_student_information" />
+        tools:layout="@layout/fragment_student_information" >
+        <action
+            android:id="@+id/action_studentInformationFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lessonTableFragment"
         android:name="com.example.pointer.fragments.lessontable.LessonTableFragment"
@@ -63,5 +67,25 @@
         android:name="com.example.pointer.fragments.personalInfo.PersonalInfoFragment"
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" />
+    <fragment
+        android:id="@+id/lastTrainingFragment"
+        android:name="com.example.pointer.fragments.trainings.LastTrainingFragment"
+        android:label="fragment_last_training"
+        tools:layout="@layout/fragment_last_training" />
+    <fragment
+        android:id="@+id/nextTrainigFragment"
+        android:name="com.example.pointer.fragments.trainings.NextTrainigFragment"
+        android:label="fragment_next_trainig"
+        tools:layout="@layout/fragment_next_trainig" />
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.example.pointer.fragments.student.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
+    <fragment
+        android:id="@+id/videoCourcesFragment"
+        android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
+        android:label="fragment_video_cources"
+        tools:layout="@layout/fragment_video_cources" />
 
 </navigation>

@@ -5,22 +5,25 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pointer.databinding.ChildItemBinding
 import com.example.pointer.databinding.ItemRvBinding
 import com.example.pointer.models.student.Course
 import com.github.florent37.expansionpanel.ExpansionLayout
 
-class ExpansionCourseAdapter(var onItemClickListener: OnItemClickListener):ListAdapter<Course,ExpansionCourseAdapter.Vh>(MyDiffUtil()) {
+class ExpansionCourseAdapter(
+    var onItemClickListener: OnItemClickListener,
+    var onChildClick: OnChildClick):ListAdapter<Course,ExpansionCourseAdapter.Vh>(MyDiffUtil()) {
     lateinit var exPansionCourseAdapterChild:ExpansionCourseAdapterChild
     inner class Vh(var itemRvBinding: ItemRvBinding):RecyclerView.ViewHolder(itemRvBinding.root){
         fun onBind(course: Course,position: Int){
             itemRvBinding.name.text = course.courseName
-            exPansionCourseAdapterChild = ExpansionCourseAdapterChild()
+
+            exPansionCourseAdapterChild = ExpansionCourseAdapterChild(onChildClick)
+
             exPansionCourseAdapterChild.submitList(course.childCourseList)
             itemRvBinding.rcItem.adapter = exPansionCourseAdapterChild
             itemRvBinding.rcItem.isNestedScrollingEnabled =false
-            itemView.setOnClickListener {
-                onItemClickListener.onItemClick(course,position,itemRvBinding)
-            }
+
             itemRvBinding.expansionLayout.addListener(object:ExpansionLayout.Listener{
                 override fun onExpansionChanged(
                     expansionLayout: ExpansionLayout?,
@@ -51,7 +54,9 @@ class ExpansionCourseAdapter(var onItemClickListener: OnItemClickListener):ListA
         }
     }
     interface OnItemClickListener{
-        fun onItemClick(course: Course,position: Int,itemRvBinding: ItemRvBinding)
         fun onItemExpansionClick(course: Course,position: Int,bool:Boolean,itemRvBinding: ItemRvBinding)
+    }
+    interface OnChildClick{
+        fun onChildClick(str:String,itemChildBinding:ChildItemBinding)
     }
 }

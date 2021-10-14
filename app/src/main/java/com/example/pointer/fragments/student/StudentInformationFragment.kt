@@ -8,11 +8,16 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainer
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.courseViewPager.ExpansionCourseAdapter
+import com.example.pointer.databinding.ChildItemBinding
 import com.example.pointer.databinding.FragmentStudentInformationBinding
 import com.example.pointer.databinding.ItemRvBinding
 import com.example.pointer.models.student.Course
+import com.example.pointer.models.student.StudentCourse
+import com.squareup.picasso.Picasso
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 
@@ -53,18 +58,20 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             loadCourse()
 
             sharedElementEnterTransition = ChangeBounds()
+
+
             requireActivity().window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            val studentCourse = arguments?.getSerializable("studentCource") as StudentCourse
+            Picasso.get().load(studentCourse.image).into(myImage)
+            nameCourse.text = studentCourse.name
+            countCourse.text = "${studentCourse.videoCourseNumber} ta dars"
+            nameCourseSi.text = studentCourse.shortNameCourse
+            Picasso.get().load(studentCourse.teacherImage).into(imageTeacher)
+            teacherName.text = studentCourse.teacherName
+            fullName.text = studentCourse.name
 
             expansionCourseAdapter = ExpansionCourseAdapter(object:ExpansionCourseAdapter.OnItemClickListener{
-                override fun onItemClick(
-                    course: Course,
-                    position: Int,
-                    itemRvBinding: ItemRvBinding
-                ) {
-
-                }
-
                 override fun onItemExpansionClick(
                     course: Course,
                     position: Int,
@@ -81,7 +88,18 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
                     itemRvBinding.iconP.setImageResource(R.drawable.ic_vector)
                 }
                 }
+            },object:ExpansionCourseAdapter.OnChildClick{
+                override fun onChildClick(str: String,childItemBinding: ChildItemBinding) {
+                    var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
+                        .addSharedElement(childItemBinding.childCard,"card")
+                        .build()
+                   var bundle = Bundle()
+                    findNavController().navigate(R.id.action_studentInformationFragment_to_courseFragment,null,null,extras)
+                }
             })
+            clouse.setOnClickListener {
+                findNavController().popBackStack()
+            }
             expansionCourseAdapter.submitList(listCourse)
             rvCourse.adapter = expansionCourseAdapter
             rvCourse.isNestedScrollingEnabled = false

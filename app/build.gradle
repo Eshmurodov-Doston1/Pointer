@@ -14,7 +14,6 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -83,4 +82,7 @@ dependencies {
     implementation 'com.github.florent37:inline-activity-result-kotlin:1.0.4'
 
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //youtubePlayer
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 }
