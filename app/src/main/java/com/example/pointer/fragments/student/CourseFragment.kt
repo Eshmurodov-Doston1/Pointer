@@ -45,7 +45,7 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
                 findNavController().popBackStack()
             }
             name.text = "UI/Ux Darsi"
-            nameCourse.text = "UI/Ux Darsi"
+            nmaeCourse.text = "UI/Ux Darsi"
           //  info.text = "Darsni ko`rib bo`lgach pastdagi tugma orqali vazifani yuklab oling va uni bajaring"
 
         }

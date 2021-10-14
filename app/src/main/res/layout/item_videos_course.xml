@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/my_cons"
-    android:transitionName="my_image"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         android:id="@+id/my_card"
         app:layout_constraintTop_toTopOf="parent"
         app:cardUseCompatPadding="true"
         app:cardCornerRadius="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:cardElevation="@dimen/_6sdp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintWidth_percent="1"
-        app:layout_constraintHeight_percent="0.7"
-        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintHeight_percent="0.8"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_350sdp">
+        android:layout_height="@dimen/_330sdp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/my_image"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
+                android:src="@drawable/my_image" />
             <com.github.mmin18.widget.RealtimeBlurView
                 android:id="@+id/blur"
                 android:layout_width="match_parent"
@@ -40,7 +31,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintHeight_percent="0.42"
                 app:realtimeBlurRadius="15dp"
                 app:realtimeOverlayColor="#00FAF7F7" />
 
@@ -59,24 +50,46 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintVertical_bias="0.1"
-                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintVertical_bias="0.08"
+                    app:layout_constraintHorizontal_bias="0.5"
                     android:textColor="@color/white"
+                    app:layout_constraintWidth_percent="0.9"
                     android:text="Android Kursi"
                     android:textStyle="normal"
                     android:textSize="@dimen/_14sdp"
                     android:textAllCaps="false"
-                    android:maxLines="1"
+                    android:maxLines="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/icon_time"
+                    app:layout_constraintTop_toBottomOf="@id/name_course"
+                    app:layout_constraintLeft_toLeftOf="@id/name_course"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.05"
+                    android:src="@drawable/ic_stopwatch"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"/>
+                <TextView
+                    app:layout_constraintTop_toTopOf="@id/icon_time"
+                    app:layout_constraintLeft_toRightOf="@id/icon_time"
+                    app:layout_constraintBottom_toBottomOf="@id/icon_time"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="normal"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cons1"
-                    app:layout_constraintTop_toBottomOf="@id/name_course"
+                    app:layout_constraintTop_toBottomOf="@id/icon_time"
                     app:layout_constraintLeft_toLeftOf="@id/name_course"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHeight_percent="0.15"
+                    app:layout_constraintHeight_percent="0.18"
                     app:layout_constraintWidth_percent="0.9"
-                    app:layout_constraintVertical_bias="0.1"
+                    app:layout_constraintVertical_bias="0.07"
                     android:layout_width="0dp"
                     android:layout_height="0dp">
                     <LinearLayout
@@ -96,7 +109,7 @@
                             android:paddingTop="@dimen/_3sdp"
                             android:paddingLeft="@dimen/_5sdp"
                             android:paddingRight="@dimen/_5sdp"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_9sdp"
                             android:textAllCaps="false"
                             android:textStyle="normal"
                             android:textColor="@color/white"
@@ -111,7 +124,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toRightOf="@id/count_course_app"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintHorizontal_bias="0.05"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
@@ -121,13 +134,38 @@
                             android:paddingTop="@dimen/_3sdp"
                             android:paddingLeft="@dimen/_5sdp"
                             android:paddingRight="@dimen/_5sdp"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_9sdp"
                             android:textAllCaps="false"
                             android:textStyle="normal"
                             android:textColor="@color/white"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/free_course"
+                        android:background="@drawable/course_free"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/name_course_app"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/free_text"
+                            android:text="Salom"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:textSize="@dimen/_9sdp"
+                            android:textAllCaps="false"
+                            android:textStyle="normal"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/image_teacher"

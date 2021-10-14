@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
+import androidx.viewpager2.widget.CompositePageTransformer
 import com.example.pointer.R
+import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
 import com.example.pointer.databinding.FragmentVideoCourcesBinding
+import com.example.pointer.models.student.Course
+import com.example.pointer.models.videocources.VideoCourse
+import com.google.android.material.tabs.TabLayoutMediator
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,11 +38,39 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
         }
     }
     private val binding by viewBinding(FragmentVideoCourcesBinding::bind)
+    lateinit var pagerAdapterVideoCourse:PagerAdapterVideoCourse
+    lateinit var listCourse:ArrayList<VideoCourse>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            loadCourse()
+            pagerAdapterVideoCourse = PagerAdapterVideoCourse()
 
+            pagerAdapterVideoCourse.submitList(listCourse)
+            viewPager2.adapter = pagerAdapterVideoCourse
+            viewPager2.clipToPadding=false
+            viewPager2.clipChildren=false
+            viewPager2.offscreenPageLimit = 3
+            viewPager2.setPageTransformer { page, position ->
+                var a= 1-Math.abs(position)
+                page.scaleY = 0.85F+a*0.1f
+            }
+            TabLayoutMediator(tabLayout,viewPager2){ tab,position->
+                tab.text = listCourse[position].name
+            }.attach()
+            tabLayout.clipChildren = false
+            tabLayout.clipToPadding = false
         }
+    }
+
+    private fun loadCourse() {
+        listCourse = ArrayList()
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
+        listCourse.add(VideoCourse("Android kursi","https://tproger.ru/s3/uploads/2015/03/android-development-770x270.jpg","https://miro.medium.com/fit/c/262/262/1*MjhYbbidoKrR3CNN9Be_9A@2x.jpeg","Sanjar Suvonov","AN",30))
     }
 
     companion object {
