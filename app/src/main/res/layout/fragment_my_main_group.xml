@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_350sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.mainAdapterFragments.MyMainGroupFragment">
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="@dimen/_60sdp">
+                <ImageView
+                    android:id="@+id/clouse"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_bias="0.03"
+                    app:layout_constraintVertical_bias="0.1"
+                    android:src="@drawable/ic_group_3"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"/>
+                <TextView
+                    android:id="@+id/name_page"
+                    app:layout_constraintTop_toTopOf="@id/clouse"
+                    app:layout_constraintBottom_toBottomOf="@id/clouse"
+                    app:layout_constraintLeft_toRightOf="@id/clouse"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="Mening guruhim"
+                    app:layout_constraintVertical_bias="0.1"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/group"
+                    app:layout_constraintTop_toBottomOf="@id/mygroup"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#01D8D0"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Android G-20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/cl"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/white"
+                android:layout_height="0dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:background="@color/white"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_student1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

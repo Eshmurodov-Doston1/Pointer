@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:background="@drawable/back_style3"
+    app:cardMaxElevation="1dp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_height="@dimen/_50sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            android:src="@drawable/click6"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"/>
+
+        <TextView
+
+            android:id="@+id/name"
+            app:layout_constraintTop_toTopOf="@id/image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            android:layout_width="wrap_content"
+            app:layout_constraintVertical_bias="0"
+            android:textColor="#222B45"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_12sdp"
+            android:text="Asadbek Bektayev"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            android:id="@+id/coming"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintVertical_bias="0"
+            android:textColor="#BDBDBD"
+            android:fontFamily="@font/montserrat"
+            android:textSize="@dimen/_10sdp"
+            android:text="Hozir darsda"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

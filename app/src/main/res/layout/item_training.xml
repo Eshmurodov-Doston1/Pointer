@@ -37,6 +37,7 @@
             app:layout_constraintVertical_bias="0"
             app:layout_constraintHorizontal_bias="0"
             android:layout_marginTop="124dp"
+            android:textStyle="bold"
             android:layout_marginStart="11dp"
             android:textSize="15sp"
             android:text="UX/UI bo’yicha master klass"

@@ -68,29 +68,83 @@
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" />
     <fragment
-        android:id="@+id/lastTrainingFragment"
-        android:name="com.example.pointer.fragments.trainings.LastTrainingFragment"
-        android:label="fragment_last_training"
-        tools:layout="@layout/fragment_last_training" />
+        android:id="@+id/studentFragment"
+        android:name="com.example.pointer.fragments.group.StudentFragment"
+        android:label="StudentFragment" />
     <fragment
-        android:id="@+id/nextTrainigFragment"
-        android:name="com.example.pointer.fragments.trainings.NextTrainigFragment"
-        android:label="fragment_next_trainig"
-        tools:layout="@layout/fragment_next_trainig" />
+        android:id="@+id/myGroupFragment"
+        android:name="com.example.pointer.fragments.group.MyGroupFragment"
+        android:label="fragment_my_group"
+        tools:layout="@layout/fragment_my_group" />
+    <fragment
+        android:id="@+id/nowTrainingFragment"
+        android:name="com.example.pointer.fragments.trainings.NowTrainingFragment"
+        android:label="fragment_now_training"
+        tools:layout="@layout/fragment_now_training" />
+    <fragment
+        android:id="@+id/videoCourcesFragment"
+        android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
+        android:label="fragment_video_cources"
+        tools:layout="@layout/fragment_video_cources" >
+        <action
+            android:id="@+id/action_videoCourcesFragment_to_allVideoCourseFragment"
+            app:destination="@id/allVideoCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingVideoFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingVideoFragment"
+        android:label="fragment_training_video"
+        tools:layout="@layout/fragment_training_video" />
+    <fragment
+        android:id="@+id/allVideoCourseFragment"
+        android:name="com.example.pointer.fragments.videoCources.AllVideoCourseFragment"
+        android:label="fragment_all_video_course"
+        tools:layout="@layout/fragment_all_video_course" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pointer.fragments.mainFragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.example.pointer.fragments.news.FullNewsFragment"
+        android:label="fragment_full_news"
+        tools:layout="@layout/fragment_full_news" />
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.example.pointer.fragments.student.CourseFragment"
         android:label="fragment_course"
         tools:layout="@layout/fragment_course" />
     <fragment
-        android:id="@+id/videoCourcesFragment"
-        android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
-        android:label="fragment_video_cources"
-        tools:layout="@layout/fragment_video_cources" />
+        android:id="@+id/lastTraningMainFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.LastTraningMainFragment"
+        android:label="fragment_last_traning_main"
+        tools:layout="@layout/fragment_last_traning_main" />
     <fragment
-        android:id="@+id/trainingVideoFragment"
-        android:name="com.example.pointer.fragments.trainings.TrainingVideoFragment"
-        android:label="fragment_training_video"
-        tools:layout="@layout/fragment_training_video" />
+        android:id="@+id/lessonTableMainFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.LessonTableMainFragment"
+        android:label="fragment_lesson_table_main"
+        tools:layout="@layout/fragment_lesson_table_main" />
+    <fragment
+        android:id="@+id/myCourcesViewPagerFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.MyCourcesViewPagerFragment"
+        android:label="fragment_my_cources_view_pager"
+        tools:layout="@layout/fragment_my_cources_view_pager" />
+    <fragment
+        android:id="@+id/myMainGroupFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.MyMainGroupFragment"
+        android:label="fragment_my_main_group"
+        tools:layout="@layout/fragment_my_main_group" />
+    <fragment
+        android:id="@+id/newsAdapterFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.NewsAdapterFragment"
+        android:label="fragment_news_adapter"
+        tools:layout="@layout/fragment_news_adapter" />
+    <fragment
+        android:id="@+id/videoCourseViewPagerFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.VideoCourseViewPagerFragment"
+        android:label="fragment_video_course_view_pager"
+        tools:layout="@layout/fragment_video_course_view_pager" >
+    </fragment>
 
 </navigation>

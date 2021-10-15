@@ -30,10 +30,6 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentNewsBinding.bind(view)
 
-
-        binding.gotocalendar.setOnClickListener {
-            findNavController().navigate(R.id.calendarFragment)
-        }
         initData()
         newsAdapter = NewsAdapter(requireContext(), newsList)
         binding.viewPager.adapter = newsAdapter

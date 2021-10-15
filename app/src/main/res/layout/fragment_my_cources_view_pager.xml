@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_350sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.mainAdapterFragments.MyCourcesViewPagerFragment">
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/name_page"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintRight_toRightOf="parent"
+                android:maxLines="1"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Mening kurslarim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/name_page"
+                android:id="@+id/cource_viewPager"
+                app:layout_constraintVertical_bias="0.05"
+                android:layout_width="match_parent"
+                app:layout_constraintHeight_percent="0.9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

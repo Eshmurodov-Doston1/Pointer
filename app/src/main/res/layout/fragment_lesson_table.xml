@@ -178,7 +178,7 @@
                 <TextView
 
                     android:id="@+id/day2"
-                    android:textColor="#212525"
+                    android:textColor="@color/black"
                     android:layout_margin="@dimen/_2sdp"
                     android:textSize="@dimen/_14sdp"
                     android:fontFamily="@font/montserrat"

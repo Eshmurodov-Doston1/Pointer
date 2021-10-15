@@ -33,7 +33,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MyCourceFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MyCourceFragment : Fragment(com.example.pointer.R.layout.fragment_my_cource) {
+class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

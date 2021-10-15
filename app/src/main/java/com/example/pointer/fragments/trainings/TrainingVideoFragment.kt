@@ -19,6 +19,7 @@ class TrainingVideoFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTrainingVideoBinding.inflate(inflater, container, false)
 
+        val youtube = binding.youtube
 
         binding.back.setOnClickListener {
             findNavController().popBackStack()
