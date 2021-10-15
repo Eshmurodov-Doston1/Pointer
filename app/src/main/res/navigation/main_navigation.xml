@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/settingsFragment"
+    app:startDestination="@id/newsFragment"
     tools:ignore="ExtraText">
 
     <fragment
@@ -87,5 +87,10 @@
         android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
         android:label="fragment_video_cources"
         tools:layout="@layout/fragment_video_cources" />
+    <fragment
+        android:id="@+id/trainingVideoFragment"
+        android:name="com.example.pointer.fragments.trainings.TrainingVideoFragment"
+        android:label="fragment_training_video"
+        tools:layout="@layout/fragment_training_video" />
 
 </navigation>

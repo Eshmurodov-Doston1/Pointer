@@ -20,7 +20,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_400sdp"
+                android:layout_height="@dimen/_350sdp"
                 android:scaleType="fitXY"
                 android:src="@drawable/image19"
                 android:transitionName="imageTransition"

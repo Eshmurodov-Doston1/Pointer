@@ -1,16 +1,14 @@
 package com.example.pointer.fragments.lessontable
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.TableRecyclerAdapter
@@ -131,9 +129,9 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("11:00", "13:00", "Java", "313-19", "4-201",R.drawable.click3, "Bektayev Asadbek"))
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.click1, "Qosimov Shahrizod"))
-        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.click2, "Bozorov Bobur"))
+        list.add(Table("11:00", "13:00", "Java", "313-19", "4-201",R.drawable.news_image3, "Bektayev Asadbek"))
+        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
+        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.news_image2, "Bozorov Bobur"))
         return list
     }
 
@@ -141,8 +139,8 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.click1, "Qosimov Shahrizod"))
-        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.click2, "Bozorov Bobur"))
+        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
+        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.news_image2, "Bozorov Bobur"))
 
         return list
     }
@@ -158,7 +156,7 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.click1, "Qosimov Shahrizod"))
+        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
         return list
     }
 

@@ -2,16 +2,12 @@ package com.example.pointer.fragments.student
 
 import android.os.Bundle
 import android.transition.ChangeBounds
-import android.util.SparseArray
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentCourseBinding
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import okhttp3.internal.Util
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,8 +40,8 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
             close.setOnClickListener {
                 findNavController().popBackStack()
             }
-            name.text = "UI/Ux Darsi"
-            nameCourse.text = "UI/Ux Darsi"
+//            name.text = "UI/Ux Darsi"
+//            nameCourse.text = "UI/Ux Darsi"
           //  info.text = "Darsni ko`rib bo`lgach pastdagi tugma orqali vazifani yuklab oling va uni bajaring"
 
         }

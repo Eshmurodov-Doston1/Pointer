@@ -267,6 +267,7 @@
                 android:id="@+id/btn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:shadowColor="#01D8D0"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"

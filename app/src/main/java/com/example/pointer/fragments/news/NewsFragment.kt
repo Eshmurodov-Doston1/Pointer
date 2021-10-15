@@ -43,18 +43,14 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
             val extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
                 .addSharedElement(imageView, "my_image").build()
 
-            findNavController().navigate(R.id.news_to_fullNews, null, null, extras)
+            findNavController().navigate(R.id.news_to_fullNews)
         }
     }
 
     private fun initData() {
         newsList = ArrayList()
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click2, "", 11, "", ""))
-        newsList.add(News(R.drawable.click3, "", 11, "", ""))
-        newsList.add(News(R.drawable.click4, "", 11, "", ""))
-        newsList.add(News(R.drawable.click5, "", 11, "", ""))
-        newsList.add(News(R.drawable.click6, "", 11, "", ""))
-    }
+        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
+         }
 }

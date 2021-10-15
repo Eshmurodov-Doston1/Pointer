@@ -170,7 +170,7 @@
                 app:layout_constraintRight_toRightOf="@id/group"
                 android:layout_marginTop="@dimen/_15sdp"
                 app:layout_constraintHorizontal_bias="0"
-                android:src="@drawable/click5"
+                android:src="@drawable/news_image2"
                 app:layout_constraintVertical_bias="0"
                 android:layout_marginStart="@dimen/_2sdp"
                 android:layout_width="@dimen/_10sdp"
