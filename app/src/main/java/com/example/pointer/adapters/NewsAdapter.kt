@@ -1,17 +1,23 @@
 package com.example.pointer.adapters
 
 import android.content.Context
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.viewpager.widget.PagerAdapter
 import com.example.pointer.R
 import com.example.pointer.extensions.SingleBlock
 import com.example.pointer.models.News
 
-class NewsAdapter(var context: Context, var newsList: List<News>) : PagerAdapter() {
+class NewsAdapter(
+    var context: Context,
+    var newsList: List<News>
+) : PagerAdapter() {
     private var listener: SingleBlock<News>? = null
+    private var previousTime = SystemClock.elapsedRealtime()
 
     fun setOnCLickListener(block: SingleBlock<News>) {
         listener = block
@@ -35,14 +41,14 @@ class NewsAdapter(var context: Context, var newsList: List<News>) : PagerAdapter
         val view: View = LayoutInflater.from(context).inflate(R.layout.item_news, container, false)
 
         val ivImage = view.findViewById<ImageView>(R.id.iv_image)
-
         ivImage.setImageResource(newsList[position].image)
-
         view.setOnClickListener {
             listener?.invoke(newsList[position])
+            val extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
+                .addSharedElement(ivImage, "my_image").build()
+            ivImage.transitionName = "my_iamge"
         }
         container.addView(view)
         return view
     }
-
 }

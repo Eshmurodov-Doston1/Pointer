@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="secondary_color">#01D8D0</color>
+    <color name="click_green">#00B238</color>
+    <color name="quantum_yellow500">#ffeb3b</color>
     <color name="text_color">#303030</color>
 </resources>

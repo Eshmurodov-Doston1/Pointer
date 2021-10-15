@@ -3,19 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/myCourceFragment">
-    app:startDestination="@id/calendarFragment">
+    app:startDestination="@id/settingsFragment"
+    tools:ignore="ExtraText">
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.pointer.fragments.NewsFragment"
+        android:name="com.example.pointer.fragments.news.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/news_to_fullNews"
+            app:destination="@id/fullNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.example.pointer.fragments.news.FullNewsFragment"
+        android:label="fragment_full_news"
+        tools:layout="@layout/fragment_full_news" />
+    tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/myCourceFragment"
         android:name="com.example.pointer.fragments.student.MyCourceFragment"
         android:label="fragment_my_cource"
-        tools:layout="@layout/fragment_my_cource" >
+        tools:layout="@layout/fragment_my_cource">
         <action
             android:id="@+id/action_myCourceFragment_to_studentInformationFragment"
             app:destination="@id/studentInformationFragment" />
@@ -43,6 +53,20 @@
         android:name="com.example.pointer.fragments.trainings.TrainingMainFragment"
         android:label="fragment_training_main"
         tools:layout="@layout/fragment_training_main" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.pointer.fragments.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/settings_to_info"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.example.pointer.fragments.personalInfo.PersonalInfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" />
     <fragment
         android:id="@+id/lastTrainingFragment"
         android:name="com.example.pointer.fragments.trainings.LastTrainingFragment"

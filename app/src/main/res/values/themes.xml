@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
         <item name="fontFamily">@font/montserrat</item>
+
+        <item name="android:windowActivityTransitions">true</item>
         <!-- Customize your theme here. -->
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowEnterTransition">@transition/trans_anim</item>
