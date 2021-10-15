@@ -16,12 +16,6 @@
             app:destination="@id/fullNewsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/fullNewsFragment"
-        android:name="com.example.pointer.fragments.news.FullNewsFragment"
-        android:label="fragment_full_news"
-        tools:layout="@layout/fragment_full_news" />
-    tools:layout="@layout/fragment_news" />
-    <fragment
         android:id="@+id/myCourceFragment"
         android:name="com.example.pointer.fragments.student.MyCourceFragment"
         android:label="fragment_my_cource"
@@ -68,20 +62,19 @@
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" />
     <fragment
-        android:id="@+id/lastTrainingFragment"
-        android:name="com.example.pointer.fragments.trainings.LastTrainingFragment"
-        android:label="fragment_last_training"
-        tools:layout="@layout/fragment_last_training" />
+        android:id="@+id/studentFragment"
+        android:name="com.example.pointer.fragments.group.StudentFragment"
+        android:label="StudentFragment" />
     <fragment
-        android:id="@+id/nextTrainigFragment"
-        android:name="com.example.pointer.fragments.trainings.NextTrainigFragment"
-        android:label="fragment_next_trainig"
-        tools:layout="@layout/fragment_next_trainig" />
+        android:id="@+id/myGroupFragment"
+        android:name="com.example.pointer.fragments.group.MyGroupFragment"
+        android:label="fragment_my_group"
+        tools:layout="@layout/fragment_my_group" />
     <fragment
-        android:id="@+id/courseFragment"
-        android:name="com.example.pointer.fragments.student.CourseFragment"
-        android:label="fragment_course"
-        tools:layout="@layout/fragment_course" />
+        android:id="@+id/nowTrainingFragment"
+        android:name="com.example.pointer.fragments.trainings.NowTrainingFragment"
+        android:label="fragment_now_training"
+        tools:layout="@layout/fragment_now_training" />
     <fragment
         android:id="@+id/videoCourcesFragment"
         android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
@@ -106,5 +99,15 @@
         android:name="com.example.pointer.fragments.mainFragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.example.pointer.fragments.news.FullNewsFragment"
+        android:label="fragment_full_news"
+        tools:layout="@layout/fragment_full_news" />
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.example.pointer.fragments.student.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
 
 </navigation>

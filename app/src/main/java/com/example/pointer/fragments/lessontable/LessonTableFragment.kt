@@ -31,7 +31,6 @@ class LessonTableFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentLessonTableBinding.inflate(inflater, container, false)
 
-
         val days:ArrayList<String> = arguments?.getStringArrayList("list") as ArrayList<String>
         val dayOfWeek = arguments?.getInt("week", 0)
 
@@ -51,11 +50,10 @@ class LessonTableFragment : Fragment() {
             findNavController().popBackStack()
         }
         var activeWeek: LinearLayout? = null
-        var textView: TextView? = null
 
         val weekClickListen = View.OnClickListener{
 
-            if(activeWeek != it) {
+            if (activeWeek != it) {
                 when (it.id) {
                     R.id.yetti -> {
 
@@ -85,7 +83,13 @@ class LessonTableFragment : Fragment() {
 
                 binding.rv.adapter = adapter
                 (it as LinearLayout).setBackgroundResource(R.drawable.back_style)
-                activeWeek?.setBackgroundResource(R.color.purple_200)
+                if (activeWeek!=null) {
+                    activeWeek?.setBackgroundResource(R.color.purple_200)
+                    (activeWeek?.getChildAt(0) as TextView).setTextColor(Color.GRAY)
+                    (activeWeek?.getChildAt(1) as TextView).setTextColor(Color.GRAY)
+                }
+                (it.getChildAt(0) as TextView).setTextColor(Color.WHITE)
+                (it.getChildAt(1) as TextView).setTextColor(Color.WHITE)
                 binding.rv.visibility = View.VISIBLE
                 activeWeek = it
             }

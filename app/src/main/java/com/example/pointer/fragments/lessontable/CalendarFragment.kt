@@ -28,6 +28,9 @@ class CalendarFragment : Fragment() {
             findNavController().navigate(R.id.trainingMainFragment)
         }
 
+        binding.mygroup.setOnClickListener {
+            findNavController().navigate(R.id.myGroupFragment)
+        }
         binding.calendar.setOnDateChangeListener { _, year, month, dayOfMonth ->
 
             val format: DateFormat = SimpleDateFormat("dd")

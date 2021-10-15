@@ -39,6 +39,7 @@
             android:layout_marginTop="124dp"
             android:layout_marginStart="11dp"
             android:textSize="15sp"
+            android:textStyle="bold"
             android:text="UX/UI bo’yicha master klass"
             android:fontFamily="@font/montserrat"
             android:textColor="#FFFFFF"
