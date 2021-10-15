@@ -19,6 +19,8 @@ import com.example.pointer.models.student.Course
 import com.example.pointer.models.videocources.VideoCourse
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 import com.squareup.picasso.Picasso
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
@@ -51,6 +53,11 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             loadCourse()
+            sharedElementEnterTransition = MaterialContainerTransform()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+
             pagerAdapterVideoCourse = PagerAdapterVideoCourse(object:PagerAdapterVideoCourse.OnItemClickListener{
                 override fun onItemClick(
                     videoCourse: VideoCourse,

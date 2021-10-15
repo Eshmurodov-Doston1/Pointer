@@ -1,13 +1,17 @@
 package com.example.pointer.fragments.mainFragment
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
+import com.example.pointer.databinding.ItemTabMainBinding
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
@@ -52,8 +56,44 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             TabLayoutMediator(tabLayout,viewPager){ tab,position->
                 tab.text = listLoad[position]
             }.attach()
+            setTabs()
             tabLayout.clipToPadding =false
             tabLayout.clipChildren = false
+            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    val customView = tab!!.customView
+                    val let = customView?.let { ItemTabMainBinding.bind(it) }
+                    let?.name?.setTextColor(Color.parseColor("#01D8D0"))
+                }
+
+                override fun onTabUnselected(tab: TabLayout.Tab?) {
+                    val customView = tab!!.customView
+                    val let = customView?.let { ItemTabMainBinding.bind(it) }
+                    let?.name?.setTextColor(Color.parseColor("#BDBDBD"))
+                }
+
+                override fun onTabReselected(tab: TabLayout.Tab?) {
+
+                }
+
+            })
+        }
+    }
+
+
+
+    private fun setTabs() {
+        val tabCount = binding.tabLayout.tabCount
+        for (i in 0 until tabCount){
+            var itemTabBinding = ItemTabMainBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+            val tabAt = binding.tabLayout.getTabAt(i)
+            tabAt?.customView = itemTabBinding.root
+            itemTabBinding.name.text = listLoad[i]
+            if (i==0){
+                itemTabBinding.name.setTextColor(Color.parseColor("#01D8D0"))
+            }else{
+                itemTabBinding.name.setTextColor(Color.parseColor("#BDBDBD"))
+            }
         }
     }
 

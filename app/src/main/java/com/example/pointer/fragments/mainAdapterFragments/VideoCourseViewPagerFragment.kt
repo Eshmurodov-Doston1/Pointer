@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.adapterView.ViewPagerAdapterVideoCourse
@@ -18,6 +20,8 @@ import com.example.pointer.databinding.ItemVideosCourseBinding
 import com.example.pointer.models.videocources.VideoCourse
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.squareup.picasso.Picasso
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
@@ -51,6 +55,17 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             loadCourse()
+
+
+            exitTransition = Hold()
+            exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+            cardMy.setOnClickListener {
+                val extras = FragmentNavigatorExtras(cardMy to "My_cardView")
+                findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
+            }
+
+
             pagerAdapterVideoCourse = ViewPagerAdapterVideoCourse()
             Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
             name.text = "Dostonbek Eshmurodov"

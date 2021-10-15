@@ -22,12 +22,4 @@
         android:layout_marginTop="30dp"
         android:layout_height="match_parent"
         tools:ignore="MissingClass" />
-
-    <Button
-        android:id="@+id/gotocalendar"
-        android:layout_margin="@dimen/_10sdp"
-        android:textSize="@dimen/_18sdp"
-        android:text="Go to Calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 </RelativeLayout>

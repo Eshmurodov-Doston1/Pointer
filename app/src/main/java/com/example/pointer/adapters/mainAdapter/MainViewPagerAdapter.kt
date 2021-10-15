@@ -7,29 +7,42 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pointer.fragments.mainAdapterFragments.VideoCourseViewPagerFragment
+import com.example.pointer.adapters.mainAdapter.group.MyMainGroupAdapter
+import com.example.pointer.fragments.mainAdapterFragments.*
 import com.example.pointer.fragments.videoCources.VideoCourcesFragment
 
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
     override fun getItemCount(): Int {
-        return 5
+        return 9
     }
 
     override fun createFragment(position: Int): Fragment {
        return when(position){
-            0->{
+           0->{
                 VideoCourseViewPagerFragment()
-            }
+           }
            1->{
-               VideoCourseViewPagerFragment()
+               MyCourcesViewPagerFragment()
            }
            2->{
-               VideoCourseViewPagerFragment()
+               NewsAdapterFragment()
            }
            3->{
-               VideoCourseViewPagerFragment()
+               TraningPagerFragment()
            }
            4->{
+               MyMainGroupFragment()
+           }
+           5->{
+               LessonTableMainFragment()
+           }
+           6->{
+               VideoCourseViewPagerFragment()
+           }
+           7->{
+               VideoCourseViewPagerFragment()
+           }
+           8->{
                VideoCourseViewPagerFragment()
            }
            else->{
@@ -37,5 +50,4 @@ class MainViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdap
            }
         }
     }
-
 }
