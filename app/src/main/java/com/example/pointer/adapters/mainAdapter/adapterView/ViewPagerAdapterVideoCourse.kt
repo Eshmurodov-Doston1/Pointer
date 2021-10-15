@@ -1,4 +1,4 @@
-package com.example.pointer.adapters.vodeoCourseAdapters
+package com.example.pointer.adapters.mainAdapter.adapterView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pointer.databinding.ItemVideosCourseBinding
+import com.example.pointer.databinding.ItemVideosCourseViewpagerBinding
 import com.example.pointer.models.student.Course
 import com.example.pointer.models.videocources.VideoCourse
 import com.squareup.picasso.Picasso
 
-class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):ListAdapter<VideoCourse,PagerAdapterVideoCourse.Vh>(MyDiffUtill()) {
-    inner class Vh(var itemVideosCourseBinding: ItemVideosCourseBinding):RecyclerView.ViewHolder(itemVideosCourseBinding.root){
+class ViewPagerAdapterVideoCourse():ListAdapter<VideoCourse,ViewPagerAdapterVideoCourse.Vh>(MyDiffUtill()) {
+    inner class Vh(var itemVideosCourseBinding: ItemVideosCourseViewpagerBinding):RecyclerView.ViewHolder(itemVideosCourseBinding.root){
         fun onBind(videoCourse: VideoCourse,position: Int){
             itemVideosCourseBinding.apply {
                 nameCourse.text = videoCourse.name
@@ -23,15 +24,12 @@ class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):List
                 Picasso.get().load(videoCourse.teacherImage).into(imageTeacher)
                 teacherName.text = videoCourse.teacherName
                 fullName.text = videoCourse.name
-                myCard.setOnClickListener {
-                    onItemClickListener.onItemClick(videoCourse,position,itemVideosCourseBinding)
-                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
-        return Vh(ItemVideosCourseBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return Vh(ItemVideosCourseViewpagerBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: Vh, position: Int) {
@@ -46,8 +44,5 @@ class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):List
         override fun areContentsTheSame(oldItem: VideoCourse, newItem: VideoCourse): Boolean {
             return oldItem.equals(newItem)
         }
-    }
-    interface OnItemClickListener{
-        fun onItemClick(videoCourse: VideoCourse,position: Int,itemVideosCourseBinding: ItemVideosCourseBinding)
     }
 }

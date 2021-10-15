@@ -1,4 +1,4 @@
-package com.example.pointer.fragments.videoCources
+package com.example.pointer.fragments.mainAdapterFragments
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,13 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.CompositePageTransformer
 import com.example.pointer.R
+import com.example.pointer.adapters.mainAdapter.adapterView.ViewPagerAdapterVideoCourse
 import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
-import com.example.pointer.databinding.FragmentVideoCourcesBinding
+import com.example.pointer.databinding.FragmentVideoCourseViewPagerBinding
 import com.example.pointer.databinding.ItemTabBinding
 import com.example.pointer.databinding.ItemVideosCourseBinding
-import com.example.pointer.models.student.Course
 import com.example.pointer.models.videocources.VideoCourse
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -29,10 +28,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [VideoCourcesFragment.newInstance] factory method to
+ * Use the [VideoCourseViewPagerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
+class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_view_pager) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,27 +43,15 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    private val binding by viewBinding(FragmentVideoCourcesBinding::bind)
-    lateinit var pagerAdapterVideoCourse:PagerAdapterVideoCourse
+
+    private val binding by viewBinding(FragmentVideoCourseViewPagerBinding::bind)
+    lateinit var pagerAdapterVideoCourse: ViewPagerAdapterVideoCourse
     lateinit var listCourse:ArrayList<VideoCourse>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             loadCourse()
-            pagerAdapterVideoCourse = PagerAdapterVideoCourse(object:PagerAdapterVideoCourse.OnItemClickListener{
-                override fun onItemClick(
-                    videoCourse: VideoCourse,
-                    position: Int,
-                    itemVideosCourseBinding: ItemVideosCourseBinding
-                ) {
-                    var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
-                        .addSharedElement(itemVideosCourseBinding.myCard,"card1")
-                        .build()
-                    var bundle = Bundle()
-                    bundle.putSerializable("videoCourse",videoCourse)
-                    findNavController().navigate(R.id.action_videoCourcesFragment_to_allVideoCourseFragment,bundle,null,extras)
-                }
-            })
+            pagerAdapterVideoCourse = ViewPagerAdapterVideoCourse()
             Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
             name.text = "Dostonbek Eshmurodov"
             pagerAdapterVideoCourse.submitList(listCourse)
@@ -73,8 +60,6 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
                 tab.text = listCourse[position].categoryName
             }.attach()
             setTabs()
-
-
             viewPager2.clipToPadding=false
             viewPager2.clipChildren=false
             viewPager2.offscreenPageLimit = 2
@@ -82,11 +67,7 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
                 var a= 1-Math.abs(position)
                 page.scaleY = 0.85F+a*0.1f
             }
-
-
-
-
-            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+            tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
                     itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#01D8D0"))
@@ -96,9 +77,9 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
                     val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
-                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#F7F7FC"))
+                    itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
                     itemTabBinding?.textTab?.setTextColor(Color.parseColor("#9D9FA0"))
-                  //  itemTabBinding?.btn?.setColor(Color.WHITE)
+                    //  itemTabBinding?.btn?.setColor(Color.WHITE)
                 }
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -121,21 +102,14 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
             if (i==0){
                 itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#01D8D0"))
                 itemTabBinding.textTab.setTextColor(Color.WHITE)
-               // itemTabBinding.btn.setColor(Color.WHITE)
+                // itemTabBinding.btn.setColor(Color.WHITE)
             }else{
-                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#F7F7FC"))
+                itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
                 itemTabBinding.textTab.setTextColor(Color.parseColor("#9D9FA0"))
-              //  itemTabBinding.btn.setColor(Color.WHITE)
+                //  itemTabBinding.btn.setColor(Color.WHITE)
             }
         }
     }
-
-
-
-
-
-
-
 
     private fun loadCourse() {
         listCourse = ArrayList()
@@ -154,12 +128,12 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment VideoCourcesFragment.
+         * @return A new instance of fragment VideoCourseViewPagerFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            VideoCourcesFragment().apply {
+            VideoCourseViewPagerFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

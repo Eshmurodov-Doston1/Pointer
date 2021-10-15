@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/settingsFragment"
+    app:startDestination="@id/mainFragment"
     tools:ignore="ExtraText">
 
     <fragment
@@ -86,11 +86,25 @@
         android:id="@+id/videoCourcesFragment"
         android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
         android:label="fragment_video_cources"
-        tools:layout="@layout/fragment_video_cources" />
+        tools:layout="@layout/fragment_video_cources" >
+        <action
+            android:id="@+id/action_videoCourcesFragment_to_allVideoCourseFragment"
+            app:destination="@id/allVideoCourseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/trainingVideoFragment"
         android:name="com.example.pointer.fragments.trainings.TrainingVideoFragment"
         android:label="fragment_training_video"
         tools:layout="@layout/fragment_training_video" />
+    <fragment
+        android:id="@+id/allVideoCourseFragment"
+        android:name="com.example.pointer.fragments.videoCources.AllVideoCourseFragment"
+        android:label="fragment_all_video_course"
+        tools:layout="@layout/fragment_all_video_course" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pointer.fragments.mainFragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 
 </navigation>
