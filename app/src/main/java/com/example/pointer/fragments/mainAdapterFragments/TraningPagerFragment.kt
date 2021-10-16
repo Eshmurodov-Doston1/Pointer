@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.traning.TrainingMainPagerAdapter
@@ -13,6 +15,8 @@ import com.example.pointer.databinding.FragmentTraningPagerBinding
 import com.example.pointer.models.Training
 import com.example.training.animations.DepthPageTransformer
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,6 +48,11 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             loadList()
+            exitTransition = Hold()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+
            traningMainPagerAdapter = TrainingMainPagerAdapter(requireActivity())
             binding.viewPager.adapter =traningMainPagerAdapter
             TabLayoutMediator(tablayout,viewPager){tab,position->
@@ -52,6 +61,10 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
 
             back.setOnClickListener {
                 findNavController().popBackStack()
+            }
+            consTraining.setOnClickListener {
+                val extras = FragmentNavigatorExtras(consTraining to "cons")
+                findNavController().navigate(R.id.trainingMainFragment,null,null,extras)
             }
         }
     }

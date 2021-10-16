@@ -11,6 +11,8 @@ import com.example.pointer.adapters.NewsAdapter
 import com.example.pointer.databinding.FragmentNewsBinding
 import com.example.pointer.models.News
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 class NewsFragment : Fragment(R.layout.fragment_news) {
     private lateinit var binding: FragmentNewsBinding
@@ -31,6 +33,11 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
         binding = FragmentNewsBinding.bind(view)
 
         initData()
+
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         newsAdapter = NewsAdapter(requireContext(), newsList)
         binding.viewPager.adapter = newsAdapter
 
