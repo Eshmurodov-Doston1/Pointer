@@ -183,7 +183,7 @@
                     app:layout_constraintTop_toBottomOf="@id/cons1"
                     app:layout_constraintLeft_toLeftOf="@id/cons1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:src="@drawable/click4"
+                    android:src="@drawable/news_image2"
                     app:layout_constraintVertical_bias="0.3"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"

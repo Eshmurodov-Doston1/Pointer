@@ -1,21 +1,20 @@
 package com.example.pointer.fragments.group
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
-import com.example.pointer.adapters.trainingAdapter.TrainingRecyclerAdapter
 import com.example.pointer.databinding.FragmentMyGroupBinding
-import com.example.pointer.models.Training
 import com.example.pointer.models.mygroup.MyGroup
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 import java.util.ArrayList
+import java.util.*
 
 class MyGroupFragment : Fragment() {
 
@@ -47,7 +46,7 @@ class MyGroupFragment : Fragment() {
         for (i in 0..10)
         {
             list.add(
-                MyGroup("Asadbek Bektayev", R.drawable.click3, true)
+                MyGroup("Asadbek Bektayev", R.drawable.news_image3, true)
             )
         }
 

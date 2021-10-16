@@ -7,10 +7,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentFullNewsBinding
 import com.example.pointer.models.News
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     private lateinit var binding: FragmentFullNewsBinding
-
+    private lateinit var news: News
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,21 +20,19 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentFullNewsBinding.bind(view)
 
-        val poster = arguments?.getParcelable<News>(posterKey)
-        poster?.let {
+        news = arguments?.getSerializable("news") as News
 
-            // [Step2]: sets a transition name to the target view.
-            binding.detailContainer.transitionName = poster.title
-            binding.ivImage.setImageResource(poster.image)
-        }
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+        binding.ivImage.setImageResource(news.image)
+        binding.tvDate.text = news.date
+        binding.tvViews.text = news.views.toString()
+        binding.tvTitle.text = news.title
+        binding.tvDesc.text = news.description
         binding.ivBack.setOnClickListener {
             findNavController().navigateUp()
         }
-    }
-
-    companion object {
-        const val TAG = "LibraryFragment"
-        const val posterKey = "posterKey"
-        const val paramsKey = "paramsKey"
     }
 }

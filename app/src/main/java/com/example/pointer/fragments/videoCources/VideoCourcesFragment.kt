@@ -1,24 +1,15 @@
 package com.example.pointer.fragments.videoCources
 
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.CompositePageTransformer
 import com.example.pointer.R
 import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
 import com.example.pointer.databinding.FragmentVideoCourcesBinding
-import com.example.pointer.databinding.ItemTabBinding
 import com.example.pointer.databinding.ItemVideosCourseBinding
-import com.example.pointer.models.student.Course
 import com.example.pointer.models.videocources.VideoCourse
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 import com.squareup.picasso.Picasso
@@ -77,65 +68,65 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
             Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
             name.text = "Dostonbek Eshmurodov"
             pagerAdapterVideoCourse.submitList(listCourse)
-            viewPager2.adapter = pagerAdapterVideoCourse
-            TabLayoutMediator(tabLayout,viewPager2){ tab,position->
-                tab.text = listCourse[position].categoryName
-            }.attach()
-            setTabs()
+//            viewPager2.adapter = pagerAdapterVideoCourse
+//            TabLayoutMediator(tabLayout,viewPager2){ tab,position->
+//                tab.text = listCourse[position].categoryName
+//            }.attach()
+//            setTabs()
+//
+//
+//            viewPager2.clipToPadding=false
+//            viewPager2.clipChildren=false
+//            viewPager2.offscreenPageLimit = 2
+//            viewPager2.setPageTransformer { page, position ->
+//                var a= 1-Math.abs(position)
+//                page.scaleY = 0.85F+a*0.1f
+//            }
 
 
-            viewPager2.clipToPadding=false
-            viewPager2.clipChildren=false
-            viewPager2.offscreenPageLimit = 2
-            viewPager2.setPageTransformer { page, position ->
-                var a= 1-Math.abs(position)
-                page.scaleY = 0.85F+a*0.1f
-            }
 
 
+//            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+//                override fun onTabSelected(tab: TabLayout.Tab?) {
+//                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
+//                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#01D8D0"))
+//                    itemTabBinding?.textTab?.setTextColor(Color.WHITE)
+//                    //itemTabBinding?.btn?.setColor(Color.WHITE)
+//                }
+//
+//                override fun onTabUnselected(tab: TabLayout.Tab?) {
+//                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
+//                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#F7F7FC"))
+//                    itemTabBinding?.textTab?.setTextColor(Color.parseColor("#9D9FA0"))
+//                  //  itemTabBinding?.btn?.setColor(Color.WHITE)
+//                }
+//
+//                override fun onTabReselected(tab: TabLayout.Tab?) {
+//
+//                }
+//
+//            })
+//            tabLayout.clipChildren = false
+//            tabLayout.clipToPadding = false
+//        }
+//    }
+//    private fun setTabs() {
+//        val tabCount = binding.tabLayout.tabCount
+//        for (i in 0 until tabCount){
+//            var itemTabBinding = ItemTabBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+//            val tabAt = binding.tabLayout.getTabAt(i)
+//            tabAt?.customView = itemTabBinding.root
+//            itemTabBinding.textTab.text = listCourse[i].categoryName
 
-
-            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
-                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#01D8D0"))
-                    itemTabBinding?.textTab?.setTextColor(Color.WHITE)
-                    //itemTabBinding?.btn?.setColor(Color.WHITE)
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
-                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#F7F7FC"))
-                    itemTabBinding?.textTab?.setTextColor(Color.parseColor("#9D9FA0"))
-                  //  itemTabBinding?.btn?.setColor(Color.WHITE)
-                }
-
-                override fun onTabReselected(tab: TabLayout.Tab?) {
-
-                }
-
-            })
-            tabLayout.clipChildren = false
-            tabLayout.clipToPadding = false
-        }
-    }
-    private fun setTabs() {
-        val tabCount = binding.tabLayout.tabCount
-        for (i in 0 until tabCount){
-            var itemTabBinding = ItemTabBinding.inflate(LayoutInflater.from(requireContext()),null,false)
-            val tabAt = binding.tabLayout.getTabAt(i)
-            tabAt?.customView = itemTabBinding.root
-            itemTabBinding.textTab.text = listCourse[i].categoryName
-
-            if (i==0){
-                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#01D8D0"))
-                itemTabBinding.textTab.setTextColor(Color.WHITE)
-               // itemTabBinding.btn.setColor(Color.WHITE)
-            }else{
-                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#F7F7FC"))
-                itemTabBinding.textTab.setTextColor(Color.parseColor("#9D9FA0"))
-              //  itemTabBinding.btn.setColor(Color.WHITE)
-            }
+//            if (i==0){
+//                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#01D8D0"))
+//                itemTabBinding.textTab.setTextColor(Color.WHITE)
+//               // itemTabBinding.btn.setColor(Color.WHITE)
+//            }else{
+//                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#F7F7FC"))
+//                itemTabBinding.textTab.setTextColor(Color.parseColor("#9D9FA0"))
+//              //  itemTabBinding.btn.setColor(Color.WHITE)
+//            }
         }
     }
 

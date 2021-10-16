@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detail_container"
+    android:transitionName="view_my"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.news.FullNewsFragment">
@@ -20,8 +21,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_400sdp"
-                android:scaleType="fitXY"
+                android:layout_height="@dimen/_350sdp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/image19"
                 android:transitionName="imageTransition"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -49,6 +50,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -57,6 +59,7 @@
                 android:text="18.10.2021" />
 
             <TextView
+                android:id="@+id/tv_views"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -69,6 +72,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -80,6 +84,7 @@
             android:textStyle="normal" />
 
         <TextView
+            android:id="@+id/tv_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

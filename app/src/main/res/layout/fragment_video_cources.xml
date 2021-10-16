@@ -29,7 +29,7 @@
                     android:scaleType="centerCrop"
                     app:layout_constraintWidth_percent="0.12"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:src="@drawable/click4"
+                    android:src="@drawable/news_image2"
                     app:layout_constraintHorizontal_bias="0.04"
                     android:layout_height="@dimen/_40sdp"/>
                 <TextView

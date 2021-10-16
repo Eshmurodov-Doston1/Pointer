@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/click2"
+                android:src="@drawable/news_image2"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
 
@@ -131,7 +131,7 @@
                     app:layout_constraintTop_toBottomOf="@id/cons1"
                     app:layout_constraintLeft_toLeftOf="@id/cons1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:src="@drawable/click4"
+                    android:src="@drawable/news_image3"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"/>

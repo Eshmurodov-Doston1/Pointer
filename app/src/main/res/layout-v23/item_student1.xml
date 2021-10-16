@@ -24,7 +24,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintHorizontal_bias="0.03"
-            android:src="@drawable/click6"
+            android:src="@drawable/news_image3"
             android:layout_width="@dimen/_38sdp"
             android:layout_height="@dimen/_38sdp"/>
 

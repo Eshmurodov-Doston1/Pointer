@@ -1,9 +1,8 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
+import androidx.fragment.app.Fragment
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.FragmentContainer
@@ -11,10 +10,8 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
-import com.example.pointer.adapters.NewsAdapter
 import com.example.pointer.adapters.mainAdapter.newsViewAdapter.NewsAdapterPager
 import com.example.pointer.databinding.FragmentNewsAdapterBinding
-import com.example.pointer.databinding.FragmentNewsBinding
 import com.example.pointer.models.News
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
@@ -63,13 +60,13 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
 
     private fun initData() {
         newsList = ArrayList()
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click2, "", 11, "", ""))
-        newsList.add(News(R.drawable.click3, "", 11, "", ""))
-        newsList.add(News(R.drawable.click4, "", 11, "", ""))
-        newsList.add(News(R.drawable.click5, "", 11, "", ""))
-        newsList.add(News(R.drawable.click6, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
     }
 
     companion object {

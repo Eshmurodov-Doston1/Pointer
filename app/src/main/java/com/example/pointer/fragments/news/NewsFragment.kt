@@ -2,9 +2,8 @@ package com.example.pointer.fragments.news
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.NewsAdapter
@@ -42,21 +41,36 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
         binding.viewPager.adapter = newsAdapter
 
         newsAdapter.setOnCLickListener {
-            val imageView = ImageView(requireContext(), null, 0, it.image)
-            val extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
-                .addSharedElement(imageView, "my_image").build()
-            findNavController().navigate(R.id.news_to_fullNews, null, null, extras)
+            val bundle = Bundle()
+            bundle.putSerializable("news", it)
+
+            val extras = FragmentNavigatorExtras(binding.constraintLayout to "view_my")
+            findNavController().navigate(R.id.news_to_fullNews, bundle, null, extras)
         }
     }
 
     private fun initData() {
         newsList = ArrayList()
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click1, "", 11, "", ""))
-        newsList.add(News(R.drawable.click2, "", 11, "", ""))
-        newsList.add(News(R.drawable.click3, "", 11, "", ""))
-        newsList.add(News(R.drawable.click4, "", 11, "", ""))
-        newsList.add(News(R.drawable.click5, "", 11, "", ""))
-        newsList.add(News(R.drawable.click6, "", 11, "", ""))
+        newsList.add(
+            News(
+                R.drawable.news_image1,
+                "16.10.2021",
+                1111,
+                getString(R.string.news_title1),
+                getString(R.string.news_desc1)
+            )
+        )
+        newsList.add(
+            News(
+                R.drawable.news_image2, "15.10.2021", 2222, getString(R.string.news_title1),
+                getString(R.string.news_desc1)
+            )
+        )
+        newsList.add(
+            News(
+                R.drawable.news_image3, "14.10.2021", 3333, getString(R.string.news_title1),
+                getString(R.string.news_desc1)
+            )
+        )
     }
 }

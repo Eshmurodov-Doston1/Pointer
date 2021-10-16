@@ -16,6 +16,11 @@
             app:destination="@id/fullNewsFragment" />
     </fragment>
     <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.example.pointer.fragments.news.FullNewsFragment"
+        android:label="fragment_full_news"
+        tools:layout="@layout/fragment_full_news" />
+    <fragment
         android:id="@+id/myCourceFragment"
         android:name="com.example.pointer.fragments.student.MyCourceFragment"
         android:label="fragment_my_cource"
@@ -28,7 +33,7 @@
         android:id="@+id/studentInformationFragment"
         android:name="com.example.pointer.fragments.student.StudentInformationFragment"
         android:label="fragment_student_information"
-        tools:layout="@layout/fragment_student_information" >
+        tools:layout="@layout/fragment_student_information">
         <action
             android:id="@+id/action_studentInformationFragment_to_courseFragment"
             app:destination="@id/courseFragment" />
@@ -79,7 +84,7 @@
         android:id="@+id/videoCourcesFragment"
         android:name="com.example.pointer.fragments.videoCources.VideoCourcesFragment"
         android:label="fragment_video_cources"
-        tools:layout="@layout/fragment_video_cources" >
+        tools:layout="@layout/fragment_video_cources">
         <action
             android:id="@+id/action_videoCourcesFragment_to_allVideoCourseFragment"
             app:destination="@id/allVideoCourseFragment" />
@@ -99,11 +104,7 @@
         android:name="com.example.pointer.fragments.mainFragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
-    <fragment
-        android:id="@+id/fullNewsFragment"
-        android:name="com.example.pointer.fragments.news.FullNewsFragment"
-        android:label="fragment_full_news"
-        tools:layout="@layout/fragment_full_news" />
+
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.example.pointer.fragments.student.CourseFragment"
