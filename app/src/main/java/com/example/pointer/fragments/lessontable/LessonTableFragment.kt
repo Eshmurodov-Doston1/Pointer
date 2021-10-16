@@ -89,7 +89,7 @@ class LessonTableFragment : Fragment() {
                 if (activeWeek!=null) {
                     activeWeek?.setBackgroundResource(R.color.purple_200)
                     (activeWeek?.getChildAt(0) as TextView).setTextColor(Color.GRAY)
-                    (activeWeek?.getChildAt(1) as TextView).setTextColor(Color.GRAY)
+                    (activeWeek?.getChildAt(1) as TextView).setTextColor(Color.BLACK)
                 }
                 (it.getChildAt(0) as TextView).setTextColor(Color.WHITE)
                 (it.getChildAt(1) as TextView).setTextColor(Color.WHITE)
