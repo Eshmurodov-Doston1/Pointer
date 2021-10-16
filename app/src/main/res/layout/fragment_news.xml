@@ -22,22 +22,14 @@
         app:icvp_scroll_duration="250"
         tools:ignore="MissingClass,MissingConstraints" />
 
-    <Button
-        android:id="@+id/gotocalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="Go to Calendar"
-        android:textSize="@dimen/_18sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
+        android:id="@+id/bottom_btn"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:background="@drawable/main_button"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +38,9 @@
         app:layout_constraintTop_toTopOf="@id/linear">
 
         <ImageView
-            android:src="@drawable/ic_up_img"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_up_img" />
     </LinearLayout>
 
     <LinearLayout
