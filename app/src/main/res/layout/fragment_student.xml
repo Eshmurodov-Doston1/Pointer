@@ -65,7 +65,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:background="@drawable/back_style1"
+        android:background="@drawable/back_style3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl"
         app:layout_constraintVertical_bias="0.0"
