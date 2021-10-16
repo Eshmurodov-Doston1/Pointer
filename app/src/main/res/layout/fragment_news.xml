@@ -6,21 +6,26 @@
     android:transitionName="view_my"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relative_layout"
-    android:background="#E5E5E5"
+    android:background="#F7F7FC"
     tools:context=".fragments.news.NewsFragment">
-
-    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-        android:id="@+id/view_pager"
-        app:icvp_center_page_scale_offset="10dp"
-        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
-        app:icvp_max_page_scale="0.8"
-        app:icvp_medium_scaled="false"
-        app:icvp_min_page_scale="0.55"
-        app:icvp_min_page_scale_offset="5dp"
-        app:icvp_scroll_duration="250"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:transitionName="cardView"
+        android:background="#F7F7FC"
         android:layout_width="match_parent"
-       android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_height="match_parent"
-        tools:ignore="MissingClass" />
+        android:layout_height="match_parent">
+        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+            android:id="@+id/view_pager"
+            app:icvp_center_page_scale_offset="10dp"
+            app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+            app:icvp_max_page_scale="0.8"
+            app:icvp_medium_scaled="false"
+            app:icvp_min_page_scale="0.55"
+            app:icvp_min_page_scale_offset="5dp"
+            app:icvp_scroll_duration="250"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="match_parent"
+            tools:ignore="MissingClass" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

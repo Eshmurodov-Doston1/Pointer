@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="#F7F7FC"
-    android:transitionName="My_cardView"
+    android:transitionName="cardView"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.videoCources.VideoCourcesFragment">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:background="#F7F7FC"
+            android:transitionName="My_cardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <androidx.constraintlayout.widget.ConstraintLayout

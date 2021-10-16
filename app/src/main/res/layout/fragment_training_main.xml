@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="#F4F5F9"
+        android:transitionName="cardView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

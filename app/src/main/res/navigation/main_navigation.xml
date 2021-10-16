@@ -140,5 +140,10 @@
         android:label="fragment_video_course_view_pager"
         tools:layout="@layout/fragment_video_course_view_pager" >
     </fragment>
+    <fragment
+        android:id="@+id/paymeFragment"
+        android:name="com.example.pointer.fragments.payme.PaymeFragment"
+        android:label="fragment_payme"
+        tools:layout="@layout/fragment_payme" />
 
 </navigation>
