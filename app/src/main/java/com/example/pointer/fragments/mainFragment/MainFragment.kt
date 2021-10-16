@@ -92,7 +92,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
                     }
                     8->{
-
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.paymeFragment, null, null, extras)
                     }
 
                 }

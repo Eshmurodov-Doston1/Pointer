@@ -5,8 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
+import com.example.pointer.adapters.PaymeAdapter
+import com.example.pointer.adapters.mainAdapter.paymiAdapter.PaymiAdapter
 import com.example.pointer.databinding.FragmentPaymiAdapterBinding
+import com.example.pointer.models.Payme
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,10 +39,32 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
         }
     }
     private val binding by viewBinding(FragmentPaymiAdapterBinding::bind)
+    lateinit var paymeAdapter:PaymiAdapter
+    lateinit var listPayme:ArrayList<Payme>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            loadList()
+            exitTransition = Hold()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
+            paymeAdapter = PaymiAdapter()
+            paymeAdapter.submitList(listPayme)
+            rvMy.adapter = paymeAdapter
+            myCard.setOnClickListener {
+                val extras = FragmentNavigatorExtras(myCard to "payme")
+                findNavController().navigate(R.id.paymeFragment, null, null, extras)
+            }
+        }
+    }
+
+    private fun loadList() {
+        listPayme = ArrayList()
+        for (i in 0..10)
+        {
+            listPayme.add(
+                Payme("Tushum", R.drawable.payme, "Naqd", "+1 200 000"))
         }
     }
 
