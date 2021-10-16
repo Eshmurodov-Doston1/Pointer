@@ -10,6 +10,8 @@ import androidx.core.graphics.green
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentCalendarBinding
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -23,13 +25,12 @@ class CalendarFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentCalendarBinding.inflate(inflater, container, false)
+        sharedElementEnterTransition = MaterialContainerTransform()
 
-        binding.training.setOnClickListener {
-            findNavController().navigate(R.id.trainingMainFragment)
-        }
-
-        binding.mygroup.setOnClickListener {
-            findNavController().navigate(R.id.myGroupFragment)
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+        binding.back.setOnClickListener {
+            findNavController().popBackStack()
         }
         binding.calendar.setOnDateChangeListener { _, year, month, dayOfMonth ->
 

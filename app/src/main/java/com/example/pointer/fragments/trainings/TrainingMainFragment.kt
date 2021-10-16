@@ -24,6 +24,7 @@ class TrainingMainFragment : Fragment() {
         sharedElementEnterTransition = MaterialContainerTransform()
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         val adapter = TrainingViewPagerAdapter(childFragmentManager)
         binding.viewPager.adapter = adapter
         binding.viewPager.setPageTransformer(true, DepthPageTransformer())
