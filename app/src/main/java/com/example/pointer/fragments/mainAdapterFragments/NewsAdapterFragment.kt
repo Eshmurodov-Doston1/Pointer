@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.NewsAdapter
@@ -38,16 +40,25 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     private val binding by viewBinding(FragmentNewsAdapterBinding::bind)
+
     private lateinit var newsAdapter: NewsAdapterPager
+
     private lateinit var newsList: ArrayList<News>
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             initData()
             newsAdapter = NewsAdapterPager(requireContext(), newsList)
             viewPager.adapter = newsAdapter
+            viewButton.setOnClickListener {
+                val extras = FragmentNavigatorExtras(viewButton to "view_my")
+                findNavController().navigate(R.id.newsFragment,null,null,extras)
+            }
         }
+
     }
 
     private fun initData() {

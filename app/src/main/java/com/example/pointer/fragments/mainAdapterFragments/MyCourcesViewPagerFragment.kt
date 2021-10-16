@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.CompositePageTransformer
 import com.example.pointer.R
@@ -58,6 +60,11 @@ class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pa
                 page.scaleY = 0.85F+a*0.1f
             }
             courceViewPager.setPageTransformer(transformer)
+
+            button.setOnClickListener {
+                val extras = FragmentNavigatorExtras(button to "view")
+                findNavController().navigate(R.id.myCourceFragment,null,null,extras)
+            }
         }
     }
 

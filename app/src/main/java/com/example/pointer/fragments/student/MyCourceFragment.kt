@@ -18,9 +18,8 @@ import com.example.pointer.models.student.StudentCourse
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.example.pointer.R
-
-
-
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -52,12 +51,9 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.calendar.setOnClickListener {
-            findNavController().navigate(R.id.calendarFragment)
-        }
-        binding.videoCourse.setOnClickListener {
-            findNavController().navigate(R.id.videoCourcesFragment)
-        }
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
         binding.apply {
             loadCource()

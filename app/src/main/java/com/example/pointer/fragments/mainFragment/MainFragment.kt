@@ -13,6 +13,8 @@ import com.example.pointer.databinding.FragmentMainBinding
 import com.example.pointer.databinding.ItemTabMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -48,6 +50,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             viewPager.adapter = mainViewPagerAdapter
             viewPager.clipToPadding=false
             viewPager.clipChildren=false
+            exitTransition = Hold()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
             viewPager.offscreenPageLimit = 2
             viewPager.setPageTransformer { page, position ->
                 var a= 1-Math.abs(position)
