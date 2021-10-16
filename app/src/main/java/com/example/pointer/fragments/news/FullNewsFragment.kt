@@ -10,7 +10,7 @@ import com.example.pointer.models.News
 
 class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     private lateinit var binding: FragmentFullNewsBinding
-
+    private lateinit var news: News
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,13 +18,13 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentFullNewsBinding.bind(view)
 
-        val poster = arguments?.getParcelable<News>(posterKey)
-        poster?.let {
+        news = arguments?.getSerializable("news") as News
 
-            // [Step2]: sets a transition name to the target view.
-            binding.detailContainer.transitionName = poster.title
-            binding.ivImage.setImageResource(poster.image)
-        }
+        binding.ivImage.setImageResource(news.image)
+        binding.tvDate.text = news.date
+        binding.tvViews.text = news.views.toString()
+        binding.tvTitle.text = news.title
+        binding.tvDesc.text = news.description
         binding.ivBack.setOnClickListener {
             findNavController().navigateUp()
         }
