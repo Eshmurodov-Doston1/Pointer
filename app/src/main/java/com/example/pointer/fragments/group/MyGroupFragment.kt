@@ -12,6 +12,9 @@ import com.example.pointer.adapters.trainingAdapter.TrainingRecyclerAdapter
 import com.example.pointer.databinding.FragmentMyGroupBinding
 import com.example.pointer.models.Training
 import com.example.pointer.models.mygroup.MyGroup
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 import java.util.ArrayList
 
 class MyGroupFragment : Fragment() {
@@ -24,6 +27,10 @@ class MyGroupFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMyGroupBinding.inflate(layoutInflater, container, false)
+
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
         binding.back.setOnClickListener {
             findNavController().popBackStack()

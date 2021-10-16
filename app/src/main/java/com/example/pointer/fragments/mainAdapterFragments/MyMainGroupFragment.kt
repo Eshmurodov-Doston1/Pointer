@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.adapters.mainAdapter.group.MyMainGroupAdapter
 import com.example.pointer.databinding.FragmentMyMainGroupBinding
 import com.example.pointer.models.mygroup.MyGroup
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import java.util.ArrayList
 
@@ -40,6 +43,15 @@ class MyMainGroupFragment : Fragment(R.layout.fragment_my_main_group) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+
+            exitTransition = Hold()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+            viewItem.setOnClickListener {
+                val extras = FragmentNavigatorExtras(viewItem to "my_view")
+                findNavController().navigate(R.id.myGroupFragment,null,null,extras)
+            }
             binding.rv.adapter = MyMainGroupAdapter(requireContext(), initList()) {
                 findNavController().navigate(R.id.studentFragment)
             }

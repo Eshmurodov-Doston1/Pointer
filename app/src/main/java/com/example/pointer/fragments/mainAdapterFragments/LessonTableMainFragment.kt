@@ -9,11 +9,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.TableRecyclerAdapter
 import com.example.pointer.databinding.FragmentLessonTableMainBinding
 import com.example.pointer.models.Table
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,6 +46,15 @@ class LessonTableMainFragment : Fragment(R.layout.fragment_lesson_table_main) {
     private lateinit var list: ArrayList<Table>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.apply {
+            exitTransition = Hold()
+            enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+            returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+            cons1.setOnClickListener {
+                val extras = FragmentNavigatorExtras(cons1 to "my_calendar")
+                findNavController().navigate(R.id.calendarFragment,null,null,extras)
+            }
+        }
     }
     companion object {
         /**

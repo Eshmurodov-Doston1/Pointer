@@ -16,6 +16,8 @@ import com.example.pointer.R
 import com.example.pointer.adapters.TableRecyclerAdapter
 import com.example.pointer.databinding.FragmentLessonTableBinding
 import com.example.pointer.models.Table
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 class LessonTableFragment : Fragment() {
 
@@ -30,6 +32,7 @@ class LessonTableFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentLessonTableBinding.inflate(inflater, container, false)
+
 
         val days:ArrayList<String> = arguments?.getStringArrayList("list") as ArrayList<String>
         val dayOfWeek = arguments?.getInt("week", 0)
