@@ -1,6 +1,7 @@
 package com.example.pointer.fragments.lessontable
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

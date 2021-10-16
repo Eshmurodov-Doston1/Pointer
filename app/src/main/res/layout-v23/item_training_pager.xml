@@ -46,7 +46,7 @@
                             android:layout_height="match_parent">
                             <ImageView
                                 android:id="@+id/image"
-                                android:src="@drawable/click2"
+                                android:src="@drawable/news_image2"
                                 android:scaleType="centerCrop"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintHeight_percent="0.7"
@@ -108,7 +108,7 @@
                                     android:id="@+id/image_user"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    android:src="@drawable/click4"
+                                    android:src="@drawable/news_image2"
                                     app:layout_constraintLeft_toLeftOf="parent"
                                     app:layout_constraintRight_toRightOf="parent"
                                     app:layout_constraintHorizontal_bias="0.05"

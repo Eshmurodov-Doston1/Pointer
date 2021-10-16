@@ -185,7 +185,7 @@
                     app:layout_constraintTop_toBottomOf="@id/info"
                     app:layout_constraintLeft_toLeftOf="@id/info"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:src="@drawable/click4"
+                    android:src="@drawable/news_image2"
                     app:layout_constraintVertical_bias="0.3"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"

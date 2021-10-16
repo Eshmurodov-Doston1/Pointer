@@ -90,7 +90,7 @@
                     android:layout_width="@dimen/_90sdp"
                     android:layout_height="@dimen/_90sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:src="@drawable/click6"
+                    android:src="@drawable/news_image3"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

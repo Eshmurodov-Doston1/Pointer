@@ -1,18 +1,15 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
-import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.adapters.mainAdapter.group.MyMainGroupAdapter
 import com.example.pointer.databinding.FragmentMyMainGroupBinding
 import com.example.pointer.models.mygroup.MyGroup
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import java.util.ArrayList
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,7 +50,7 @@ class MyMainGroupFragment : Fragment(R.layout.fragment_my_main_group) {
         for (i in 0..10)
         {
             list.add(
-                MyGroup("Asadbek Bektayev", R.drawable.click3, true)
+                MyGroup("Asadbek Bektayev", R.drawable.news_image3, true)
             )
         }
 
