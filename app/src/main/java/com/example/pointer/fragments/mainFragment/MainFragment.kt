@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentContainer
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
@@ -50,9 +52,53 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             viewPager.adapter = mainViewPagerAdapter
             viewPager.clipToPadding=false
             viewPager.clipChildren=false
+
+
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+
+            mainBtn.setOnClickListener {
+                when(viewPager.currentItem){
+                    0->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
+                    }
+                    1->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.myCourceFragment, null, null, extras)
+                    }
+                    2->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.newsFragment, null, null, extras)
+                    }
+                    3->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.trainingMainFragment, null, null, extras)
+                    }
+                    4->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.myGroupFragment, null, null, extras)
+                    }
+                    5->{
+                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        findNavController().navigate(R.id.calendarFragment, null, null, extras)
+                    }
+                    6->{
+
+                    }
+                    7->{
+
+                    }
+                    8->{
+
+                    }
+
+                }
+            }
+
+
             viewPager.offscreenPageLimit = 2
             viewPager.setPageTransformer { page, position ->
                 var a= 1-Math.abs(position)

@@ -44,6 +44,8 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             loadCourse()
+
+
             sharedElementEnterTransition = MaterialContainerTransform()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)

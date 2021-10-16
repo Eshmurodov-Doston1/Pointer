@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/back_style3"
+    android:layout_height="@dimen/_50sdp">
+
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/tushum"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="#3F495E"
+            android:fontFamily="@font/montserrat"
+            android:text="Tushum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+
+            android:id="@+id/type"
+            android:src="@drawable/payme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+
+            android:textColor="#828282"
+            android:textSize="@dimen/_8sdp"
+            android:fontFamily="@font/montserrat"
+            android:text="18:05 15 Okt 2021"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            android:id="@+id/money"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textColor="@color/secondary_color"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/montserrat"
+            android:text="+500 000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

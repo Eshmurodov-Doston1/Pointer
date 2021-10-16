@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pointer.R
 import com.example.pointer.models.Training
@@ -35,7 +36,7 @@ class NowTrainingRecyclerAdapter(
                     itemView.findViewById<TextView>(R.id.address).text = training.address
                     itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.type).text = training.type
-                    itemView.findViewById<CardView>(R.id.enter).setOnClickListener {
+                    itemView.findViewById<ConstraintLayout>(R.id.enter).setOnClickListener {
                         onButtonClick.onTraningClick(training,position)
                     }
 

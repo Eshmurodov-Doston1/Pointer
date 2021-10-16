@@ -6,75 +6,79 @@
     android:transitionName="my_view"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.group.MyGroupFragment">
-
-<androidx.constraintlayout.widget.ConstraintLayout
-
-    android:id="@+id/cl"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_width="match_parent"
-    android:background="#F7F7FC"
-    android:layout_height="@dimen/_85sdp">
-
-    <ImageView
-
-        android:id="@+id/back"
-        app:layout_constraintTop_toTopOf="@id/mygroup"
-        app:layout_constraintBottom_toBottomOf="@id/mygroup"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        android:src="@drawable/vector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-
-        android:id="@+id/mygroup"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        android:textColor="#373737"
-        android:textSize="@dimen/_20sdp"
-        android:text="Mening guruhim"
-        app:layout_constraintHorizontal_bias="0.32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-    <TextView
-
-        android:id="@+id/group"
-        app:layout_constraintTop_toBottomOf="@id/mygroup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0"
-        android:layout_marginTop="15dp"
-        android:textColor="#01D8D0"
-        android:textSize="@dimen/_14sdp"
-        android:text="Android G-20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-
-        app:layout_constraintTop_toBottomOf="@id/cl"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:transitionName="cardView"
         android:layout_width="match_parent"
-        android:background="#F4F5F9"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/rv"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_student"
+            android:id="@+id/cl"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:background="#F7F7FC"
+            android:layout_height="@dimen/_85sdp">
 
+            <ImageView
+
+                android:id="@+id/back"
+                app:layout_constraintTop_toTopOf="@id/mygroup"
+                app:layout_constraintBottom_toBottomOf="@id/mygroup"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                android:src="@drawable/vector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+
+                android:id="@+id/mygroup"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintVertical_bias="0.3"
+                android:textColor="#373737"
+                android:textSize="@dimen/_20sdp"
+                android:text="Mening guruhim"
+                app:layout_constraintHorizontal_bias="0.32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+
+                android:id="@+id/group"
+                app:layout_constraintTop_toBottomOf="@id/mygroup"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:layout_marginTop="15dp"
+                android:textColor="#01D8D0"
+                android:textSize="@dimen/_14sdp"
+                android:text="Android G-20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            app:layout_constraintTop_toBottomOf="@id/cl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:background="#F4F5F9"
+            android:layout_height="0dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/rv"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_student"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
