@@ -43,7 +43,7 @@ class MainViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdap
                VideoCourseViewPagerFragment()
            }
            8->{
-               VideoCourseViewPagerFragment()
+               PaymiAdapterFragment()
            }
            else->{
                VideoCourseViewPagerFragment()

@@ -12,6 +12,8 @@ import com.example.pointer.adapters.trainingAdapter.NextTrainingRecyclerAdapter
 import com.example.pointer.databinding.FragmentPaymeBinding
 import com.example.pointer.models.Payme
 import com.example.pointer.models.Training
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 import java.util.ArrayList
 
 class PaymeFragment : Fragment() {
@@ -25,6 +27,9 @@ class PaymeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentPaymeBinding.inflate(inflater, container, false)
 
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
         binding.rv.adapter = PaymeAdapter(requireContext(), initList())
         return binding.root

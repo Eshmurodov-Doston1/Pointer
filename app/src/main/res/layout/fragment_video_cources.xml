@@ -19,10 +19,11 @@
                 app:layout_constraintHeight_percent="0.07"
                 app:layout_constraintVertical_bias="0.02"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="wrap_content">
                 <com.google.android.material.imageview.ShapeableImageView
+                    app:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/image_student"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/_40sdp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     android:scaleType="centerCrop"
@@ -30,7 +31,7 @@
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                     android:src="@drawable/news_image2"
                     app:layout_constraintHorizontal_bias="0.04"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="@dimen/_40sdp"/>
                 <TextView
                     android:id="@+id/name"
                     android:maxLines="2"
