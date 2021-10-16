@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionName="view_my"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relative_layout"
+    android:id="@+id/constraint_layout"
     android:background="#F7F7FC"
     tools:context=".fragments.news.NewsFragment">
 

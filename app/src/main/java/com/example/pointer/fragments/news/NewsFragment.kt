@@ -3,6 +3,7 @@ package com.example.pointer.fragments.news
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.NewsAdapter
@@ -42,7 +43,9 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
         newsAdapter.setOnCLickListener {
             val bundle = Bundle()
             bundle.putSerializable("news", it)
-            findNavController().navigate(R.id.news_to_fullNews, bundle)
+
+            val extras = FragmentNavigatorExtras(binding.constraintLayout to "view_my")
+            findNavController().navigate(R.id.news_to_fullNews, bundle, null, extras)
         }
     }
 

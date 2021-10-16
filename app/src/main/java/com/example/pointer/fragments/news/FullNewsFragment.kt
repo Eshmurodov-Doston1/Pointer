@@ -7,6 +7,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentFullNewsBinding
 import com.example.pointer.models.News
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
     private lateinit var binding: FragmentFullNewsBinding
@@ -20,6 +22,10 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
 
         news = arguments?.getSerializable("news") as News
 
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         binding.ivImage.setImageResource(news.image)
         binding.tvDate.text = news.date
         binding.tvViews.text = news.views.toString()
@@ -28,11 +34,5 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
         binding.ivBack.setOnClickListener {
             findNavController().navigateUp()
         }
-    }
-
-    companion object {
-        const val TAG = "LibraryFragment"
-        const val posterKey = "posterKey"
-        const val paramsKey = "paramsKey"
     }
 }

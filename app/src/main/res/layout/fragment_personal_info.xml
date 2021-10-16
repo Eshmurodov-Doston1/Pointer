@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
+    android:background="#F7F7FC"
     tools:context=".fragments.personalInfo.PersonalInfoFragment">
 
     <LinearLayout
@@ -48,17 +48,17 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_personal"
                 android:layout_width="100dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="centerCrop"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:padding="4dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/oval_img"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -89,6 +89,7 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:background="@drawable/back_edit"
                     android:id="@+id/edit_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -257,22 +258,22 @@
                     android:layout_marginEnd="10dp"
                     android:ellipsize="start"
                     android:inputType="textPassword"
+                    android:singleLine="true"
                     android:text="123456"
                     android:textColor="#5169FF"
-                    android:textSize="14sp"
-                    android:singleLine="true" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:shadowColor="#01D8D0"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="#01D8D0"
+                android:shadowColor="#01D8D0"
                 android:text="O'zgarishni saqlash"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
