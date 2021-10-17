@@ -8,50 +8,55 @@
     android:id="@+id/constraint_layout"
     android:background="#F7F7FC"
     tools:context=".fragments.news.NewsFragment">
-
-    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-        android:id="@+id/view_pager"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="#F7F7FC"
+        android:transitionName="cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_50sdp"
-        android:layout_marginBottom="@dimen/_50sdp"
-        app:icvp_center_page_scale_offset="10dp"
-        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
-        app:icvp_max_page_scale="0.8"
-        app:icvp_medium_scaled="false"
-        app:icvp_min_page_scale="0.55"
-        app:icvp_min_page_scale_offset="5dp"
-        app:icvp_scroll_duration="250"
-        tools:ignore="MissingClass,MissingConstraints" />
+        android:layout_height="match_parent">
+        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            app:icvp_center_page_scale_offset="10dp"
+            app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+            app:icvp_max_page_scale="0.8"
+            app:icvp_medium_scaled="false"
+            app:icvp_min_page_scale="0.55"
+            app:icvp_min_page_scale_offset="5dp"
+            app:icvp_scroll_duration="250"
+            tools:ignore="MissingClass,MissingConstraints" />
 
-    <LinearLayout
-        android:id="@+id/bottom_btn"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginBottom="@dimen/_50sdp"
-        android:background="@drawable/main_button"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/linear">
+        <LinearLayout
+            android:id="@+id/bottom_btn"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:background="@drawable/main_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/linear">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_up_img" />
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_img" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:background="@drawable/ic_bottom_back"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/ic_bottom_back"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

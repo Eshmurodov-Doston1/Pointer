@@ -12,6 +12,7 @@ import com.example.pointer.fragments.mainAdapterFragments.*
 import com.example.pointer.fragments.videoCources.VideoCourcesFragment
 
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+
     override fun getItemCount(): Int {
         return 9
     }

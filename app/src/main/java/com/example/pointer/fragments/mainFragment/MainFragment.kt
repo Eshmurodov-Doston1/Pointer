@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
 import com.example.pointer.databinding.ItemTabMainBinding
+import com.example.pointer.fragments.mainAdapterFragments.*
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.Hold
@@ -44,6 +47,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding by viewBinding(FragmentMainBinding::bind)
     lateinit var mainViewPagerAdapter:MainViewPagerAdapter
     lateinit var listLoad:ArrayList<String>
+    lateinit var listFragment:ArrayList<Fragment>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
@@ -62,27 +66,33 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             mainBtn.setOnClickListener {
                 when(viewPager.currentItem){
                     0->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.card_my)
+                        val extras = FragmentNavigatorExtras(myCard to "My_cardView")
                         findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
                     }
                     1->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.button)
+                        val extras = FragmentNavigatorExtras(myCard to "view")
                         findNavController().navigate(R.id.myCourceFragment, null, null, extras)
                     }
                     2->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.view_button)
+                        val extras = FragmentNavigatorExtras(myCard to "view_my")
                         findNavController().navigate(R.id.newsFragment, null, null, extras)
                     }
                     3->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.cons_training)
+                        val extras = FragmentNavigatorExtras(myCard to "cons")
                         findNavController().navigate(R.id.trainingMainFragment, null, null, extras)
                     }
                     4->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.view_item)
+                        val extras = FragmentNavigatorExtras(myCard to "my_view")
                         findNavController().navigate(R.id.myGroupFragment, null, null, extras)
                     }
                     5->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.cons1)
+                        val extras = FragmentNavigatorExtras(myCard to "my_calendar")
                         findNavController().navigate(R.id.calendarFragment, null, null, extras)
                     }
                     6->{
@@ -92,7 +102,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
                     }
                     8->{
-                        val extras = FragmentNavigatorExtras(mainBtn to "cardView")
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons1)
+                        val extras = FragmentNavigatorExtras(myCard to "payme")
                         findNavController().navigate(R.id.paymeFragment, null, null, extras)
                     }
 
