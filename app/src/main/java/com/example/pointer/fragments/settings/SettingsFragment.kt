@@ -3,10 +3,7 @@ package com.example.pointer.fragments.settings
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -27,21 +24,15 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             findNavController().navigate(R.id.settings_to_info)
         }
 
-        binding.ivLangIcon.setOnClickListener {
+        binding.linearLang.setOnClickListener {
             val alertDialog = AlertDialog.Builder(requireContext()).create()
             val inflater = layoutInflater
             val bn = ItemLanguageBinding.inflate(inflater)
             alertDialog.setView(bn.root)
-            alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            alertDialog.window?.setGravity(Gravity.CENTER)
-            bn.cancelTv.setOnClickListener {
-                alertDialog.dismiss()
-            }
-            bn.okTv.setOnClickListener {
-                forRestartIntent2()
-                alertDialog.dismiss()
-            }
+//            alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//            alertDialog.window?.setGravity(Gravity.CENTER)
 
+//bn.
             alertDialog.show()
         }
 
@@ -51,7 +42,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     }
 
     private fun logOutDialog() {
-        val dialog = BaseDialog("Dasturdan chiqmoqchimisiz", "Yo'q", "Ha")
+        val dialog = BaseDialog("Rostdan ham akkauntdan\n chiqmoqchimisiz?", "Yo'q", "Ha")
         dialog.setOnDoneListener {
             dialog.dismiss()
             startActivity(Intent(requireContext(), MainActivity::class.java))

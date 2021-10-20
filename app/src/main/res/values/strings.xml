@@ -34,4 +34,7 @@ O‘ta yengil kompyuterlarni ishlab chiqarishga ixtisoslashgan One Netbook kompa
 Mazkur mini noutbuk 7 dyuymli sensor display bilan jihozlanib, uni maxsus bog‘lash moslamasi orqali 180  gradusga aylantirib planshetga o‘zgartirsa bo‘ladi. Mazkur noutbukga  Windows 10 operatsion tizimi o‘rnatiladi.
 
  </string>
+    <string name="news">Yangiliklar</string>
+    <string name="ru_lang">Русский</string>
+    <string name="en_lang">English</string>
 </resources>

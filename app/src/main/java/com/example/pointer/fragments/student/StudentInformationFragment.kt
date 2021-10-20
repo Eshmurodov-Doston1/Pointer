@@ -1,13 +1,10 @@
 package com.example.pointer.fragments.student
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.transition.ChangeBounds
-import android.view.*
-import android.widget.Toast
+import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
@@ -70,7 +67,6 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             Picasso.get().load(studentCourse.teacherImage).into(imageTeacher)
             teacherName.text = studentCourse.teacherName
             fullName.text = studentCourse.name
-
             expansionCourseAdapter = ExpansionCourseAdapter(object:ExpansionCourseAdapter.OnItemClickListener{
                 override fun onItemExpansionClick(
                     course: Course,

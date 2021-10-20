@@ -174,16 +174,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button">
+
                         <ImageView
                             android:id="@+id/save_image"
-                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_akar_icons_download"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.15"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintHorizontal_bias="0.15"
-                            android:src="@drawable/ic_akar_icons_download"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            app:layout_constraintTop_toTopOf="parent" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,8 +194,8 @@
                             android:textColor="@color/white"
                             android:textSize="@dimen/_13sdp"
                             android:textStyle="bold"
-                            app:layout_constraintHorizontal_bias="0.15"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.15"
                             app:layout_constraintLeft_toRightOf="@id/save_image"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

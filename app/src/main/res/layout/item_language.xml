@@ -1,81 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_lang_cons">
 
-        <TextView
+    <com.blure.complexview.ComplexView
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/complex_uz"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintBottom_toTopOf="@id/complex_ru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="4dp"
+        app:shadow="true"
+        app:shadowAlpha="20"
+        app:shadowPosition="bottom"
+        app:shadowSpread="2">
+
+        <com.blure.complexview.ComplexView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center|left"
-            android:text="@string/lan"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent"
+            app:radius="4dp"
+            app:shadow="true"
+            app:shadowAlpha="25"
+            app:shadowColor="#F4F5F9"
+            app:shadowPosition="bottom"
+            app:shadowSpread="1">
 
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
-
-            <RadioButton
-                android:id="@+id/radio1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="O'zbek tili"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <RadioButton
-                android:id="@+id/radio2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Узбек тили"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-        </RadioGroup>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/cancel_tv"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_uz"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center|right"
-                android:text="@string/cancel"
-                android:textColor="@color/click_green"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:background="@drawable/back_lang">
 
-            <TextView
-                android:id="@+id/ok_tv"
+                <TextView
+                    android:id="@+id/tv_uz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_flag_uz"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:text="@string/uzb_lang"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
+
+
+    <com.blure.complexview.ComplexView
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:id="@+id/complex_ru"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/complex_uz"
+        app:radius="4dp"
+        app:layout_constraintBottom_toTopOf="@id/complex_en"
+        app:shadow="true"
+        app:shadowAlpha="20"
+        app:shadowPosition="bottom"
+        app:shadowSpread="1">
+
+        <com.blure.complexview.ComplexView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:radius="4dp"
+            app:shadow="true"
+            app:shadowAlpha="25"
+            app:shadowColor="#F4F5F9"
+            app:shadowPosition="bottom"
+            app:shadowSpread="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_ru"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="@string/ok"
-                android:textColor="@color/click_green"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="@drawable/back_lang">
 
+                <TextView
+                    android:id="@+id/tv_ru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_flag_ru"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:text="@string/ru_lang"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
 
-    </LinearLayout>
+    <com.blure.complexview.ComplexView
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:id="@+id/complex_en"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/complex_ru"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:radius="4dp"
+        app:shadow="true"
+        app:shadowAlpha="20"
+        app:shadowPosition="bottom"
+        app:shadowSpread="1">
 
-</androidx.cardview.widget.CardView>
+        <com.blure.complexview.ComplexView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:radius="4dp"
+            app:shadow="true"
+            app:shadowAlpha="25"
+            app:shadowColor="#F4F5F9"
+            app:shadowPosition="bottom"
+            app:shadowSpread="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_en"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/back_lang">
+
+                <TextView
+                    android:id="@+id/tv_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_flag_us"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:text="@string/en_lang"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,13 +25,19 @@
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_next.xml" value="0.25" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_now.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_edit.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_lang.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_lang_cons.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_linear.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_linear_info_edit.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_linear_per_info.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_news.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/blur_back.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/button.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/editetext.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/ic_back_vector.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/ic_down_vector.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/ic_flag_uz.xml" value="0.2203125" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/ic_up_img.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/item_back.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/main_button.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/shadow.xml" value="0.2203125" />
@@ -44,12 +50,14 @@
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/activity_splash.xml" value="0.1431159420289855" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_all_video_course.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_calendar.xml" value="0.22" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_course.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_course_viewpager.xml" value="0.1" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_full_news.xml" value="0.19" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_login.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_main_splash.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_my_cource.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_my_group.xml" value="0.20102564102564102" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_my_main_group.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_news.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/fragment_news_adapter.xml" value="0.20416666666666666" />
@@ -67,7 +75,8 @@
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_course.xml" value="0.1" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_course_student.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_language.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_news.xml" value="0.25" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_news.xml" value="0.2" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_rv.xml" value="0.20102564102564102" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_student.xml" value="0.1" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_training.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/layout/item_training_next.xml" value="0.20416666666666666" />

@@ -42,9 +42,12 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/linear_lang"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/back_linear">
+            android:background="@drawable/back_linear"
+            android:clickable="true"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -111,25 +114,25 @@
             android:gravity="center|start">
 
             <TextView
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_weight="1"
                 android:text="@string/tv_night"
                 android:textColor="#3F495E"
                 android:textSize="16sp" />
 
             <LinearLayout
-                android:gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <Switch
                     android:id="@+id/switch_btn"
-                    android:checked="false"
-                    android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="10dp"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
             </LinearLayout>
         </LinearLayout>

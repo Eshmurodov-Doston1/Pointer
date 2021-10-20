@@ -52,7 +52,6 @@
                 android:layout_marginTop="20dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="4dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/oval_img"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +88,9 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:background="@drawable/back_edit"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,7 +98,7 @@
                     android:layout_marginEnd="10dp"
                     android:text="Davronbek"
                     android:textColor="#373737"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
             <LinearLayout
@@ -122,6 +123,9 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_fullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +133,7 @@
                     android:layout_marginEnd="10dp"
                     android:text="Sherg'oziyev"
                     android:textColor="#373737"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
             <LinearLayout
@@ -154,6 +158,9 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_fatherName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -187,6 +194,7 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_phone_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -219,6 +227,7 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -251,6 +260,7 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:background="#F7F7FC"
                     android:id="@+id/edit_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
