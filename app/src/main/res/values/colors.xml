@@ -13,4 +13,5 @@
     <color name="text_color">#303030</color>
     <color name="news_text_color">#373737</color>
 
+    <color name="primary">#01D8D0</color>
 </resources>

@@ -52,8 +52,8 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
             paymeAdapter = PaymiAdapter()
             paymeAdapter.submitList(listPayme)
             rvMy.adapter = paymeAdapter
-            myCard.setOnClickListener {
-                val extras = FragmentNavigatorExtras(myCard to "payme")
+            myCons1.setOnClickListener {
+                val extras = FragmentNavigatorExtras(myCons1 to "payme")
                 findNavController().navigate(R.id.paymeFragment, null, null, extras)
             }
         }

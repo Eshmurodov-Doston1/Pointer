@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 tools:ignore="MissingClass" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <View
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/view_button"
             android:transitionName="view_my"
             android:layout_width="match_parent"

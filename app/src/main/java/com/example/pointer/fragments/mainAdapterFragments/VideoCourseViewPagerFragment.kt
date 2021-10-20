@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.adapterView.ViewPagerAdapterVideoCourse
 import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
@@ -51,6 +52,7 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
     private val binding by viewBinding(FragmentVideoCourseViewPagerBinding::bind)
     lateinit var pagerAdapterVideoCourse: ViewPagerAdapterVideoCourse
     lateinit var listCourse:ArrayList<VideoCourse>
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
@@ -60,10 +62,16 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
             exitTransition = Hold()
             exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
             cardMy.setOnClickListener {
                 val extras = FragmentNavigatorExtras(cardMy to "My_cardView")
                 findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
             }
+
+//            val mainBtn = requireActivity().findViewById<CircleButton>(R.id.main_btn)
+//            mainBtn.setOnClickListener {
+//                Toast.makeText(requireContext(), "Click", Toast.LENGTH_SHORT).show()
+//            }
 
 
             pagerAdapterVideoCourse = ViewPagerAdapterVideoCourse()
@@ -125,6 +133,7 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
             }
         }
     }
+
 
     private fun loadCourse() {
         listCourse = ArrayList()
