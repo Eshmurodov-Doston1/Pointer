@@ -5,30 +5,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.View.OnSystemUiVisibilityChangeListener
-import android.view.Window
-import android.view.WindowManager
-import androidx.core.view.WindowCompat
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.example.pointer.databinding.ActivityMainBinding
-import com.example.pointer.fragments.chat.ChatListFragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
-
-
-
-
-
-
-
-
-
-
-
-
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
