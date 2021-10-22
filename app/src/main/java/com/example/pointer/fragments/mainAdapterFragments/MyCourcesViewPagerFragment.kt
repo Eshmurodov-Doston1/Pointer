@@ -46,21 +46,21 @@ class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pa
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            loadCource()
-            courseViewPagerAdapter = ViewPagerAdapterCourse(requireContext())
-            courseViewPagerAdapter.submitList(listCource)
-            courceViewPager.adapter = courseViewPagerAdapter
-
-            courceViewPager.clipToPadding=false
-            courceViewPager.clipChildren=false
-            courceViewPager.offscreenPageLimit=listCource.size
-            var transformer = CompositePageTransformer()
-            transformer.addTransformer { page, position ->
-                var a= 1-Math.abs(position)
-                page.scaleY = 0.85F+a*0.1f
-            }
-            courceViewPager.setPageTransformer(transformer)
-
+//            loadCource()
+//            courseViewPagerAdapter = ViewPagerAdapterCourse(requireContext())
+//            courseViewPagerAdapter.submitList(listCource)
+//            courceViewPager.adapter = courseViewPagerAdapter
+//
+//            courceViewPager.clipToPadding=false
+//            courceViewPager.clipChildren=false
+//            courceViewPager.offscreenPageLimit=listCource.size
+//            var transformer = CompositePageTransformer()
+//            transformer.addTransformer { page, position ->
+//                var a= 1-Math.abs(position)
+//                page.scaleY = 0.85F+a*0.1f
+//            }
+//            courceViewPager.setPageTransformer(transformer)
+//
             button.setOnClickListener {
                 val extras = FragmentNavigatorExtras(button to "view")
                 findNavController().navigate(R.id.myCourceFragment,null,null,extras)

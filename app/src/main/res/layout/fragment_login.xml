@@ -148,8 +148,8 @@
             app:shadow="true"
             app:shadowAlpha="100"
             app:shadowColor="#01D8D0"
-            app:shadowSpread="1"
-            app:shadowPosition="bottom">
+            app:shadowPosition="bottom"
+            app:shadowSpread="1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cons"

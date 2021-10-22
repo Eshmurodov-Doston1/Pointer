@@ -1,5 +1,6 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -56,6 +57,7 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
                 val extras = FragmentNavigatorExtras(myCons1 to "payme")
                 findNavController().navigate(R.id.paymeFragment, null, null, extras)
             }
+
         }
     }
 

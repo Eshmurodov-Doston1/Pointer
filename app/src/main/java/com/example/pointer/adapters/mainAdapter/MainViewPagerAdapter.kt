@@ -20,10 +20,10 @@ class MainViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdap
     override fun createFragment(position: Int): Fragment {
        return when(position){
            0->{
-                VideoCourseViewPagerFragment()
+               MyCourcesViewPagerFragment()
            }
            1->{
-               MyCourcesViewPagerFragment()
+               VideoCourseViewPagerFragment()
            }
            2->{
                NewsAdapterFragment()

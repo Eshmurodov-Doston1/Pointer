@@ -6,26 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F7F7FC"
     tools:context=".fragments.mainFragment.MainFragment">
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingRight="@dimen/_30sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        android:background="#F7F7FC"
-        app:tabRippleColor="@null"
-        app:tabMode="scrollable"
-        app:tabIndicatorHeight="0dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:paddingLeft="@dimen/_30sdp"-->
+<!--        android:paddingRight="@dimen/_30sdp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.03"-->
+<!--        android:background="#F7F7FC"-->
+<!--        app:tabRippleColor="@null"-->
+<!--        app:tabMode="scrollable"-->
+<!--        app:tabIndicatorHeight="0dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
-        android:paddingStart="@dimen/_30sdp"
-        android:paddingEnd="@dimen/_30sdp"
+        android:paddingStart="@dimen/_25sdp"
+        android:paddingEnd="@dimen/_25sdp"
+        android:paddingTop="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintHeight_percent="0.72"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/line"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
     <ImageView
