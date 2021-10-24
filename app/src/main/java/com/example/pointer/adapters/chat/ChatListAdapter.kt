@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pointer.R
 import com.example.pointer.databinding.LayoutItemChatListBinding
-import com.example.pointer.models.ChatListItem
+import com.example.pointer.models.chat.ChatListItem
 import com.example.pointer.utils.TimeEncoder
 
-class ChatListAdapter : RecyclerView.Adapter<ChatListAdapter.ChatListHolder>() {
-    val chatList: ArrayList<ChatListItem> = arrayListOf()
+class ChatListAdapter(var chatList: ArrayList<ChatListItem>) : RecyclerView.Adapter<ChatListAdapter.ChatListHolder>() {
 
     class ChatListHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = LayoutItemChatListBinding.bind(item)
