@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-
 //        if (hasFocus) {
 //            window.decorView.systemUiVisibility = (
 //                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR

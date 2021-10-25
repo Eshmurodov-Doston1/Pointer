@@ -85,5 +85,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //youtubePlayer
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    //pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }

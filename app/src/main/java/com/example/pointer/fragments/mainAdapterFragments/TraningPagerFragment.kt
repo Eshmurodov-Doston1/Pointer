@@ -54,14 +54,11 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
 
 
            traningMainPagerAdapter = TrainingMainPagerAdapter(requireActivity())
-            binding.viewPager.adapter =traningMainPagerAdapter
-            TabLayoutMediator(tablayout,viewPager){tab,position->
-                tab.text = listCategory[position]
-            }.attach()
+//            binding.viewPager.adapter =traningMainPagerAdapter
+//            TabLayoutMediator(tablayout,viewPager){tab,position->
+//                tab.text = listCategory[position]
+//            }.attach()
 
-            back.setOnClickListener {
-                findNavController().popBackStack()
-            }
             consTraining.setOnClickListener {
                 val extras = FragmentNavigatorExtras(consTraining to "cons")
                 findNavController().navigate(R.id.trainingMainFragment,null,null,extras)

@@ -3,6 +3,8 @@ package com.example.pointer.fragments.mainFragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -89,15 +91,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                         findNavController().navigate(R.id.calendarFragment, null, null, extras)
                     }
                     6->{
-
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons_chat)
+                        val extras = FragmentNavigatorExtras(myCard to "chat")
+                        findNavController().navigate(R.id.chatFragment,null,null,extras)
                     }
                     7->{
-
-                    }
-                    8->{
                         val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons1)
                         val extras = FragmentNavigatorExtras(myCard to "payme")
                         findNavController().navigate(R.id.paymeFragment, null, null, extras)
+                    }
+                    8->{
+                        val myCard = requireActivity().findViewById<LinearLayout>(R.id.my_cons_settings)
+                        val extras = FragmentNavigatorExtras(myCard to "settings")
+                        findNavController().navigate(R.id.settingsFragment, null, null, extras)
                     }
 
                 }

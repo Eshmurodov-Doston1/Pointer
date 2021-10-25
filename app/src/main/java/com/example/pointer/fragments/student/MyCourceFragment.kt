@@ -57,6 +57,10 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
 
         binding.apply {
             loadCource()
+
+            mainBtn.setOnClickListener {
+                findNavController().popBackStack()
+            }
             courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),object:CourseViewPagerAdapter.OnItemClickListener{
                 override fun onItemClick(
                     studentCourse: StudentCourse,
@@ -66,6 +70,8 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
                     var extras:FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
                         .addSharedElement(itemCourceStudentBinding.myCons,"my_image")
                         .build()
+
+
                     var bundle = Bundle()
                     bundle.putSerializable("studentCource",studentCourse)
                     findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,bundle,null,extras)

@@ -45,14 +45,13 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            loadList()
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
             paymeAdapter = PaymiAdapter()
-            paymeAdapter.submitList(listPayme)
-            rvMy.adapter = paymeAdapter
+//            paymeAdapter.submitList(listPayme)
+//            rvMy.adapter = paymeAdapter
             myCons1.setOnClickListener {
                 val extras = FragmentNavigatorExtras(myCons1 to "payme")
                 findNavController().navigate(R.id.paymeFragment, null, null, extras)
@@ -61,14 +60,14 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
         }
     }
 
-    private fun loadList() {
-        listPayme = ArrayList()
-        for (i in 0..10)
-        {
-            listPayme.add(
-                Payme("Tushum", R.drawable.payme, "Naqd", "+1 200 000"))
-        }
-    }
+//    private fun loadList() {
+//        listPayme = ArrayList()
+//        for (i in 0..10)
+//        {
+//            listPayme.add(
+//                Payme("Tushum", R.drawable.payme, "Naqd", "+1 200 000"))
+//        }
+//    }
 
     companion object {
         /**

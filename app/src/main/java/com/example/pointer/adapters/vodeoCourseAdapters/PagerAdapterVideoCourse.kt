@@ -15,7 +15,7 @@ class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):List
         fun onBind(videoCourse: VideoCourse,position: Int){
             itemVideosCourseBinding.apply {
                 nameCourse.text = videoCourse.name
-                videoTime.text = videoCourse.vidoTime
+               // videoTime.text = videoCourse.vidoTime
                 countCourse.text = "${videoCourse.videoCourseNumber} ta dars"
                 nameCourseSi.text = videoCourse.shortNameCourse
                 freeText.text = "Tekin"
