@@ -6,9 +6,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
-import com.example.pointer.adapters.NewsAdapter
+import com.example.pointer.adapters.news.NewsAdapter
 import com.example.pointer.databinding.FragmentNewsBinding
-import com.example.pointer.models.News
+import com.example.pointer.models.news.News
+import com.example.pointer.models.news.News2
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
@@ -16,7 +17,8 @@ import com.google.android.material.transition.MaterialSharedAxis
 class NewsFragment : Fragment(R.layout.fragment_news) {
     private lateinit var binding: FragmentNewsBinding
     private lateinit var newsAdapter: NewsAdapter
-    private lateinit var newsList: ArrayList<News>
+    private lateinit var newsList: ArrayList<News2>
+    private lateinit var imageList: ArrayList<Int>
     private lateinit var viewPager: HorizontalInfiniteCycleViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,25 +53,34 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
     private fun initData() {
         newsList = ArrayList()
+        imageList = ArrayList()
+        imageList.add(R.drawable.news_image1)
+        imageList.add(R.drawable.news_image2)
+        imageList.add(R.drawable.news_image3)
         newsList.add(
-            News(
-                R.drawable.news_image1,
-                "16.10.2021",
-                1111,
-                getString(R.string.news_title1),
-                getString(R.string.news_desc1)
+            News2(
+                imageList, News(
+                    "16.10.2021",
+                    1111,
+                    getString(R.string.news_title1),
+                    getString(R.string.news_desc1)
+                )
             )
         )
         newsList.add(
-            News(
-                R.drawable.news_image2, "15.10.2021", 2222, getString(R.string.news_title1),
-                getString(R.string.news_desc1)
+            News2(
+                imageList, News(
+                    "15.10.2021", 2222, getString(R.string.news_title1),
+                    getString(R.string.news_desc1)
+                )
             )
         )
         newsList.add(
-            News(
-                R.drawable.news_image3, "14.10.2021", 3333, getString(R.string.news_title1),
-                getString(R.string.news_desc1)
+            News2(
+                imageList, News(
+                    "14.10.2021", 3333, getString(R.string.news_title1),
+                    getString(R.string.news_desc1)
+                )
             )
         )
     }

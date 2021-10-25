@@ -3,16 +3,13 @@ package com.example.pointer.fragments.mainAdapterFragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.fragment.app.FragmentContainer
-import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.newsViewAdapter.NewsAdapterPager
 import com.example.pointer.databinding.FragmentNewsAdapterBinding
-import com.example.pointer.models.News
+import com.example.pointer.models.news.News
+import com.example.pointer.models.news.News2
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,7 +39,9 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
 
     private lateinit var newsAdapter: NewsAdapterPager
 
-    private lateinit var newsList: ArrayList<News>
+    private lateinit var newsList: ArrayList<News2>
+    private lateinit var imageList: ArrayList<Int>
+    private lateinit var news: News
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -52,7 +51,7 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
             viewPager.adapter = newsAdapter
             viewButton.setOnClickListener {
                 val extras = FragmentNavigatorExtras(viewButton to "view_my")
-                findNavController().navigate(R.id.newsFragment,null,null,extras)
+                findNavController().navigate(R.id.newsFragment, null, null, extras)
             }
         }
 
@@ -60,13 +59,22 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
 
     private fun initData() {
         newsList = ArrayList()
-        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
-        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
+        imageList = ArrayList()
+        news = News("", 11, "", "")
+        imageList.add(R.drawable.news_image1)
+        imageList.add(R.drawable.news_image2)
+        imageList.add(R.drawable.news_image3)
+        imageList.add(R.drawable.news_image1)
+        imageList.add(R.drawable.news_image2)
+        imageList.add(R.drawable.news_image3)
+        newsList.add(News2(imageList, news))
+//        newsList.add(News(, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
+//        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
     }
 
     companion object {

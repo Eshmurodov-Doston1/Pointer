@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentCourseViewpagerBinding
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import io.alterac.blurkit.BlurKit
 
 
 

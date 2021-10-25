@@ -55,10 +55,6 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
-    //blur
-    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
-    //blur
-    implementation 'io.alterac.blurkit:blurkit:1.1.0'
     //shadow
     implementation 'com.github.BluRe-CN:ComplexView:1.1'
     //password
@@ -86,4 +82,7 @@ dependencies {
     //youtubePlayer
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation 'com.merhold.extensiblepageindicator:extensiblepageindicator:1.0.1'
 }
