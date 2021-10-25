@@ -1,17 +1,22 @@
 package com.example.pointer.fragments.trainings
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
+import com.example.pointer.adapters.trainingAdapter.MediaAdapter
 import com.example.pointer.databinding.FragmentTrainingVideoBinding
+import com.example.pointer.models.medislider.MediaItem
 
 class TrainingVideoFragment : Fragment() {
 
     private lateinit var binding: FragmentTrainingVideoBinding
+
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,13 +24,18 @@ class TrainingVideoFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTrainingVideoBinding.inflate(inflater, container, false)
 
-        val youtube = binding.youtube
-
         binding.back.setOnClickListener {
             findNavController().popBackStack()
         }
+        val list: ArrayList<MediaItem> = arrayListOf()
+        list.add(MediaItem(""))
+        list.add(MediaItem(null, R.drawable.image20))
+        list.add(MediaItem(null, R.drawable.my_image))
+        list.add(MediaItem(null, R.drawable.payment))
+        val adapter = MediaAdapter(list,childFragmentManager)
 
-       return binding.root
+        binding.viewPager.adapter = adapter
+        binding.indicator.setupWithViewPager(binding.viewPager)
+        return binding.root
     }
-
 }

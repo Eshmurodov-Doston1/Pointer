@@ -12,10 +12,11 @@ import com.squareup.picasso.Picasso
 
 class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):ListAdapter<VideoCourse,PagerAdapterVideoCourse.Vh>(MyDiffUtill()) {
     inner class Vh(var itemVideosCourseBinding: ItemVideosCourseBinding):RecyclerView.ViewHolder(itemVideosCourseBinding.root){
+
         fun onBind(videoCourse: VideoCourse,position: Int){
             itemVideosCourseBinding.apply {
                 nameCourse.text = videoCourse.name
-                videoTime.text = videoCourse.vidoTime
+               // videoTime.text = videoCourse.vidoTime
                 countCourse.text = "${videoCourse.videoCourseNumber} ta dars"
                 nameCourseSi.text = videoCourse.shortNameCourse
                 freeText.text = "Tekin"
@@ -42,7 +43,6 @@ class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):List
         override fun areItemsTheSame(oldItem: VideoCourse, newItem: VideoCourse): Boolean {
             return oldItem.equals(newItem)
         }
-
         override fun areContentsTheSame(oldItem: VideoCourse, newItem: VideoCourse): Boolean {
             return oldItem.equals(newItem)
         }

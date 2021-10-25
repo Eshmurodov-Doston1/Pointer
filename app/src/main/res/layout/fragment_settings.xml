@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F7FC"
+    android:id="@+id/my_cons_settings"
+    android:transitionName="settings"
     android:orientation="vertical"
     tools:context=".fragments.settings.SettingsFragment">
 

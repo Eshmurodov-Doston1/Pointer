@@ -22,8 +22,6 @@ class MainSplashFragment : Fragment(R.layout.fragment_main_splash) {
     private val binding by viewBinding(FragmentMainSplashBinding::bind)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         binding.apply {
             handler = Handler(Looper.getMainLooper())
             text.visibility = View.INVISIBLE

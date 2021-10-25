@@ -3,7 +3,9 @@ package com.example.pointer.fragments.student
 import android.os.Bundle
 import android.transition.ChangeBounds
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentCourseBinding
@@ -42,8 +44,15 @@ class CourseFragment : Fragment(R.layout.fragment_course) {
             }
 //            name.text = "UI/Ux Darsi"
 //            nameCourse.text = "UI/Ux Darsi"
-          //  info.text = "Darsni ko`rib bo`lgach pastdagi tugma orqali vazifani yuklab oling va uni bajaring"
-
+            info.text = "Darsni ko`rib bo`lgach pastdagi tugma orqali vazifani yuklab oling va uni bajaring\n blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah v blah blah blah blah blah blah blahblah blah blah blah blah blah blahblah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"
+            cons.setOnClickListener {
+                var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
+                    .addSharedElement(cons,"button")
+                    .build()
+                findNavController().navigate(R.id.createPDFFragment,null,null,extras)
+            }
+            container.clipToPadding = false
+            container.clipChildren=false
         }
     }
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7FC"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.student.CreatePDFFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/close"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_group_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingRight="@dimen/_2sdp"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:cb_color="@color/white"
+            app:cb_pressedRingWidth="@dimen/_5sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"/>
+        <TextView
+            android:id="@+id/nmae_course"
+            app:layout_constraintTop_toTopOf="@id/close"
+            app:layout_constraintBottom_toBottomOf="@id/close"
+            app:layout_constraintLeft_toRightOf="@id/close"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.2"
+            android:layout_width="0dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:text="Sizning topshiriqingiz"
+            android:textSize="@dimen/_15sdp"
+            android:maxLines="2"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/my_pdf"
+        android:background="#F7F7FC"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

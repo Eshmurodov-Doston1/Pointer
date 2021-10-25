@@ -12,6 +12,8 @@ import com.example.pointer.R
 import com.example.pointer.databinding.FragmentSettingsBinding
 import com.example.pointer.databinding.ItemLanguageBinding
 import com.example.pointer.utils.BaseDialog
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialSharedAxis
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private lateinit var binding: FragmentSettingsBinding
@@ -19,6 +21,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     @SuppressLint("InflateParams")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentSettingsBinding.bind(view)
+
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
         binding.linearPersonInfo.setOnClickListener {
             findNavController().navigate(R.id.settings_to_info)

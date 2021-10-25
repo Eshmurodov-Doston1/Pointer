@@ -26,16 +26,11 @@ class TrainingRecyclerAdapter(var onButtonClick: OnButtonClick,var context: Cont
                     )
                 }
                 itemView.apply {
-                    training.speakerImage?.let {
-                        itemView.findViewById<ImageView>(R.id.imageSpeaker).setImageResource(
-                            it
-                        )
-                    }
+
                     itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.nameTraining).text = training.trainingName
                     itemView.findViewById<TextView>(R.id.time).text = training.time
                     itemView.findViewById<TextView>(R.id.address).text = training.address
-                    itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.type).text = training.type
                     itemView.findViewById<ConstraintLayout>(R.id.enter).setOnClickListener {
                         onButtonClick.onTraningClick(training,position)
@@ -53,8 +48,8 @@ class TrainingRecyclerAdapter(var onButtonClick: OnButtonClick,var context: Cont
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position],position)
-
     }
+
     override fun getItemCount(): Int = list.size
 
     interface OnButtonClick{

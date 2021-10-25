@@ -92,28 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-
-
-            android:id="@+id/imageSpeaker"
-            app:layout_constraintTop_toBottomOf="@id/image"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/news_image1"
-            android:layout_width="44dp"
-            android:layout_height="44dp"/>
 
         <TextView
 
 
             android:id="@+id/nameSpeaker"
             app:layout_constraintTop_toBottomOf="@id/image"
-            app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0"
@@ -132,7 +117,7 @@
 
             android:id="@+id/type"
             app:layout_constraintTop_toBottomOf="@id/nameSpeaker"
-            app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0"
@@ -172,7 +157,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintWidth_percent="0.35"
-            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintHeight_percent="0.27"
             android:layout_width="0dp"
             android:layout_height="0dp"

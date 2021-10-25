@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F7F7FC"
-    android:transitionName="card"
+    android:id="@+id/container"
+    android:paddingBottom="@dimen/_10sdp"
     tools:context=".fragments.student.CourseFragment">
     <at.markushi.ui.CircleButton
         android:id="@+id/close"
@@ -15,11 +16,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.02"
+        android:paddingRight="@dimen/_2sdp"
         app:layout_constraintHorizontal_bias="0.03"
         app:cb_color="@color/white"
         app:cb_pressedRingWidth="@dimen/_5sdp"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"/>
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"/>
     <TextView
         android:id="@+id/nmae_course"
         app:layout_constraintTop_toTopOf="@id/close"
@@ -32,7 +34,7 @@
         android:textColor="@color/black"
         android:textStyle="normal"
         android:text="@string/app_name"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="@dimen/_15sdp"
         android:maxLines="2"
         android:layout_height="wrap_content"/>
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
@@ -60,17 +62,16 @@
         android:layout_height="0dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:layout_height="match_parent">
             <com.blure.complexview.ComplexView
                 android:id="@+id/btn"
+                android:layout_marginTop="@dimen/_3sdp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintVertical_bias="0.1"
-                app:layout_constraintWidth_percent="0.97"
-                app:layout_constraintHeight_percent="0.12"
+                app:layout_constraintWidth_percent="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:radius="10dp"
@@ -79,53 +80,59 @@
                 app:shadowAlpha="80"
                 app:shadowColor="#A1A8A8"
                 app:shadowSpread="1">
-            <com.blure.complexview.ComplexView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:radius="10dp"
-                app:shadow="true"
-                app:shadowAlpha="100"
-                app:shadowColor="#A1A8A8"
-                app:shadowSpread="1"
-                app:shadowPosition="bottom">
-                <androidx.cardview.widget.CardView
-                    app:cardCornerRadius="@dimen/_5sdp"
-                    app:cardElevation="0dp"
+
+                <com.blure.complexview.ComplexView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="match_parent"
+                    app:radius="10dp"
+                    app:shadow="true"
+                    app:shadowAlpha="100"
+                    app:shadowColor="#A1A8A8"
+                    app:shadowPosition="bottom"
+                    app:shadowSpread="1">
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:padding="@dimen/_5sdp"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:id="@+id/name"
-                            android:maxLines="1"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintWidth_percent="0.7"
-                            app:layout_constraintHorizontal_bias="0.05"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_15sdp"
-                            android:text="@string/app_name"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-                        <TextView
-                            android:id="@+id/info"
-                            app:layout_constraintTop_toBottomOf="@id/name"
-                            app:layout_constraintLeft_toLeftOf="@id/name"
-                            android:layout_marginTop="@dimen/_8sdp"
-                            android:text="@string/app_name"
-                            android:textSize="@dimen/_13sdp"
-                            android:textStyle="normal"
-                            android:textColor="#A19D9D"
-                            app:layout_constraintWidth_percent="0.95"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
-            </com.blure.complexview.ComplexView>
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:text="@string/app_name"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_15sdp"
+                                android:textStyle="bold"
+                                app:layout_constraintHorizontal_bias="0.05"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent="0.7" />
+
+                            <TextView
+                                android:id="@+id/info"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:text="@string/app_name"
+                                android:textColor="#4F4F4F"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="normal"
+                                app:layout_constraintLeft_toLeftOf="@id/name"
+                                app:layout_constraintTop_toBottomOf="@id/name"
+                                app:layout_constraintWidth_percent="0.98" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </com.blure.complexview.ComplexView>
             </com.blure.complexview.ComplexView>
             <TextView
                 android:id="@+id/lesson_text"
@@ -148,7 +155,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintVertical_bias="0.1"
-                app:layout_constraintWidth_percent="0.97"
+                app:layout_constraintWidth_percent="1"
                 app:layout_constraintHeight_percent="0.12"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_60sdp"
@@ -157,7 +164,7 @@
                 app:shadowPosition="bottom"
                 app:shadowAlpha="80"
                 app:shadowColor="#01D8D0"
-                app:shadowSpread="2">
+                app:shadowSpread="1">
 
                 <com.blure.complexview.ComplexView
                     android:layout_width="match_parent"
@@ -171,9 +178,11 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cons"
+                        android:transitionName="button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button">
+
 
                         <ImageView
                             android:id="@+id/save_image"
@@ -189,12 +198,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Topshiriqni yuklab olish"
+                            android:text="Topshiriqni ko'rish"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_13sdp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintHorizontal_bias="0.15"
                             app:layout_constraintLeft_toRightOf="@id/save_image"
                             app:layout_constraintRight_toRightOf="parent"

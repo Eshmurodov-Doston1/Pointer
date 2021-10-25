@@ -50,9 +50,9 @@ class MyMainGroupFragment : Fragment(R.layout.fragment_my_main_group) {
                 val extras = FragmentNavigatorExtras(viewItem to "my_view")
                 findNavController().navigate(R.id.myGroupFragment,null,null,extras)
             }
-            binding.rv.adapter = MyMainGroupAdapter(requireContext(), initList()) {
-                findNavController().navigate(R.id.studentFragment)
-            }
+//            binding.rv.adapter = MyMainGroupAdapter(requireContext(), initList()) {
+//                findNavController().navigate(R.id.studentFragment)
+//            }
         }
     }
 

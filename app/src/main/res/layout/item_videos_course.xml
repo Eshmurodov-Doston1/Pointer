@@ -16,7 +16,7 @@
         app:layout_constraintWidth_percent="1"
         app:layout_constraintHeight_percent="0.8"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_330sdp">
+        android:layout_height="@dimen/_350sdp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -30,7 +30,7 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
 
-            <com.github.mmin18.widget.RealtimeBlurView
+           <!-- <com.github.mmin18.widget.RealtimeBlurView
                 android:id="@+id/blur"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -40,15 +40,14 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintHeight_percent="0.45"
                 app:realtimeBlurRadius="15dp"
-                app:realtimeOverlayColor="#00FAF7F7" />
+                app:realtimeOverlayColor="#00FAF7F7" />-->
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:background="@android:color/transparent"
-                app:layout_constraintTop_toTopOf="@id/blur"
-                app:layout_constraintBottom_toBottomOf="@id/blur"
-                app:layout_constraintLeft_toLeftOf="@id/blur"
-                app:layout_constraintRight_toRightOf="@id/blur"
-                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/back_student"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.43"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 android:layout_width="0dp"
                 android:layout_height="0dp">
 
@@ -64,38 +63,38 @@
                     app:layout_constraintWidth_percent="0.9"
                     android:text="Android Kursi"
                     android:textStyle="normal"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_15sdp"
                     android:textAllCaps="false"
                     android:maxLines="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
-                <ImageView
-                    android:id="@+id/icon_time"
-                    app:layout_constraintTop_toBottomOf="@id/name_course"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintHorizontal_bias="0.04"
-                    app:layout_constraintVertical_bias="0.05"
-                    android:src="@drawable/ic_stopwatch"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"/>
-                <TextView
-                    android:id="@+id/videoTime"
-                    app:layout_constraintTop_toTopOf="@id/icon_time"
-                    app:layout_constraintLeft_toRightOf="@id/icon_time"
-                    app:layout_constraintBottom_toBottomOf="@id/icon_time"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintHorizontal_bias="0.05"
-                    android:text="@string/app_name"
-                    android:textSize="@dimen/_10sdp"
-                    android:textStyle="normal"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/icon_time"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/name_course"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.04"-->
+<!--                    app:layout_constraintVertical_bias="0.05"-->
+<!--                    android:src="@drawable/ic_stopwatch"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"/>-->
+<!--                <TextView-->
+<!--                    android:id="@+id/videoTime"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/icon_time"-->
+<!--                    app:layout_constraintLeft_toRightOf="@id/icon_time"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/icon_time"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.05"-->
+<!--                    android:text="@string/app_name"-->
+<!--                    android:textSize="@dimen/_11sdp"-->
+<!--                    android:textStyle="normal"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cons1"
-                    app:layout_constraintTop_toBottomOf="@id/icon_time"
+                    app:layout_constraintTop_toBottomOf="@id/name_course"
                     app:layout_constraintLeft_toLeftOf="@id/name_course"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHeight_percent="0.18"
@@ -120,7 +119,7 @@
                             android:paddingTop="@dimen/_3sdp"
                             android:paddingLeft="@dimen/_5sdp"
                             android:paddingRight="@dimen/_5sdp"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_10sdp"
                             android:textAllCaps="false"
                             android:textStyle="normal"
                             android:textColor="@color/white"
@@ -145,7 +144,7 @@
                             android:paddingTop="@dimen/_3sdp"
                             android:paddingLeft="@dimen/_5sdp"
                             android:paddingRight="@dimen/_5sdp"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_10sdp"
                             android:textAllCaps="false"
                             android:textStyle="normal"
                             android:textColor="@color/white"
@@ -169,7 +168,7 @@
                             android:paddingTop="@dimen/_3sdp"
                             android:paddingLeft="@dimen/_5sdp"
                             android:paddingRight="@dimen/_5sdp"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_10sdp"
                             android:textAllCaps="false"
                             android:textStyle="normal"
                             android:textColor="@color/white"
@@ -200,14 +199,14 @@
                     app:layout_constraintBottom_toBottomOf="@id/image_teacher"
                     app:layout_constraintVertical_bias="0.2"
                     android:text="Dostonbek Eshmurodv"
-                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintHorizontal_bias="0.2"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_11sdp"
+                    android:textSize="@dimen/_13sdp"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/full_name"
-                    android:textSize="@dimen/_9sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:textStyle="normal"
                     android:textColor="@color/white"
                     android:text="@string/app_name"

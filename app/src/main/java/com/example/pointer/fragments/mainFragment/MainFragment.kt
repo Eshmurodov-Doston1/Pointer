@@ -1,23 +1,17 @@
 package com.example.pointer.fragments.mainFragment
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
-import com.example.pointer.databinding.ItemTabMainBinding
 import com.example.pointer.fragments.mainAdapterFragments.*
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -54,6 +48,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             loadList()
             mainViewPagerAdapter = MainViewPagerAdapter(requireActivity())
             viewPager.adapter = mainViewPagerAdapter
+
             viewPager.clipToPadding=false
             viewPager.clipChildren=false
 
@@ -66,14 +61,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             mainBtn.setOnClickListener {
                 when(viewPager.currentItem){
                     0->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.card_my)
-                        val extras = FragmentNavigatorExtras(myCard to "My_cardView")
-                        findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
-                    }
-                    1->{
                         val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.button)
                         val extras = FragmentNavigatorExtras(myCard to "view")
                         findNavController().navigate(R.id.myCourceFragment, null, null, extras)
+                    }
+                    1->{
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.card_my)
+                        val extras = FragmentNavigatorExtras(myCard to "My_cardView")
+                        findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
                     }
                     2->{
                         val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.view_button)
@@ -96,69 +91,73 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                         findNavController().navigate(R.id.calendarFragment, null, null, extras)
                     }
                     6->{
-
+                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons_chat)
+                        val extras = FragmentNavigatorExtras(myCard to "chat")
+                        findNavController().navigate(R.id.chatFragment,null,null,extras)
                     }
                     7->{
-
-                    }
-                    8->{
                         val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons1)
                         val extras = FragmentNavigatorExtras(myCard to "payme")
                         findNavController().navigate(R.id.paymeFragment, null, null, extras)
                     }
+                    8->{
+                        val myCard = requireActivity().findViewById<LinearLayout>(R.id.my_cons_settings)
+                        val extras = FragmentNavigatorExtras(myCard to "settings")
+                        findNavController().navigate(R.id.settingsFragment, null, null, extras)
+                    }
 
                 }
             }
 
 
-            viewPager.offscreenPageLimit = 2
+            viewPager.offscreenPageLimit = 1
             viewPager.setPageTransformer { page, position ->
                 var a= 1-Math.abs(position)
                 page.scaleY = 0.85F+a*0.1f
             }
-            TabLayoutMediator(tabLayout,viewPager){ tab,position->
-                tab.text = listLoad[position]
-            }.attach()
-            setTabs()
-            tabLayout.clipToPadding =false
-            tabLayout.clipChildren = false
-            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    val customView = tab!!.customView
-                    val let = customView?.let { ItemTabMainBinding.bind(it) }
-                    let?.name?.setTextColor(Color.parseColor("#01D8D0"))
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    val customView = tab!!.customView
-                    val let = customView?.let { ItemTabMainBinding.bind(it) }
-                    let?.name?.setTextColor(Color.parseColor("#BDBDBD"))
-                }
-
-                override fun onTabReselected(tab: TabLayout.Tab?) {
-
-                }
-
-            })
+//            TabLayoutMediator(tabLayout,viewPager){ tab,position->
+//                tab.text = listLoad[position]
+//            }.attach()
+//            setTabs()
+//            tabLayout.clipToPadding =false
+//            tabLayout.clipChildren = false
+//            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+//                override fun onTabSelected(tab: TabLayout.Tab?) {
+//                    val customView = tab!!.customView
+//                    val let = customView?.let { ItemTabMainBinding.bind(it) }
+//                    let?.name?.setTextColor(Color.parseColor("#01D8D0"))
+//                }
+//
+//                override fun onTabUnselected(tab: TabLayout.Tab?) {
+//                    val customView = tab!!.customView
+//                    val let = customView?.let { ItemTabMainBinding.bind(it) }
+//                    let?.name?.setTextColor(Color.parseColor("#BDBDBD"))
+//                }
+//
+//                override fun onTabReselected(tab: TabLayout.Tab?) {
+//
+//                }
+//
+//            })
         }
     }
 
 
 
-    private fun setTabs() {
-        val tabCount = binding.tabLayout.tabCount
-        for (i in 0 until tabCount){
-            var itemTabBinding = ItemTabMainBinding.inflate(LayoutInflater.from(requireContext()),null,false)
-            val tabAt = binding.tabLayout.getTabAt(i)
-            tabAt?.customView = itemTabBinding.root
-            itemTabBinding.name.text = listLoad[i]
-            if (i==0){
-                itemTabBinding.name.setTextColor(Color.parseColor("#01D8D0"))
-            }else{
-                itemTabBinding.name.setTextColor(Color.parseColor("#BDBDBD"))
-            }
-        }
-    }
+//    private fun setTabs() {
+//        val tabCount = binding.tabLayout.tabCount
+//        for (i in 0 until tabCount){
+//            var itemTabBinding = ItemTabMainBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+//            val tabAt = binding.tabLayout.getTabAt(i)
+//            tabAt?.customView = itemTabBinding.root
+//            itemTabBinding.name.text = listLoad[i]
+//            if (i==0){
+//                itemTabBinding.name.setTextColor(Color.parseColor("#01D8D0"))
+//            }else{
+//                itemTabBinding.name.setTextColor(Color.parseColor("#BDBDBD"))
+//            }
+//        }
+//    }
 
     private fun loadList() {
         listLoad = ArrayList()

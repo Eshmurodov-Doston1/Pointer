@@ -48,7 +48,7 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
         binding.apply {
             initData()
             newsAdapter = NewsAdapterPager(requireContext(), newsList)
-            viewPager.adapter = newsAdapter
+          //  viewPager.adapter = newsAdapter
             viewButton.setOnClickListener {
                 val extras = FragmentNavigatorExtras(viewButton to "view_my")
                 findNavController().navigate(R.id.newsFragment, null, null, extras)

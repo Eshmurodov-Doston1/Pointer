@@ -12,27 +12,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-                android:id="@+id/view_pager"
-                app:icvp_center_page_scale_offset="10dp"
-                app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
-                app:icvp_max_page_scale="0.8"
-                app:icvp_medium_scaled="false"
-                app:icvp_min_page_scale="0.55"
-                app:icvp_min_page_scale_offset="5dp"
-                app:icvp_scroll_duration="250"
-                android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_height="match_parent"
-                tools:ignore="MissingClass" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/view_button"
             android:transitionName="view_my"
+            android:background="@drawable/back3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/name_page"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.86"
+                android:text="YANGILIKLAR"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:maxLines="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+<!--            <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager-->
+<!--                android:id="@+id/view_pager"-->
+<!--                app:icvp_center_page_scale_offset="10dp"-->
+<!--                app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"-->
+<!--                app:icvp_max_page_scale="0.8"-->
+<!--                app:icvp_medium_scaled="false"-->
+<!--                app:icvp_min_page_scale="0.55"-->
+<!--                app:icvp_min_page_scale_offset="5dp"-->
+<!--                app:icvp_scroll_duration="250"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                tools:ignore="MissingClass" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

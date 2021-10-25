@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:id="@+id/my_cons"
     android:fitsSystemWindows="true"
-    android:transitionName="my_image"
     android:background="#F7F7FC"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.student.StudentInformationFragment">

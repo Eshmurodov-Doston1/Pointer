@@ -3,16 +3,10 @@ package com.example.pointer.adapters.mainAdapter.studentAdapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pointer.R
 import com.example.pointer.databinding.ItemCourseStudentAdapterBinding
-import com.example.pointer.databinding.ItemCourseStudentBinding
 import com.example.pointer.models.student.StudentCourse
 import com.squareup.picasso.Picasso
 

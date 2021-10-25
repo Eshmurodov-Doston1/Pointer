@@ -56,7 +56,6 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
-
             pagerAdapterVideoCourse = PagerAdapterVideoCourse(object:PagerAdapterVideoCourse.OnItemClickListener{
                 override fun onItemClick(
                     videoCourse: VideoCourse,
@@ -72,7 +71,7 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
                 }
             })
             Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
-            name.text = "Dostonbek Eshmurodov"
+            name.text = "Pointer kurslari"
             pagerAdapterVideoCourse.submitList(listCourse)
             viewPager2.adapter = pagerAdapterVideoCourse
             TabLayoutMediator(tabLayout,viewPager2){ tab,position->

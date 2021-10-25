@@ -11,13 +11,15 @@ import com.example.pointer.fragments.trainings.NowTrainingFragment
 class TrainingViewPagerAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 ) {
+
     override fun getCount(): Int  = 3
 
     override fun getItem(position: Int): Fragment {
         return when(position) {
-            0 -> LastTrainingFragment()
+
+            0 -> NextTrainigFragment()
             1 -> NowTrainingFragment()
-            2 -> NextTrainigFragment()
+            2 -> LastTrainingFragment()
             else -> {
                 NextTrainigFragment()
             }
@@ -26,14 +28,12 @@ class TrainingViewPagerAdapter(fm: FragmentManager): FragmentStatePagerAdapter(f
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position) {
-            0 -> "O'tgan"
+            0 -> "Kutilyotgan"
             1 -> "Hozirgi"
-            2 -> "Kutilyotgan"
-
+            2 -> "O'tgan"
             else -> {
                 "O'tgan"
             }
         }
     }
-
 }

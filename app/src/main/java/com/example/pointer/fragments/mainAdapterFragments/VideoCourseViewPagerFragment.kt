@@ -62,77 +62,77 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
             exitTransition = Hold()
             exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
-
+//
             cardMy.setOnClickListener {
                 val extras = FragmentNavigatorExtras(cardMy to "My_cardView")
                 findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
             }
-
-//            val mainBtn = requireActivity().findViewById<CircleButton>(R.id.main_btn)
-//            mainBtn.setOnClickListener {
-//                Toast.makeText(requireContext(), "Click", Toast.LENGTH_SHORT).show()
+//
+////            val mainBtn = requireActivity().findViewById<CircleButton>(R.id.main_btn)
+////            mainBtn.setOnClickListener {
+////                Toast.makeText(requireContext(), "Click", Toast.LENGTH_SHORT).show()
+////            }
+//
+//
+//            pagerAdapterVideoCourse = ViewPagerAdapterVideoCourse()
+//            Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
+//            name.text = "Dostonbek Eshmurodov"
+//            pagerAdapterVideoCourse.submitList(listCourse)
+//            viewPager2.adapter = pagerAdapterVideoCourse
+//            TabLayoutMediator(tabLayout,viewPager2){ tab,position->
+//                tab.text = listCourse[position].categoryName
+//            }.attach()
+//            setTabs()
+//            viewPager2.clipToPadding=false
+//            viewPager2.clipChildren=false
+//            viewPager2.offscreenPageLimit = 2
+//            viewPager2.setPageTransformer { page, position ->
+//                var a= 1-Math.abs(position)
+//                page.scaleY = 0.85F+a*0.1f
 //            }
-
-
-            pagerAdapterVideoCourse = ViewPagerAdapterVideoCourse()
-            Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56af_9rmSjIvrqSXgrdzJBZJDNfYcWT7jmX5hD11mEQY81ukwx5vxoIEPY_bVp7PPTmU&usqp=CAU").into(imageStudent)
-            name.text = "Dostonbek Eshmurodov"
-            pagerAdapterVideoCourse.submitList(listCourse)
-            viewPager2.adapter = pagerAdapterVideoCourse
-            TabLayoutMediator(tabLayout,viewPager2){ tab,position->
-                tab.text = listCourse[position].categoryName
-            }.attach()
-            setTabs()
-            viewPager2.clipToPadding=false
-            viewPager2.clipChildren=false
-            viewPager2.offscreenPageLimit = 2
-            viewPager2.setPageTransformer { page, position ->
-                var a= 1-Math.abs(position)
-                page.scaleY = 0.85F+a*0.1f
-            }
-            tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
-                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#01D8D0"))
-                    itemTabBinding?.textTab?.setTextColor(Color.WHITE)
-                    //itemTabBinding?.btn?.setColor(Color.WHITE)
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
-                    itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
-                    itemTabBinding?.textTab?.setTextColor(Color.parseColor("#9D9FA0"))
-                    //  itemTabBinding?.btn?.setColor(Color.WHITE)
-                }
-
-                override fun onTabReselected(tab: TabLayout.Tab?) {
-
-                }
-
-            })
-            tabLayout.clipChildren = false
-            tabLayout.clipToPadding = false
+//            tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+//                override fun onTabSelected(tab: TabLayout.Tab?) {
+//                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
+//                    itemTabBinding?.tabCons?.setBackgroundColor(Color.parseColor("#01D8D0"))
+//                    itemTabBinding?.textTab?.setTextColor(Color.WHITE)
+//                    //itemTabBinding?.btn?.setColor(Color.WHITE)
+//                }
+//
+//                override fun onTabUnselected(tab: TabLayout.Tab?) {
+//                    val itemTabBinding = tab?.customView?.let { ItemTabBinding.bind(it) }
+//                    itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
+//                    itemTabBinding?.textTab?.setTextColor(Color.parseColor("#9D9FA0"))
+//                    //  itemTabBinding?.btn?.setColor(Color.WHITE)
+//                }
+//
+//                override fun onTabReselected(tab: TabLayout.Tab?) {
+//
+//                }
+//
+//            })
+//            tabLayout.clipChildren = false
+//            tabLayout.clipToPadding = false
         }
     }
-    private fun setTabs() {
-        val tabCount = binding.tabLayout.tabCount
-        for (i in 0 until tabCount){
-            var itemTabBinding = ItemTabBinding.inflate(LayoutInflater.from(requireContext()),null,false)
-            val tabAt = binding.tabLayout.getTabAt(i)
-            tabAt?.customView = itemTabBinding.root
-            itemTabBinding.textTab.text = listCourse[i].categoryName
-
-            if (i==0){
-                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#01D8D0"))
-                itemTabBinding.textTab.setTextColor(Color.WHITE)
-                // itemTabBinding.btn.setColor(Color.WHITE)
-            }else{
-                itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
-                itemTabBinding.textTab.setTextColor(Color.parseColor("#9D9FA0"))
-                //  itemTabBinding.btn.setColor(Color.WHITE)
-            }
-        }
-    }
+//    private fun setTabs() {
+//        val tabCount = binding.tabLayout.tabCount
+//        for (i in 0 until tabCount){
+//            var itemTabBinding = ItemTabBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+//            val tabAt = binding.tabLayout.getTabAt(i)
+//            tabAt?.customView = itemTabBinding.root
+//            itemTabBinding.textTab.text = listCourse[i].categoryName
+//
+//            if (i==0){
+//                itemTabBinding.tabCons.setBackgroundColor(Color.parseColor("#01D8D0"))
+//                itemTabBinding.textTab.setTextColor(Color.WHITE)
+//                // itemTabBinding.btn.setColor(Color.WHITE)
+//            }else{
+//                itemTabBinding?.tabCons?.setBackgroundColor(Color.WHITE)
+//                itemTabBinding.textTab.setTextColor(Color.parseColor("#9D9FA0"))
+//                //  itemTabBinding.btn.setColor(Color.WHITE)
+//            }
+//        }
+//    }
 
 
     private fun loadCourse() {
