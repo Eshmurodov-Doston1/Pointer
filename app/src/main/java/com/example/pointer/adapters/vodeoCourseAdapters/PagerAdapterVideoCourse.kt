@@ -16,10 +16,8 @@ class PagerAdapterVideoCourse(var onItemClickListener: OnItemClickListener):List
         fun onBind(videoCourse: VideoCourse,position: Int){
             itemVideosCourseBinding.apply {
                 nameCourse.text = videoCourse.name
-               // videoTime.text = videoCourse.vidoTime
-                countCourse.text = "${videoCourse.videoCourseNumber} ta dars"
+                countCourse.text = "Davomiyligi ${videoCourse.videoCourseNumber} oy"
                 nameCourseSi.text = videoCourse.shortNameCourse
-                freeText.text = "Tekin"
                 Picasso.get().load(videoCourse.image).into(image)
                 Picasso.get().load(videoCourse.teacherImage).into(imageTeacher)
                 teacherName.text = videoCourse.teacherName

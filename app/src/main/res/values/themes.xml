@@ -28,5 +28,7 @@
         <item name="textAllCaps">false</item>
         <item name="android:textSize">@dimen/_12sdp</item>
     </style>
-
+    <style name="theme_style" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

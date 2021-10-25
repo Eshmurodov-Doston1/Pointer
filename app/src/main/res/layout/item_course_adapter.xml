@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_70sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blure.complexview.ComplexView
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:radius="10dp"
+        app:shadow="true"
+        app:shadowPosition="bottom"
+        app:shadowAlpha="80"
+        app:shadowColor="#C8CCCB"
+        app:shadowSpread="1">
+        <com.blure.complexview.ComplexView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:radius="10dp"
+            app:shadow="true"
+            app:shadowAlpha="80"
+            app:shadowColor="#C8CCCB"
+            app:shadowPosition="bottom"
+            app:shadowSpread="1">
+            <androidx.cardview.widget.CardView
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons"
+                    android:transitionName="consItem"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image_my"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/news_image1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHeight_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0.97"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.17" />
+
+                    <TextView
+                        android:id="@+id/name_language"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="@string/app_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/image_my"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/image_my"
+                        app:layout_constraintTop_toTopOf="@id/image_my"
+                        app:layout_constraintVertical_bias="0.2"
+                        app:layout_constraintWidth_percent="0.6" />
+
+                    <TextView
+                        android:id="@+id/continuity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:maxLines="2"
+                        android:text="Davomiyligi 3 oy"
+                        android:textColor="#828282"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@id/image_my"
+                        app:layout_constraintLeft_toLeftOf="@id/name_language"
+                        app:layout_constraintRight_toLeftOf="@id/image_my"
+                        app:layout_constraintTop_toBottomOf="@id/name_language" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </com.blure.complexview.ComplexView>
+    </com.blure.complexview.ComplexView>
+</androidx.constraintlayout.widget.ConstraintLayout>
