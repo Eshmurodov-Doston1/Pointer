@@ -1,17 +1,16 @@
 package com.example.pointer.fragments.mainFragment
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.FragmentContainer
+import com.example.pointer.MainActivity
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
-import com.example.pointer.fragments.mainAdapterFragments.*
+import com.example.pointer.models.interfaceMy.ButtonClick
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -44,13 +43,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     lateinit var listFragment:ArrayList<Fragment>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         binding.apply {
             loadList()
             mainViewPagerAdapter = MainViewPagerAdapter(requireActivity())
-            viewPager.adapter = mainViewPagerAdapter
+            mainViewPager.adapter = mainViewPagerAdapter
 
-            viewPager.clipToPadding=false
-            viewPager.clipChildren=false
+            mainViewPager.clipToPadding=false
+            mainViewPager.clipChildren=false
 
 
             exitTransition = Hold()
@@ -58,60 +59,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
 
-            mainBtn.setOnClickListener {
-                when(viewPager.currentItem){
-                    0->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.button)
-                        val extras = FragmentNavigatorExtras(myCard to "view")
-                        findNavController().navigate(R.id.myCourceFragment, null, null, extras)
-                    }
-                    1->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.card_my)
-                        val extras = FragmentNavigatorExtras(myCard to "My_cardView")
-                        findNavController().navigate(R.id.videoCourcesFragment, null, null, extras)
-                    }
-                    2->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.view_button)
-                        val extras = FragmentNavigatorExtras(myCard to "view_my")
-                        findNavController().navigate(R.id.newsFragment, null, null, extras)
-                    }
-                    3->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.cons_training)
-                        val extras = FragmentNavigatorExtras(myCard to "cons")
-                        findNavController().navigate(R.id.trainingMainFragment, null, null, extras)
-                    }
-                    4->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.view_item)
-                        val extras = FragmentNavigatorExtras(myCard to "my_view")
-                        findNavController().navigate(R.id.myGroupFragment, null, null, extras)
-                    }
-                    5->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.cons1)
-                        val extras = FragmentNavigatorExtras(myCard to "my_calendar")
-                        findNavController().navigate(R.id.calendarFragment, null, null, extras)
-                    }
-                    6->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons_chat)
-                        val extras = FragmentNavigatorExtras(myCard to "chat")
-                        findNavController().navigate(R.id.chatFragment,null,null,extras)
-                    }
-                    7->{
-                        val myCard = requireActivity().findViewById<ConstraintLayout>(R.id.my_cons1)
-                        val extras = FragmentNavigatorExtras(myCard to "payme")
-                        findNavController().navigate(R.id.paymeFragment, null, null, extras)
-                    }
-                    8->{
-                        val myCard = requireActivity().findViewById<LinearLayout>(R.id.my_cons_settings)
-                        val extras = FragmentNavigatorExtras(myCard to "settings")
-                        findNavController().navigate(R.id.settingsFragment, null, null, extras)
-                    }
+            //activity.findViewById<>()
 
-                }
-            }
+//            mainBtn.setOnClickListener {
+
+//            }
 
 
-            viewPager.offscreenPageLimit = 1
-            viewPager.setPageTransformer { page, position ->
+            mainViewPager.offscreenPageLimit = 1
+            mainViewPager.setPageTransformer { page, position ->
                 var a= 1-Math.abs(position)
                 page.scaleY = 0.85F+a*0.1f
             }
@@ -191,4 +147,5 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
     }
+
 }

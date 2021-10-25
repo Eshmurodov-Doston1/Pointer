@@ -26,12 +26,12 @@
 
             <ImageView
                 android:id="@+id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cons_item"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/my_image"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
+                android:src="@drawable/my_image" />
 
 <!--            <com.github.mmin18.widget.RealtimeBlurView-->
 <!--                android:id="@+id/blur"-->
@@ -45,6 +45,7 @@
 <!--                app:realtimeOverlayColor="#00FAF7F7" />-->
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_item"
                 android:background="@drawable/back_student"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

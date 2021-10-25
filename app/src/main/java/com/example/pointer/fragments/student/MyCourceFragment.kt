@@ -17,6 +17,7 @@ import com.example.pointer.databinding.ItemCourseStudentBinding
 import com.example.pointer.models.student.StudentCourse
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
@@ -54,13 +55,8 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
         sharedElementEnterTransition = MaterialContainerTransform()
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
-
         binding.apply {
             loadCource()
-
-            mainBtn.setOnClickListener {
-                findNavController().popBackStack()
-            }
             courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),object:CourseViewPagerAdapter.OnItemClickListener{
                 override fun onItemClick(
                     studentCourse: StudentCourse,
