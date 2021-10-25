@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.adapters.StudentHistoryAdapter
@@ -27,6 +28,11 @@ class StudentFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.rv.adapter = StudentHistoryAdapter(requireContext(), initList())
+        binding.rv.layoutManager = object : LinearLayoutManager(context) {
+            override fun canScrollVertically(): Boolean {
+                return false
+            }
+        }
         return binding.root
     }
 
