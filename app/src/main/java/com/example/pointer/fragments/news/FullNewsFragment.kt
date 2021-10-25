@@ -10,7 +10,6 @@ import com.example.pointer.R
 import com.example.pointer.adapters.news.ImageAdapter
 import com.example.pointer.databinding.FragmentFullNewsBinding
 import com.example.pointer.models.news.News2
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
@@ -51,11 +50,7 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
         binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                Snackbar.make(
-                    binding.relativeLayout,
-                    "You are selected " + (position + 1),
-                    Snackbar.LENGTH_SHORT
-                ).show()
+
             }
         })
     }

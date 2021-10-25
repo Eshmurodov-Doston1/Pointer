@@ -38,7 +38,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 //            alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 //            alertDialog.window?.setGravity(Gravity.CENTER)
 
-//bn.
             alertDialog.show()
         }
 
