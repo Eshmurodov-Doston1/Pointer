@@ -10,7 +10,9 @@ import androidx.core.graphics.green
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
+import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.databinding.FragmentCalendarBinding
+import com.example.pointer.models.mygroup.MyGroup
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 import java.text.DateFormat
@@ -56,6 +58,10 @@ class CalendarFragment : Fragment() {
             bundle.putStringArrayList("list", days)
             bundle.putInt("week", dayOfWeek)
             findNavController().navigate(R.id.lessonTableFragment,bundle)
+        }
+
+        binding.mainBtn.setOnClickListener {
+            findNavController().navigate(R.id.mainFragment)
         }
         return binding.root
     }

@@ -25,16 +25,11 @@ class NowTrainingRecyclerAdapter(
                     )
                 }
                 itemView.apply {
-                    training.speakerImage?.let {
-                        itemView.findViewById<ImageView>(R.id.imageSpeaker).setImageResource(
-                            it
-                        )
-                    }
+
                     itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.nameTraining).text = training.trainingName
                     itemView.findViewById<TextView>(R.id.time).text = training.time
                     itemView.findViewById<TextView>(R.id.address).text = training.address
-                    itemView.findViewById<TextView>(R.id.nameSpeaker).text = training.speakerName
                     itemView.findViewById<TextView>(R.id.type).text = training.type
                     itemView.findViewById<ConstraintLayout>(R.id.enter).setOnClickListener {
                         onButtonClick.onTraningClick(training,position)
@@ -51,9 +46,11 @@ class NowTrainingRecyclerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_training_now, parent, false))
     }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position], position)
     }
+
     override fun getItemCount(): Int = list.size
 
     interface OnButtonClick{

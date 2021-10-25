@@ -110,6 +110,21 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/image" />
 
+                <TextView
+
+                    android:id="@+id/what"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="2/38/40"
+                    android:textColor="#222B45"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name" />
+
                 <androidx.recyclerview.widget.RecyclerView
 
                     android:id="@+id/rv"
@@ -118,7 +133,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/name"
+                    app:layout_constraintTop_toBottomOf="@id/what"
                     tools:listitem="@layout/item_student_history" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

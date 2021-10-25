@@ -1,69 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.trainings.TrainingVideoFragment"
-    tools:ignore="MissingClass">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:id="@+id/cl"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#F4F5F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <ImageView
-
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/vector"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-
-        app:layout_constraintTop_toBottomOf="@id/cl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintWidth_percent="0.95"
-            app:layout_constraintHeight_percent="0.35"
-            app:layout_constraintVertical_bias="0"
-            app:videoId="Hbbb93tNY4Y"
-            app:useWebUi="true"
-            android:focusedByDefault="false"
-            app:showYouTubeButton="true"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            app:enableLiveVideoUi="false"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content"
+            android:background="@color/teal_200"
+            android:id="@+id/collaps"
+            android:foregroundGravity="bottom"
+            app:title="@string/training_title"
+            app:titleCollapseMode="scale"
+            app:contentScrim="@color/secondary_color"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:background="#5A5A5A"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHeight_percent="1"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="0dp">
+
+                </androidx.viewpager.widget.ViewPager>
+
+                <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    app:delimiterSize="8dp"
+                    app:itemScale="1.5"
+                    app:itemTint="@color/secondary_color"
+                    app:itemSelectedTint="@color/white"
+                    app:itemSize="8dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewPager">
+
+                </com.github.vivchar.viewpagerindicator.ViewPagerIndicator>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" >
+
+
+                        <ImageView
+
+                            android:id="@+id/back"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:padding="@dimen/_10sdp"
+                            android:background="@drawable/thumb"
+                            android:src="@drawable/vector"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+
+<!--                <TextView-->
+
+<!--                    android:id="@+id/title"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:tint="@color/white" />-->
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--Now add the NestedScollView-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <!--In textview we will be adding the text that i have
+            added earlier in strings.xml file.This is simply the
+            the content to be scrolled -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/imageSpeaker"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginStart="@dimen/_18sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="@dimen/_35sdp"
+                app:layout_constraintVertical_bias="0.03"
+                android:src="@drawable/image20"
+                android:layout_height="@dimen/_35sdp"/>
+
+            <TextView
+
+                android:id="@+id/speakerName"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:fontFamily="@font/montserrat"
+                android:text="Bektayev Asadbek"
+                android:textColor="#373737"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+
+                android:id="@+id/speakerJob"
+                android:textSize="@dimen/_9sdp"
+                app:layout_constraintTop_toBottomOf="@id/speakerName"
+                app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="0.56dp"
+                android:fontFamily="@font/montserrat"
+                android:text="UX/UI dizayner"
+                android:textColor="#9D9FA0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+            <TextView
+
+                android:id="@+id/desc"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@id/imageSpeaker"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Avero amerika startapi 3D-printer orqali elektrovelosipedlarni chiqarishini yo‘lga qo‘ymoqchi. Ushbu tovarni joriy yil oxirlarida sotuvga chiqarilishni rejalashtirmoqda.
+                                Elektrovelosipedlarning ikkita rusumi ishlab chiqarilishi mo‘ljallanmoqda. Superstrata Terra nomli rusumli.YouTube Android Player API lets you play any YouTube video or playlist inside your app that too without leaving your app. A sample video is given below to get an idea about what we are going to do in this article. Note that we are going to implement this project using both Java and Kotlin language.
+        In order to use this API, you will need to have Google Play installed on your emulator and the Youtube App installed because the YouTube API interacts with a service that is distributed with the YouTube app. Either use a physical device to test or make sure you have followed this emulator setup guide to install Google Play services and then added the Youtube App. Otherwise, you are likely to see An error has occurred while initializing the YouTube player.
+
+        To start, you will need to create an API key through https://console.developers.google.com/. Make sure to enable the YouTube Data API v3. Go to the Credentials section and generate an API key."
+                android:textColor="#828282"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    tools:context=".fragments.trainings.TrainingVideoFragment">-->
+<!-- -->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+
+<!--        android:id="@+id/cl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:background="#F4F5F9"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0">-->
 
 <!--        <ImageView-->
-<!--            android:id="@+id/image"-->
-<!--            android:background="@drawable/image20"-->
+
+<!--            android:id="@+id/back"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/vector"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.05"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+
+
+<!--        app:layout_constraintTop_toBottomOf="@id/cl"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp">-->
+
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/viewPager"-->
+<!--            android:background="#5A5A5A"-->
 <!--            app:layout_constraintTop_toTopOf="parent"-->
 <!--            app:layout_constraintBottom_toBottomOf="parent"-->
 <!--            app:layout_constraintLeft_toLeftOf="parent"-->
@@ -71,145 +246,164 @@
 <!--            app:layout_constraintWidth_percent="0.95"-->
 <!--            app:layout_constraintHeight_percent="0.35"-->
 <!--            app:layout_constraintVertical_bias="0"-->
-<!--            android:foreground="@drawable/image_foreground"-->
 <!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp" />-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_height="0dp">-->
 
-        <LinearLayout
+<!--        </androidx.viewpager.widget.ViewPager>-->
 
+<!--        <com.github.vivchar.viewpagerindicator.ViewPagerIndicator-->
+<!--            android:id="@+id/indicator"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center_horizontal|bottom"-->
+<!--            app:delimiterSize="8dp"-->
+<!--            app:itemScale="1.5"-->
+<!--            app:itemTint="@color/secondary_color"-->
+<!--            app:itemSelectedTint="#061918"-->
+<!--            app:itemSize="10dp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/viewPager">-->
 
-            android:id="@+id/play"
-            app:layout_constraintTop_toTopOf="@id/youtube"
-            app:layout_constraintBottom_toBottomOf="@id/youtube"
-            app:layout_constraintLeft_toLeftOf="@id/youtube"
-            app:layout_constraintRight_toRightOf="@id/youtube"
-            android:gravity="center"
-            android:visibility="gone"
-            android:focusable="true"
-            android:clickable="true"
-            android:background="@drawable/thumb1"
-            android:layout_width="60dp"
-            android:layout_height="60dp">
-
-            <ImageView
-
-                android:src="@drawable/ic_baseline_play_arrow_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.65"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl"
-            app:layout_constraintVertical_bias="0.35"
-            tools:ignore="NotSibling">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-
-                        android:id="@+id/title"
-                        android:textSize="@dimen/_13sdp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintVertical_bias="0"
-                        app:layout_constraintHorizontal_bias="0"
-                        android:layout_marginStart="@dimen/_18sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/montserrat"
-                        android:text="UX/UI bo’yicha master klass"
-                        android:textColor="#373737"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-
-                        android:id="@+id/imageSpeaker"
-                        app:layout_constraintTop_toBottomOf="@id/title"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintHorizontal_bias="0"
-                        app:layout_constraintVertical_bias="0"
-                        android:layout_marginStart="@dimen/_18sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_width="@dimen/_35sdp"
-                        android:src="@drawable/image20"
-                        android:layout_height="@dimen/_35sdp"/>
-
-                    <TextView
-
-                        android:id="@+id/speakerName"
-                        android:textSize="@dimen/_13sdp"
-                        app:layout_constraintTop_toBottomOf="@id/title"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
-                        app:layout_constraintVertical_bias="0"
-                        app:layout_constraintHorizontal_bias="0"
-                        android:layout_marginStart="@dimen/_17sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/montserrat"
-                        android:text="Bektayev Asadbek"
-                        android:textColor="#373737"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-
-                        android:id="@+id/speakerJob"
-                        android:textSize="@dimen/_9sdp"
-                        app:layout_constraintTop_toBottomOf="@id/speakerName"
-                        app:layout_constraintLeft_toRightOf="@id/imageSpeaker"
-                        app:layout_constraintVertical_bias="0"
-                        app:layout_constraintHorizontal_bias="0"
-                        android:layout_marginStart="@dimen/_17sdp"
-                        android:layout_marginTop="0.56dp"
-                        android:fontFamily="@font/montserrat"
-                        android:text="UX/UI dizayner"
-                        android:textColor="#9D9FA0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+<!--        </com.github.vivchar.viewpagerindicator.ViewPagerIndicator>-->
 
 
-                    <TextView
-
-                        android:id="@+id/desc"
-                        android:textSize="@dimen/_12sdp"
-                        app:layout_constraintTop_toBottomOf="@id/imageSpeaker"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintVertical_bias="0"
-                        app:layout_constraintRight_toRightOf="parent"
-                        android:fontFamily="@font/montserrat"
-                        android:gravity="start"
-                        android:layout_marginTop="@dimen/_20sdp"
-                        android:text="Avero amerika startapi 3D-printer orqali elektrovelosipedlarni chiqarishini yo‘lga qo‘ymoqchi. Ushbu tovarni joriy yil oxirlarida sotuvga chiqarilishni rejalashtirmoqda.
-                        Elektrovelosipedlarning ikkita rusumi ishlab chiqarilishi mo‘ljallanmoqda. Superstrata Terra nomli rusumli.YouTube Android Player API lets you play any YouTube video or playlist inside your app that too without leaving your app. A sample video is given below to get an idea about what we are going to do in this article. Note that we are going to implement this project using both Java and Kotlin language.
-In order to use this API, you will need to have Google Play installed on your emulator and the Youtube App installed because the YouTube API interacts with a service that is distributed with the YouTube app. Either use a physical device to test or make sure you have followed this emulator setup guide to install Google Play services and then added the Youtube App. Otherwise, you are likely to see An error has occurred while initializing the YouTube player.
-
-To start, you will need to create an API key through https://console.developers.google.com/. Make sure to enable the YouTube Data API v3. Go to the Credentials section and generate an API key."
-                        android:textColor="#828282"
-                        android:layout_width="@dimen/_290sdp"
-                        android:layout_height="wrap_content"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
+<!--        <LinearLayout-->
 
 
-        </LinearLayout>
+<!--            android:id="@+id/play"-->
+<!--            app:layout_constraintTop_toTopOf="@id/viewPager"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/viewPager"-->
+<!--            app:layout_constraintLeft_toLeftOf="@id/viewPager"-->
+<!--            app:layout_constraintRight_toRightOf="@id/viewPager"-->
+<!--            android:gravity="center"-->
+<!--            android:visibility="gone"-->
+<!--            android:focusable="true"-->
+<!--            android:clickable="true"-->
+<!--            android:background="@drawable/thumb1"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp">-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            <ImageView-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--                android:src="@drawable/ic_baseline_play_arrow_24"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintHeight_percent="0.65"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/cl"-->
+<!--            app:layout_constraintVertical_bias="0.35"-->
+<!--            tools:ignore="NotSibling">-->
+
+<!--            <ScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <TextView-->
+
+<!--                        android:id="@+id/title"-->
+<!--                        android:textSize="@dimen/_13sdp"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintVertical_bias="0"-->
+<!--                        app:layout_constraintHorizontal_bias="0"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:layout_marginTop="@dimen/_8sdp"-->
+<!--                        android:fontFamily="@font/montserrat"-->
+<!--                        android:text="UX/UI bo’yicha master klass"-->
+<!--                        android:textColor="#373737"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+
+<!--                        android:id="@+id/imageSpeaker"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/title"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toRightOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0"-->
+<!--                        app:layout_constraintVertical_bias="0"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:layout_marginTop="@dimen/_8sdp"-->
+<!--                        android:layout_width="@dimen/_35sdp"-->
+<!--                        android:src="@drawable/image20"-->
+<!--                        android:layout_height="@dimen/_35sdp"/>-->
+
+<!--                    <TextView-->
+
+<!--                        android:id="@+id/speakerName"-->
+<!--                        android:textSize="@dimen/_13sdp"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/title"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/imageSpeaker"-->
+<!--                        app:layout_constraintVertical_bias="0"-->
+<!--                        app:layout_constraintHorizontal_bias="0"-->
+<!--                        android:layout_marginStart="@dimen/_17sdp"-->
+<!--                        android:layout_marginTop="@dimen/_8sdp"-->
+<!--                        android:fontFamily="@font/montserrat"-->
+<!--                        android:text="Bektayev Asadbek"-->
+<!--                        android:textColor="#373737"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+<!--                    <TextView-->
+
+<!--                        android:id="@+id/speakerJob"-->
+<!--                        android:textSize="@dimen/_9sdp"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/speakerName"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/imageSpeaker"-->
+<!--                        app:layout_constraintVertical_bias="0"-->
+<!--                        app:layout_constraintHorizontal_bias="0"-->
+<!--                        android:layout_marginStart="@dimen/_17sdp"-->
+<!--                        android:layout_marginTop="0.56dp"-->
+<!--                        android:fontFamily="@font/montserrat"-->
+<!--                        android:text="UX/UI dizayner"-->
+<!--                        android:textColor="#9D9FA0"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+
+<!--                    <TextView-->
+
+<!--                        android:id="@+id/desc"-->
+<!--                        android:textSize="@dimen/_12sdp"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/imageSpeaker"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintVertical_bias="0"-->
+<!--                        app:layout_constraintRight_toRightOf="parent"-->
+<!--                        android:fontFamily="@font/montserrat"-->
+<!--                        android:gravity="start"-->
+<!--                        android:layout_marginTop="@dimen/_20sdp"-->
+<!--                        android:text="Avero amerika startapi 3D-printer orqali elektrovelosipedlarni chiqarishini yo‘lga qo‘ymoqchi. Ushbu tovarni joriy yil oxirlarida sotuvga chiqarilishni rejalashtirmoqda.-->
+<!--                        Elektrovelosipedlarning ikkita rusumi ishlab chiqarilishi mo‘ljallanmoqda. Superstrata Terra nomli rusumli.YouTube Android Player API lets you play any YouTube video or playlist inside your app that too without leaving your app. A sample video is given below to get an idea about what we are going to do in this article. Note that we are going to implement this project using both Java and Kotlin language.-->
+<!--In order to use this API, you will need to have Google Play installed on your emulator and the Youtube App installed because the YouTube API interacts with a service that is distributed with the YouTube app. Either use a physical device to test or make sure you have followed this emulator setup guide to install Google Play services and then added the Youtube App. Otherwise, you are likely to see An error has occurred while initializing the YouTube player.-->
+
+<!--To start, you will need to create an API key through https://console.developers.google.com/. Make sure to enable the YouTube Data API v3. Go to the Credentials section and generate an API key."-->
+<!--                        android:textColor="#828282"-->
+<!--                        android:layout_width="@dimen/_290sdp"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--            </ScrollView>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

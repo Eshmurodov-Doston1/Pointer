@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentContainer
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.example.pointer.R
 import com.example.pointer.adapters.trainingAdapter.TrainingViewPagerAdapter
 import com.example.pointer.databinding.FragmentTrainingMainBinding
 import com.example.training.animations.DepthPageTransformer
@@ -29,6 +31,10 @@ class TrainingMainFragment : Fragment() {
         binding.viewPager.adapter = adapter
         binding.viewPager.setPageTransformer(true, DepthPageTransformer())
         binding.tablayout.setupWithViewPager(binding.viewPager)
+
+        binding.mainBtn.setOnClickListener {
+            findNavController().navigate(R.id.mainFragment)
+        }
 
         binding.back.setOnClickListener {
             findNavController().popBackStack()
