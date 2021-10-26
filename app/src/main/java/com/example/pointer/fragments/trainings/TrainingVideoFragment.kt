@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.trainingAdapter.MediaAdapter
 import com.example.pointer.databinding.FragmentTrainingVideoBinding
@@ -23,7 +25,8 @@ class TrainingVideoFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentTrainingVideoBinding.inflate(inflater, container, false)
-
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
         binding.back.setOnClickListener {
             findNavController().popBackStack()
         }

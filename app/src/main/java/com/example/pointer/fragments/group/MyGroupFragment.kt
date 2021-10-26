@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.databinding.FragmentMyGroupBinding
@@ -53,4 +55,9 @@ class MyGroupFragment : Fragment() {
         return list
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+    }
 }

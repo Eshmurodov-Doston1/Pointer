@@ -2,12 +2,16 @@ package com.example.pointer.fragments.mainAdapterFragments
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.RotateAnimation
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.PaymeAdapter
 import com.example.pointer.adapters.mainAdapter.paymiAdapter.PaymiAdapter
@@ -52,7 +56,18 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
             paymeAdapter = PaymiAdapter()
 //            paymeAdapter.submitList(listPayme)
 //            rvMy.adapter = paymeAdapter
+            var handlerThread = Handler(Looper.getMainLooper())
+            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             myCons1.setOnClickListener {
+                handlerThread.postDelayed({
+                    mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+                    mainMenuBtn.setPadding(0,0,0,9)
+                },490)
+                var rotateAnimation = RotateAnimation(0F, 180F,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f)
+                rotateAnimation.duration = 450
+                mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(myCons1 to "payme")
                 findNavController().navigate(R.id.paymeFragment, null, null, extras)
             }

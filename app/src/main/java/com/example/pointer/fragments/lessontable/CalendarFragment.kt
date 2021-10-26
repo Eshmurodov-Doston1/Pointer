@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.graphics.green
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.databinding.FragmentCalendarBinding
@@ -57,6 +59,12 @@ class CalendarFragment : Fragment() {
             findNavController().navigate(R.id.lessonTableFragment,bundle)
         }
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
     }
 
 

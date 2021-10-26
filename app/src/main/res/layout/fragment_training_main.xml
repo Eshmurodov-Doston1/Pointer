@@ -63,10 +63,12 @@
         android:layout_height="60dp">
 
             <com.google.android.material.tabs.TabLayout
-
-                android:id="@+id/tablayout"
+                android:id="@+id/main_tablayout"
                 android:background="#F7F7FC"
                 app:tabSelectedTextColor="#01D8D0"
+                app:tabTextColor="#BDBDBD"
+                app:tabRippleColor="@null"
+                app:tabIndicatorHeight="@dimen/_2sdp"
                 app:tabIndicatorColor="#01D8D0"
                 app:tabMode="fixed"
                 app:tabTextAppearance="@style/tab_text"

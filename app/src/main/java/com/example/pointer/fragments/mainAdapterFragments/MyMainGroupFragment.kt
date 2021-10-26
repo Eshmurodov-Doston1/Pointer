@@ -1,11 +1,15 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
 import android.view.ViewGroup
+import android.view.animation.RotateAnimation
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.group.MyMainGroupAdapter
 import com.example.pointer.databinding.FragmentMyMainGroupBinding
@@ -45,8 +49,18 @@ class MyMainGroupFragment : Fragment(R.layout.fragment_my_main_group) {
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
-
+            var handlerThread = Handler(Looper.getMainLooper())
+            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             viewItem.setOnClickListener {
+                handlerThread.postDelayed({
+                    mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+                    mainMenuBtn.setPadding(0,0,0,9)
+                },490)
+                var rotateAnimation = RotateAnimation(0F, 180F,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f)
+                rotateAnimation.duration = 450
+                mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(viewItem to "my_view")
                 findNavController().navigate(R.id.myGroupFragment,null,null,extras)
             }
