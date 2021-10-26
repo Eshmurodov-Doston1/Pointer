@@ -2,9 +2,11 @@ package com.example.pointer.fragments.news
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.news.NewsAdapter
 import com.example.pointer.databinding.FragmentNewsBinding
@@ -21,15 +23,6 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var viewPager: HorizontalInfiniteCycleViewPager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    private fun prepareTransition() {
-
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentNewsBinding.bind(view)
 
@@ -38,6 +31,8 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
         sharedElementEnterTransition = MaterialContainerTransform()
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
+
 
         newsAdapter = NewsAdapter(requireContext(), newsList)
         binding.viewPager.adapter = newsAdapter
@@ -83,5 +78,11 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
                 )
             )
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
     }
 }

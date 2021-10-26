@@ -1,12 +1,17 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.RotateAnimation
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentSettingsMainBinding
 import com.google.android.material.transition.Hold
@@ -42,7 +47,18 @@ class SettingsMainFragment : Fragment(R.layout.fragment_settings_main) {
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+            var handlerThread = Handler(Looper.getMainLooper())
+            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             myConsSettings.setOnClickListener {
+                handlerThread.postDelayed({
+                    mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+                    mainMenuBtn.setPadding(0,0,0,9)
+                },490)
+                var rotateAnimation = RotateAnimation(0F, 180F,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f)
+                rotateAnimation.duration = 450
+                mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(myConsSettings to "settings")
                 findNavController().navigate(R.id.settingsFragment, null, null, extras)
             }

@@ -4,10 +4,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
 import com.example.pointer.databinding.FragmentVideoCourcesBinding
@@ -135,6 +137,11 @@ class VideoCourcesFragment : Fragment(R.layout.fragment_video_cources) {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+    }
 
 
 

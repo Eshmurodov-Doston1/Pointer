@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.pointerCources.PointerCourcesAdapter
 import com.example.pointer.databinding.FragmentAllVideoCourseBinding
@@ -46,6 +48,8 @@ class AllVideoCourseFragment : Fragment(R.layout.fragment_all_video_course) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
+            requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
             sharedElementEnterTransition = ChangeBounds()
             val videoCourse = arguments?.getSerializable("videoCourse") as VideoCourse
             clouse.setOnClickListener {

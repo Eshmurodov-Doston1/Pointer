@@ -1,12 +1,18 @@
 package com.example.pointer.fragments.student
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.transition.ChangeBounds
+import android.view.*
+import android.widget.ImageView
+import android.widget.Toast
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.courseViewPager.ExpansionCourseAdapter
 import com.example.pointer.databinding.ChildItemBinding
@@ -55,8 +61,8 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             loadCourse()
 
             sharedElementEnterTransition = ChangeBounds()
-
-
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
+            requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
             requireActivity().window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             val studentCourse = arguments?.getSerializable("studentCource") as StudentCourse
@@ -67,6 +73,7 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             Picasso.get().load(studentCourse.teacherImage).into(imageTeacher)
             teacherName.text = studentCourse.teacherName
             fullName.text = studentCourse.name
+
             expansionCourseAdapter = ExpansionCourseAdapter(object:ExpansionCourseAdapter.OnItemClickListener{
                 override fun onItemExpansionClick(
                     course: Course,
