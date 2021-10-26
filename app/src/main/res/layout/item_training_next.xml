@@ -9,8 +9,6 @@
     android:layout_marginStart="20dp"
     android:elevation="@dimen/_20sdp"
     android:id="@+id/card1"
-    android:outlineAmbientShadowColor="#01D8D0"
-    android:outlineSpotShadowColor="#01D8D0"
     android:layout_marginEnd="20dp"
     android:layout_height="260dp">
 

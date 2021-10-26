@@ -32,14 +32,9 @@ class TrainingMainFragment : Fragment() {
         binding.viewPager.setPageTransformer(true, DepthPageTransformer())
         binding.tablayout.setupWithViewPager(binding.viewPager)
 
-        binding.mainBtn.setOnClickListener {
-            findNavController().navigate(R.id.mainFragment)
-        }
-
         binding.back.setOnClickListener {
             findNavController().popBackStack()
         }
         return binding.root
     }
-
 }

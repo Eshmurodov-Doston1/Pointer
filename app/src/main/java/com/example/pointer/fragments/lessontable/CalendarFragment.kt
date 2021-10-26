@@ -30,9 +30,6 @@ class CalendarFragment : Fragment() {
         binding = FragmentCalendarBinding.inflate(inflater, container, false)
         sharedElementEnterTransition = MaterialContainerTransform()
 
-//        binding.line.setOnClickListener {
-//            findNavController().popBackStack()
-//        }
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
         binding.back.setOnClickListener {
@@ -58,10 +55,6 @@ class CalendarFragment : Fragment() {
             bundle.putStringArrayList("list", days)
             bundle.putInt("week", dayOfWeek)
             findNavController().navigate(R.id.lessonTableFragment,bundle)
-        }
-
-        binding.mainBtn.setOnClickListener {
-            findNavController().navigate(R.id.mainFragment)
         }
         return binding.root
     }

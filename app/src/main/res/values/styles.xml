@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="tab_text">parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+    <style name="tab_text" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
         <item name="android:textSize">14sp</item>
     </style>
     <style name="CustomDialog" parent="Theme.MaterialComponents.DayNight.Dialog">
