@@ -10,6 +10,8 @@ import com.example.pointer.R
 import com.example.pointer.adapters.news.ImageAdapter
 import com.example.pointer.databinding.FragmentFullNewsBinding
 import com.example.pointer.models.news.News2
+import com.example.pointer.utils.InfoClass
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
@@ -34,12 +36,14 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
         binding.tvViews.text = news2.news.views.toString()
         binding.tvTitle.text = news2.news.title
         binding.tvDesc.text = news2.news.description
+        binding.tvToolbarTitle.text = news2.news.title
         imageList = news2.image
-        binding.collapsingToolbar.setCollapsedTitleTextColor(R.color.white)
 //        binding.collapsingToolbar.title = news2.news.title
-        binding.toolbarLayout.setOnClickListener {
+//        binding.collapsingToolbar.setCollapsedTitleTextColor(R.color.white)
+        binding.bacKIcon.setOnClickListener {
             findNavController().navigateUp()
         }
+
         binding.viewPager2.adapter = ImageAdapter(imageList)
         TabLayoutMediator(
             binding.tabDots, binding.viewPager2
@@ -52,6 +56,27 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
                 super.onPageSelected(position)
 
             }
+        })
+
+        binding.appbar.addOnOffsetChangedListener(object : InfoClass() {
+            override fun onStateChanged(appBarLayout: AppBarLayout?, state: State?) {
+                when (state) {
+                    State.COLLAPSED -> {
+                        binding.tvTitle.visibility = View.INVISIBLE
+                        binding.tvToolbarTitle.visibility = View.VISIBLE
+                    }
+
+//                    State.EXPANDED -> {
+//                        binding.tvTitle.visibility = View.VISIBLE
+//                        binding.tvToolbarTitle.visibility = View.INVISIBLE
+//                    }
+                    State.IDLE->{
+                        binding.tvTitle.visibility=View.VISIBLE
+                        binding.tvToolbarTitle.visibility=View.INVISIBLE
+                    }
+                }
+            }
+
         })
     }
 }

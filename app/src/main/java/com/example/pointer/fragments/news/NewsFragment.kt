@@ -21,15 +21,6 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
     private lateinit var imageList: ArrayList<Int>
     private lateinit var viewPager: HorizontalInfiniteCycleViewPager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    private fun prepareTransition() {
-
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentNewsBinding.bind(view)
 

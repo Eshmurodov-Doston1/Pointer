@@ -12,16 +12,18 @@ import com.example.pointer.R
 import com.example.pointer.databinding.FragmentSettingsBinding
 import com.example.pointer.databinding.ItemLanguageBinding
 import com.example.pointer.utils.BaseDialog
+import com.example.pointer.utils.SharedPref
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private lateinit var binding: FragmentSettingsBinding
+    private lateinit var mySharedPref: SharedPref
 
     @SuppressLint("InflateParams")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentSettingsBinding.bind(view)
-
+        mySharedPref = SharedPref(requireContext())
         sharedElementEnterTransition = MaterialContainerTransform()
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
@@ -37,13 +39,32 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             alertDialog.setView(bn.root)
 //            alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 //            alertDialog.window?.setGravity(Gravity.CENTER)
+            bn.apply {
+                consUz.setOnClickListener {
+                    language("uz")
+                    alertDialog.dismiss()
+                }
+                consRu.setOnClickListener {
+                    language("ru")
+                    alertDialog.dismiss()
+                }
+                consEn.setOnClickListener {
+                    language("en")
+                    alertDialog.dismiss()
+                }
 
+            }
             alertDialog.show()
         }
 
         binding.linearLogOut.setOnClickListener {
             logOutDialog()
         }
+    }
+
+    private fun language(lang: String) {
+        mySharedPref.setLang(lang)
+        forRestartIntent2()
     }
 
     private fun logOutDialog() {
