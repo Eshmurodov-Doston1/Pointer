@@ -3,10 +3,15 @@ package com.example.pointer.fragments.settings
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.MainActivity
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentSettingsBinding
@@ -32,7 +37,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             findNavController().navigate(R.id.settings_to_info)
         }
 
-        binding.linearLang.setOnClickListener {
+        binding.ivLangIcon.setOnClickListener {
             val alertDialog = AlertDialog.Builder(requireContext()).create()
             val inflater = layoutInflater
             val bn = ItemLanguageBinding.inflate(inflater)
@@ -85,5 +90,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         (activity as MainActivity).finish()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
     }
 }

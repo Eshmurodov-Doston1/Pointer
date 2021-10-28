@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.databinding.FragmentPersonalInfoBinding
 import com.example.pointer.extensions.PathUtil
@@ -16,7 +18,8 @@ class PersonalInfoFragment : Fragment(R.layout.fragment_personal_info) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentPersonalInfoBinding.bind(view)
-
+        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
+        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
         binding.ivBack.setOnClickListener {
             findNavController().navigateUp()
         }

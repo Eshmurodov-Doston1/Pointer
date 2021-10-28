@@ -1,10 +1,18 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
+import android.view.ViewGroup
+import android.view.animation.RotateAnimation
+import android.widget.ImageView
+import androidx.fragment.app.FragmentContainer
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.newsViewAdapter.NewsAdapterPager
 import com.example.pointer.databinding.FragmentNewsAdapterBinding
@@ -39,42 +47,28 @@ class NewsAdapterFragment : Fragment(R.layout.fragment_news_adapter) {
 
     private lateinit var newsAdapter: NewsAdapterPager
 
-    private lateinit var newsList: ArrayList<News2>
-    private lateinit var imageList: ArrayList<Int>
-    private lateinit var news: News
+    private lateinit var newsList: ArrayList<News>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            initData()
-            newsAdapter = NewsAdapterPager(requireContext(), newsList)
-          //  viewPager.adapter = newsAdapter
+            var handlerThread = Handler(Looper.getMainLooper())
+            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             viewButton.setOnClickListener {
+                handlerThread.postDelayed({
+                    mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+                    mainMenuBtn.setPadding(0,0,0,9)
+                },490)
+                var rotateAnimation = RotateAnimation(0F, 180F,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f)
+                rotateAnimation.duration = 450
+                mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(viewButton to "view_my")
-                findNavController().navigate(R.id.newsFragment, null, null, extras)
+                findNavController().navigate(R.id.newsFragment,null,null,extras)
             }
         }
 
-    }
-
-    private fun initData() {
-        newsList = ArrayList()
-        imageList = ArrayList()
-        news = News("", 11, "", "")
-        imageList.add(R.drawable.news_image1)
-        imageList.add(R.drawable.news_image2)
-        imageList.add(R.drawable.news_image3)
-        imageList.add(R.drawable.news_image1)
-        imageList.add(R.drawable.news_image2)
-        imageList.add(R.drawable.news_image3)
-        newsList.add(News2(imageList, news))
-//        newsList.add(News(, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image2, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image1, "", 11, "", ""))
-//        newsList.add(News(R.drawable.news_image3, "", 11, "", ""))
     }
 
     companion object {

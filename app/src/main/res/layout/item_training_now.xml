@@ -157,7 +157,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintWidth_percent="0.35"
-            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintHeight_percent="0.27"
             android:layout_width="0dp"
             android:layout_height="0dp"

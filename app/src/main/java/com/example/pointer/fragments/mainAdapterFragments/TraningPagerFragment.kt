@@ -1,13 +1,17 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.RotateAnimation
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.traning.TrainingMainPagerAdapter
 import com.example.pointer.adapters.trainingAdapter.TrainingViewPagerAdapter
@@ -58,8 +62,18 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
 //            TabLayoutMediator(tablayout,viewPager){tab,position->
 //                tab.text = listCategory[position]
 //            }.attach()
-
+            var handlerThread = Handler(Looper.getMainLooper())
+            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             consTraining.setOnClickListener {
+                handlerThread.postDelayed({
+                    mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+                    mainMenuBtn.setPadding(0,0,0,9)
+                },490)
+                var rotateAnimation = RotateAnimation(0F, 180F,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f,
+                    RotateAnimation.RELATIVE_TO_SELF,.5f)
+                rotateAnimation.duration = 450
+                mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(consTraining to "cons")
                 findNavController().navigate(R.id.trainingMainFragment,null,null,extras)
             }

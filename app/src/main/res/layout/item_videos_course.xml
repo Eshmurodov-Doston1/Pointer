@@ -16,7 +16,7 @@
         app:layout_constraintWidth_percent="1"
         app:layout_constraintHeight_percent="0.8"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_350sdp">
+        android:layout_height="@dimen/_370sdp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

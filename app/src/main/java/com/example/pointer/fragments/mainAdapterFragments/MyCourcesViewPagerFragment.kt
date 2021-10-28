@@ -1,5 +1,6 @@
 package com.example.pointer.fragments.mainAdapterFragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -66,6 +67,7 @@ class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pa
 //            courceViewPager.setPageTransformer(transformer)
             var handlerThread = Handler(Looper.getMainLooper())
            var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
+
             button.setOnClickListener {
                 handlerThread.postDelayed({
                     mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
