@@ -52,73 +52,23 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             mainViewPager.clipToPadding=false
             mainViewPager.clipChildren=false
-
-
+            
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
-
-
-            //activity.findViewById<>()
-
-//            mainBtn.setOnClickListener {
-
-//            }
-
 
             mainViewPager.offscreenPageLimit = 1
             mainViewPager.setPageTransformer { page, position ->
                 var a= 1-Math.abs(position)
                 page.scaleY = 0.85F+a*0.1f
             }
-//            TabLayoutMediator(tabLayout,viewPager){ tab,position->
-//                tab.text = listLoad[position]
-//            }.attach()
-//            setTabs()
-//            tabLayout.clipToPadding =false
-//            tabLayout.clipChildren = false
-//            tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
-//                override fun onTabSelected(tab: TabLayout.Tab?) {
-//                    val customView = tab!!.customView
-//                    val let = customView?.let { ItemTabMainBinding.bind(it) }
-//                    let?.name?.setTextColor(Color.parseColor("#01D8D0"))
-//                }
-//
-//                override fun onTabUnselected(tab: TabLayout.Tab?) {
-//                    val customView = tab!!.customView
-//                    val let = customView?.let { ItemTabMainBinding.bind(it) }
-//                    let?.name?.setTextColor(Color.parseColor("#BDBDBD"))
-//                }
-//
-//                override fun onTabReselected(tab: TabLayout.Tab?) {
-//
-//                }
-//
-//            })
         }
     }
-
-
-
-//    private fun setTabs() {
-//        val tabCount = binding.tabLayout.tabCount
-//        for (i in 0 until tabCount){
-//            var itemTabBinding = ItemTabMainBinding.inflate(LayoutInflater.from(requireContext()),null,false)
-//            val tabAt = binding.tabLayout.getTabAt(i)
-//            tabAt?.customView = itemTabBinding.root
-//            itemTabBinding.name.text = listLoad[i]
-//            if (i==0){
-//                itemTabBinding.name.setTextColor(Color.parseColor("#01D8D0"))
-//            }else{
-//                itemTabBinding.name.setTextColor(Color.parseColor("#BDBDBD"))
-//            }
-//        }
-//    }
 
     private fun loadList() {
         listLoad = ArrayList()
         listLoad.add("Asosiy")
-        listLoad.add("Mening kurslarim ")
+        listLoad.add("Mening kurslarim")
         listLoad.add("Yangiliklar")
         listLoad.add("Traninglar")
         listLoad.add("Mening guruhim")

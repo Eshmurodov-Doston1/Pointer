@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/newsFragment"
+    app:startDestination="@id/mainFragment"
     tools:ignore="ExtraText">
 
     <fragment
@@ -114,11 +114,6 @@
             android:id="@+id/action_courseFragment_to_createPDFFragment"
             app:destination="@id/createPDFFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/lastTraningMainFragment"
-        android:name="com.example.pointer.fragments.mainAdapterFragments.LastTraningMainFragment"
-        android:label="fragment_last_traning_main"
-        tools:layout="@layout/fragment_last_traning_main" />
     <fragment
         android:id="@+id/lessonTableMainFragment"
         android:name="com.example.pointer.fragments.mainAdapterFragments.LessonTableMainFragment"

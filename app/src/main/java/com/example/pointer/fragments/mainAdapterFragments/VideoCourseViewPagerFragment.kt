@@ -16,8 +16,6 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.adapters.mainAdapter.adapterView.ViewPagerAdapterVideoCourse
-import com.example.pointer.adapters.vodeoCourseAdapters.PagerAdapterVideoCourse
 import com.example.pointer.databinding.FragmentVideoCourseViewPagerBinding
 import com.example.pointer.databinding.ItemTabBinding
 import com.example.pointer.databinding.ItemVideosCourseBinding
@@ -53,7 +51,6 @@ class VideoCourseViewPagerFragment : Fragment(R.layout.fragment_video_course_vie
     }
 
     private val binding by viewBinding(FragmentVideoCourseViewPagerBinding::bind)
-    lateinit var pagerAdapterVideoCourse: ViewPagerAdapterVideoCourse
     lateinit var listCourse:ArrayList<VideoCourse>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -5,19 +5,15 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
-import android.view.ViewGroup
 import android.view.animation.RotateAnimation
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.adapters.mainAdapter.group.MyMainGroupAdapter
 import com.example.pointer.databinding.FragmentMyMainGroupBinding
-import com.example.pointer.models.mygroup.MyGroup
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,24 +60,7 @@ class MyMainGroupFragment : Fragment(R.layout.fragment_my_main_group) {
                 val extras = FragmentNavigatorExtras(viewItem to "my_view")
                 findNavController().navigate(R.id.myGroupFragment,null,null,extras)
             }
-//            binding.rv.adapter = MyMainGroupAdapter(requireContext(), initList()) {
-//                findNavController().navigate(R.id.studentFragment)
-//            }
         }
-    }
-
-    private fun initList(): ArrayList<MyGroup> {
-
-        val list: ArrayList<MyGroup> = ArrayList()
-
-        for (i in 0..10)
-        {
-            list.add(
-                MyGroup("Asadbek Bektayev", R.drawable.news_image3, true)
-            )
-        }
-
-        return list
     }
 
     companion object {
