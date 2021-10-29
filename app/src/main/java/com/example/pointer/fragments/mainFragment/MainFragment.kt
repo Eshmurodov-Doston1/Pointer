@@ -40,7 +40,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding by viewBinding(FragmentMainBinding::bind)
     lateinit var mainViewPagerAdapter:MainViewPagerAdapter
     lateinit var listLoad:ArrayList<String>
-    lateinit var listFragment:ArrayList<Fragment>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

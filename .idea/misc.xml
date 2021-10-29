@@ -95,8 +95,14 @@
         <entry key="app/src/main/res/drawable/course_name.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/course_number.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/editetext.xml" value="0.3388888888888889" />
+        <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.34074074074074073" />
+        <entry key="app/src/main/res/drawable/ic_chat_2_2.xml" value="0.34074074074074073" />
+        <entry key="app/src/main/res/drawable/ic_chat_3.xml" value="0.34074074074074073" />
+        <entry key="app/src/main/res/drawable/ic_dollar_2.xml" value="0.34074074074074073" />
+        <entry key="app/src/main/res/drawable/ic_dollar_2_2.xml" value="0.34074074074074073" />
         <entry key="app/src/main/res/drawable/ic_group_3.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_left.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/ic_setting.xml" value="0.34074074074074073" />
         <entry key="app/src/main/res/drawable/ic_vector.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_vector1.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/pointer_name.xml" value="0.33055555555555555" />
@@ -105,6 +111,8 @@
         <entry key="app/src/main/res/layout-v23/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout-v23/item_course_student_adapter.xml" value="0.2861111111111111" />
         <entry key="app/src/main/res/layout-v23/item_student1.xml" value="0.2962962962962963" />
+        <entry key="app/src/main/res/layout-v23/item_training_pager.xml" value="0.2972222222222222" />
+        <entry key="app/src/main/res/layout-v23/item_videos_course_viewpager.xml" value="0.3" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.32395833333333335" />
         <entry key="app/src/main/res/layout/child_item.xml" value="0.25" />
@@ -118,7 +126,9 @@
         <entry key="app/src/main/res/layout/fragment_course_viewpager.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_create_p_d_f.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_full_news.xml" value="0.33645833333333336" />
+        <entry key="app/src/main/res/layout/fragment_last_training.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/fragment_last_traning_main.xml" value="0.3002780352177943" />
+        <entry key="app/src/main/res/layout/fragment_lesson_table.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/fragment_lesson_table_main.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2962962962962963" />
@@ -129,6 +139,9 @@
         <entry key="app/src/main/res/layout/fragment_my_main_group.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/fragment_news_adapter.xml" value="0.2962962962962963" />
+        <entry key="app/src/main/res/layout/fragment_next_trainig.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_now_training.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_payme.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/fragment_paymi_adapter.xml" value="0.2962962962962963" />
         <entry key="app/src/main/res/layout/fragment_personal_info.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
@@ -144,18 +157,26 @@
         <entry key="app/src/main/res/layout/item_course_adapter.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_course_student.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_course_student1.xml" value="0.3375" />
+        <entry key="app/src/main/res/layout/item_image_swipe.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/item_language.xml" value="0.18697916666666667" />
         <entry key="app/src/main/res/layout/item_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/item_payme_adapter.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/item_rv.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_student.xml" value="0.3375" />
+        <entry key="app/src/main/res/layout/item_student_history.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/item_tab.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_tab1.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_tab_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_training.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_training_next.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/item_training_now.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/item_videos_course.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/item_viewpager_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_content_image.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/layout_content_video.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/layout_exit.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/layout_item_chat_list.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/payme_item.xml" value="0.3380208333333333" />
       </map>
     </option>
