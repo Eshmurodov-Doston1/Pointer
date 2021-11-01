@@ -25,6 +25,19 @@
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training.xml" value="0.25" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_next.xml" value="0.25" />
         <entry key="..\:/Projects/Pointer/app/src/main/res/layout/item_training_now.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/drawable/bg_chat_list_item.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/drawable/bg_message_recv.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/drawable/bg_message_send.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/drawable/bg_message_sent.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/fragment_chat.xml" value="0.26875" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/fragment_chat_list.xml" value="0.25" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/fragment_chat_main.xml" value="0.26875" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/fragment_chat_messages.xml" value="0.25" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/layout_chat_send.xml" value="0.26875" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/layout_item_chat_list.xml" value="0.26875" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/layout_message_recv.xml" value="0.25" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/layout_message_send.xml" value="0.33" />
+        <entry key="..\:/Users/Asror/Desktop/Pointer/app/src/main/res/layout/layout_message_sent.xml" value="0.2" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_edit.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_linear.xml" value="0.2203125" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/Pointer/app/src/main/res/drawable/back_linear_info_edit.xml" value="0.2203125" />

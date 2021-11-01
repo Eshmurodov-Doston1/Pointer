@@ -1,40 +1,37 @@
 package com.example.pointer
 
-import android.content.res.Configuration
 import android.graphics.Color
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.view.animation.RotateAnimation
+import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment.STYLE_NORMAL
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import at.markushi.ui.CircleButton
 import com.example.pointer.databinding.ActivityMainBinding
-import com.example.pointer.utils.SharedPref
-import java.util.*
+import com.example.pointer.models.interfaceMy.ButtonClick
+
+lateinit var navLine: ImageView
+lateinit var navButton: CircleButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private lateinit var mySharedPreference: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        mySharedPreference = SharedPref(this)
-        setLocale()
-
-//        if (mySharedPreference.getBoolean() == true) {
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//        } else {
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//        }
         val overlay = binding.container
         overlay.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -43,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = Color.parseColor("#F7F7FC")
         window.navigationBarColor = Color.parseColor("#F7F7FC")
+
+        navLine = binding.line
+        navButton = binding.mainMenuBtn
+
 
         val navigation = findNavController(R.id.nav_host_fragment)
         binding.apply {
@@ -54,14 +55,7 @@ class MainActivity : AppCompatActivity() {
                         mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
                         mainMenuBtn.setPadding(0, 0, 0, 9)
                     }, 490)
-                    var rotateAnimation = RotateAnimation(
-                        0F,
-                        180F,
-                        RotateAnimation.RELATIVE_TO_SELF,
-                        .5f,
-                        RotateAnimation.RELATIVE_TO_SELF,
-                        .5f
-                    )
+                    var rotateAnimation = RotateAnimation(0F, 180F, RotateAnimation.RELATIVE_TO_SELF, .5f, RotateAnimation.RELATIVE_TO_SELF, .5f)
                     rotateAnimation.duration = 450
                     mainMenuBtn.startAnimation(rotateAnimation)
 
@@ -99,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                         6 -> {
                             val myCard = findViewById<ConstraintLayout>(R.id.my_cons_chat)
                             val extras = FragmentNavigatorExtras(myCard to "chat")
-                            navigation.navigate(R.id.chatFragment, null, null, extras)
+                            navigation.navigate(R.id.chatListFragment, null, null, extras)
                         }
                         7 -> {
                             val myCard = findViewById<ConstraintLayout>(R.id.my_cons1)
@@ -120,14 +114,7 @@ class MainActivity : AppCompatActivity() {
                         mainMenuBtn.setImageResource(R.drawable.ic_group_4)
                         mainMenuBtn.setPadding(0, 0, 0, 0)
                     }, 490)
-                    var rotateAnimation = RotateAnimation(
-                        0F,
-                        180F,
-                        RotateAnimation.RELATIVE_TO_SELF,
-                        .5f,
-                        RotateAnimation.RELATIVE_TO_SELF,
-                        .5f
-                    )
+                    var rotateAnimation = RotateAnimation(0F, 180F, RotateAnimation.RELATIVE_TO_SELF, .5f, RotateAnimation.RELATIVE_TO_SELF, .5f)
                     rotateAnimation.duration = 450
                     mainMenuBtn.startAnimation(rotateAnimation)
 
@@ -135,14 +122,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    private fun setLocale() {
-        val locale = Locale(mySharedPreference.getLang())
-        Locale.setDefault(locale)
-        val config: Configuration = resources.configuration
-        config.locale = locale
-        resources.updateConfiguration(config, resources.displayMetrics)
     }
 
     override fun onNavigateUp(): Boolean {

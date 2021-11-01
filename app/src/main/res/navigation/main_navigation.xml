@@ -109,7 +109,7 @@
         android:id="@+id/courseFragment"
         android:name="com.example.pointer.fragments.student.CourseFragment"
         android:label="fragment_course"
-        tools:layout="@layout/fragment_course" >
+        tools:layout="@layout/fragment_course">
         <action
             android:id="@+id/action_courseFragment_to_createPDFFragment"
             app:destination="@id/createPDFFragment" />
@@ -138,8 +138,7 @@
         android:id="@+id/videoCourseViewPagerFragment"
         android:name="com.example.pointer.fragments.mainAdapterFragments.VideoCourseViewPagerFragment"
         android:label="fragment_video_course_view_pager"
-        tools:layout="@layout/fragment_video_course_view_pager" >
-    </fragment>
+        tools:layout="@layout/fragment_video_course_view_pager"></fragment>
     <fragment
         android:id="@+id/paymeFragment"
         android:name="com.example.pointer.fragments.payme.PaymeFragment"
@@ -151,8 +150,13 @@
         android:label="fragment_create_p_d_f"
         tools:layout="@layout/fragment_create_p_d_f" />
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.example.pointer.fragments.chat.ChatFragment"
-        android:label="ChatFragment" />
+        android:id="@+id/messagesFragment"
+        android:name="com.example.pointer.fragments.chat.MessagesFragment"
+        android:label="MessagesFragment"
+        tools:layout="@layout/fragment_chat_messages"/>
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.example.pointer.fragments.chat.ChatListFragment"
+        android:label="ChatListFragment" />
 
 </navigation>

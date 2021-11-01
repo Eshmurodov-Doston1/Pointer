@@ -59,9 +59,10 @@ class ChatMainFragment : Fragment(R.layout.fragment_chat_main) {
                     RotateAnimation.RELATIVE_TO_SELF,.5f,
                     RotateAnimation.RELATIVE_TO_SELF,.5f)
                 rotateAnimation.duration = 450
+
                 mainMenuBtn.startAnimation(rotateAnimation)
                 val extras = FragmentNavigatorExtras(myConsChat to "chat")
-                findNavController().navigate(R.id.chatFragment,null,null,extras)
+                findNavController().navigate(R.id.chatListFragment,null,null,extras)
             }
         }
     }
