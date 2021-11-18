@@ -34,6 +34,9 @@ class NewsAdapter(
     }
 
     override fun getItemPosition(`object`: Any): Int {
+        if (`object`==newsList[0]||`object`==newsList.size-1){
+
+        }
         return POSITION_NONE
     }
 
@@ -46,7 +49,7 @@ class NewsAdapter(
             listener?.invoke(newsList[position])
             val extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
                 .addSharedElement(ivImage, "my_image").build()
-            ivImage.transitionName = "my_iamge"
+            ivImage.transitionName = "my_image"
         }
         container.addView(view)
         return view

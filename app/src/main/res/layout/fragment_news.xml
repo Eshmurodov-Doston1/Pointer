@@ -25,6 +25,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,5 +41,5 @@
         app:icvp_min_page_scale="0.55"
         app:icvp_min_page_scale_offset="5dp"
         app:icvp_scroll_duration="250"
-        tools:ignore="MissingClass,MissingConstraints" />
+        tools:ignore="MissingClass,MissingConstraints,UnusedAttribute" />
 </androidx.constraintlayout.widget.ConstraintLayout>

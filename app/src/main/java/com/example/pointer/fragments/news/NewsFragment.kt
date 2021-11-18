@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager.widget.ViewPager
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.news.NewsAdapter
@@ -21,6 +22,7 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
     private lateinit var newsAdapter: NewsAdapter
     private lateinit var newsList: ArrayList<News2>
     private lateinit var imageList: ArrayList<Int>
+    private var counterPosition: Int = 0
     private lateinit var viewPager: HorizontalInfiniteCycleViewPager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +38,26 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
         newsAdapter = NewsAdapter(requireContext(), newsList)
         binding.viewPager.adapter = newsAdapter
+        binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
 
+            }
+
+            override fun onPageSelected(position: Int) {
+
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+//                binding.viewPager.isEnabled =
+//                    (state >= 0 || state < 1)
+
+            }
+
+        })
         newsAdapter.setOnCLickListener {
             val bundle = Bundle()
             bundle.putSerializable("news", it)

@@ -6,14 +6,12 @@ import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import at.markushi.ui.CircleButton
 import androidx.viewpager2.widget.ViewPager2
+import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.news.ImageAdapter
 import com.example.pointer.databinding.FragmentFullNewsBinding
-import com.example.pointer.models.news.News
 import com.example.pointer.models.news.News2
-import com.google.android.material.snackbar.Snackbar
 import com.example.pointer.utils.InfoClass
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -48,9 +46,7 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
         binding.tvDesc.text = news2.news.description
         binding.tvToolbarTitle.text = news2.news.title
         imageList = news2.image
-//        binding.collapsingToolbar.title = news2.news.title
-//        binding.collapsingToolbar.setCollapsedTitleTextColor(R.color.white)
-        binding.bacKIcon.setOnClickListener {
+      binding.bacKIcon.setOnClickListener {
             findNavController().navigateUp()
         }
 
