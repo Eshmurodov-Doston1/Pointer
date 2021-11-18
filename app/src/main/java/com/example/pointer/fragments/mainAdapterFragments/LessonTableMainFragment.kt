@@ -46,16 +46,17 @@ class LessonTableMainFragment : Fragment(R.layout.fragment_lesson_table_main) {
         }
     }
     private val binding by viewBinding(FragmentLessonTableMainBinding::bind)
-    private lateinit var adapter: TableRecyclerAdapter
-    private lateinit var list: ArrayList<Table>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
             var handlerThread = Handler(Looper.getMainLooper())
+
             var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
+
             cons1.setOnClickListener {
                 handlerThread.postDelayed({
                     mainMenuBtn.setImageResource(R.drawable.ic_vector_3)

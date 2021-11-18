@@ -4,21 +4,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.RotateAnimation
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.adapters.mainAdapter.traning.TrainingMainPagerAdapter
-import com.example.pointer.adapters.trainingAdapter.TrainingViewPagerAdapter
 import com.example.pointer.databinding.FragmentTraningPagerBinding
-import com.example.pointer.models.Training
-import com.example.training.animations.DepthPageTransformer
-import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -46,22 +38,13 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
         }
     }
     private val binding by viewBinding(FragmentTraningPagerBinding::bind)
-    lateinit var listCategory:ArrayList<String>
-    lateinit var traningMainPagerAdapter:TrainingMainPagerAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            loadList()
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
-
-           traningMainPagerAdapter = TrainingMainPagerAdapter(requireActivity())
-//            binding.viewPager.adapter =traningMainPagerAdapter
-//            TabLayoutMediator(tablayout,viewPager){tab,position->
-//                tab.text = listCategory[position]
-//            }.attach()
             var handlerThread = Handler(Looper.getMainLooper())
             var mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
             consTraining.setOnClickListener {
@@ -78,14 +61,6 @@ class TraningPagerFragment : Fragment(R.layout.fragment_traning_pager) {
                 findNavController().navigate(R.id.trainingMainFragment,null,null,extras)
             }
         }
-    }
-
-    private fun loadList() {
-        listCategory = ArrayList()
-        listCategory.add("O'tgan")
-        listCategory.add("Hozirgi")
-        listCategory.add("Kutilayotgan")
-
     }
 
 

@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 
 data class ChatListItem(
     val id: String,
+    val id2: String,
     val chatName: String,
     val avatar: Drawable,
     var lastMessage: String = "",

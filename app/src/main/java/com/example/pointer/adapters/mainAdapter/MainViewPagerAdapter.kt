@@ -1,15 +1,9 @@
 package com.example.pointer.adapters.mainAdapter
 
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pointer.fragments.chat.ChatFragment
 import com.example.pointer.fragments.mainAdapterFragments.*
-import com.example.pointer.models.chat.ForViewFrag
 
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 

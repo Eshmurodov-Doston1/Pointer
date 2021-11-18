@@ -7,7 +7,7 @@
     tools:context=".fragments.mainAdapterFragments.MyCourcesViewPagerFragment">
     <androidx.cardview.widget.CardView
         app:cardUseCompatPadding="true"
-        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         app:cardElevation="@dimen/_2sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

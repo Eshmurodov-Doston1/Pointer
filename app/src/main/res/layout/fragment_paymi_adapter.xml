@@ -7,7 +7,7 @@
     tools:context=".fragments.mainAdapterFragments.PaymiAdapterFragment">
     <androidx.cardview.widget.CardView
         app:cardUseCompatPadding="true"
-        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintWidth_percent="0.96"
