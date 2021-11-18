@@ -8,6 +8,7 @@ import android.view.*
 import android.widget.ImageView
 import android.widget.Toast
 import android.view.View
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
@@ -63,6 +64,8 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             sharedElementEnterTransition = ChangeBounds()
             requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
             requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
+            requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.GONE
+            requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.GONE
             requireActivity().window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             val studentCourse = arguments?.getSerializable("studentCource") as StudentCourse

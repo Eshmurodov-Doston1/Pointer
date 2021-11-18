@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -42,8 +43,13 @@ class TrainingMainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
-        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+        if ( requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE) {
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =
+                View.VISIBLE
+            requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.VISIBLE
+        }
     }
 
 }

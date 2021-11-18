@@ -13,91 +13,68 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            app:layout_constraintTop_toTopOf="@id/card2"
+            app:layout_constraintBottom_toBottomOf="@id/card2"
+            app:layout_constraintRight_toLeftOf="@id/card2"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.25"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_16sdp"
+            android:text="Asosiy oyna"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:cardCornerRadius="@dimen/_17sdp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            app:cardElevation="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_35sdp">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:background="#F7F7FC"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/image"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:paddingTop="@dimen/_8sdp"
-                    android:paddingBottom="@dimen/_8sdp"
-                    android:src="@drawable/ic_dollar_2_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    app:layout_constraintTop_toTopOf="@id/image"
-                    app:layout_constraintLeft_toRightOf="@id/image"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/image"
-                    android:text="To'lov"
-                    android:textColor="@color/black"
-                    android:paddingRight="@dimen/_7sdp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card1"-->
+<!--            app:layout_constraintHorizontal_bias="0.05"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:cardCornerRadius="@dimen/_17sdp"-->
+<!--            android:clickable="true"-->
+<!--            android:foreground="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:focusable="true"-->
+<!--            app:cardElevation="0dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="@dimen/_35sdp">-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:background="#F7F7FC"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/image"-->
+<!--                    android:paddingLeft="@dimen/_3sdp"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    android:paddingTop="@dimen/_8sdp"-->
+<!--                    android:paddingBottom="@dimen/_8sdp"-->
+<!--                    android:src="@drawable/ic_dollar_2_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"/>-->
+<!--                <TextView-->
+<!--                    app:layout_constraintTop_toTopOf="@id/image"-->
+<!--                    app:layout_constraintLeft_toRightOf="@id/image"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/image"-->
+<!--                    android:text="To'lov"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:paddingRight="@dimen/_7sdp"-->
+<!--                    android:textStyle="normal"-->
+<!--                    android:textSize="@dimen/_10sdp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/card1"
-            app:layout_constraintRight_toLeftOf="@id/card3"
-            app:cardCornerRadius="@dimen/_17sdp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            app:cardElevation="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_35sdp">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:background="#F7F7FC"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/image1"
-                    android:paddingTop="@dimen/_8sdp"
-                    android:paddingBottom="@dimen/_8sdp"
-                    android:src="@drawable/ic_chat_2_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    app:layout_constraintTop_toTopOf="@id/image1"
-                    app:layout_constraintLeft_toRightOf="@id/image1"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/image1"
-                    android:text="Chat"
-                    android:textColor="@color/black"
-                    android:paddingRight="@dimen/_7sdp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card3"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:cardCornerRadius="@dimen/_17sdp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -111,34 +88,64 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/image2"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
                     android:paddingTop="@dimen/_8sdp"
                     android:paddingBottom="@dimen/_8sdp"
                     android:src="@drawable/ic_setting"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
-                <TextView
-                    app:layout_constraintTop_toTopOf="@id/image2"
-                    app:layout_constraintLeft_toRightOf="@id/image2"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/image2"
-                    android:text="Sozlamalar"
-                    android:textColor="@color/black"
-                    android:paddingRight="@dimen/_7sdp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card3"-->
+<!--            app:layout_constraintHorizontal_bias="0.95"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:cardCornerRadius="@dimen/_17sdp"-->
+<!--            android:clickable="true"-->
+<!--            android:foreground="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:focusable="true"-->
+<!--            app:cardElevation="0dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="@dimen/_35sdp">-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:background="#F7F7FC"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/image1"-->
+<!--                    android:paddingLeft="@dimen/_3sdp"-->
+<!--                    android:paddingTop="@dimen/_8sdp"-->
+<!--                    android:paddingBottom="@dimen/_8sdp"-->
+<!--                    android:src="@drawable/ic_chat_2_2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"/>-->
+<!--                <TextView-->
+<!--                    app:layout_constraintTop_toTopOf="@id/image1"-->
+<!--                    app:layout_constraintLeft_toRightOf="@id/image1"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/image1"-->
+<!--                    android:text="Chat"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:paddingRight="@dimen/_7sdp"-->
+<!--                    android:textStyle="normal"-->
+<!--                    android:textSize="@dimen/_10sdp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingStart="@dimen/_25sdp"
+        android:paddingStart="@dimen/_20sdp"
         android:paddingTop="0dp"
-        android:paddingEnd="@dimen/_25sdp"
+        android:paddingEnd="@dimen/_20sdp"
         android:paddingBottom="@dimen/_70sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/my_cons"

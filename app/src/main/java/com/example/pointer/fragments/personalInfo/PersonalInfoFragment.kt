@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -20,6 +21,8 @@ class PersonalInfoFragment : Fragment(R.layout.fragment_personal_info) {
         binding = FragmentPersonalInfoBinding.bind(view)
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
+        requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.GONE
+        requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.GONE
         binding.ivBack.setOnClickListener {
             findNavController().navigateUp()
         }

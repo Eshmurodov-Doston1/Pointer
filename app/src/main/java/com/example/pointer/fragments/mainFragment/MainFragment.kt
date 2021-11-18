@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentContainer
 import com.example.pointer.MainActivity
 import com.example.pointer.R
@@ -43,7 +45,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.apply {
             loadList()
             mainViewPagerAdapter = MainViewPagerAdapter(requireActivity())
@@ -76,6 +77,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         listLoad.add("Sozlamalar")
         listLoad.add("To'lov")
     }
+
 
     companion object {
         /**
