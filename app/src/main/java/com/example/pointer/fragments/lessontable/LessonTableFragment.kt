@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -18,8 +17,6 @@ import com.example.pointer.R
 import com.example.pointer.adapters.TableRecyclerAdapter
 import com.example.pointer.databinding.FragmentLessonTableBinding
 import com.example.pointer.models.Table
-import com.google.android.material.transition.MaterialContainerTransform
-import com.google.android.material.transition.MaterialSharedAxis
 
 class LessonTableFragment : Fragment() {
 
@@ -36,12 +33,10 @@ class LessonTableFragment : Fragment() {
         binding = FragmentLessonTableBinding.inflate(inflater, container, false)
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
-        val days:ArrayList<String> = arguments?.getStringArrayList("list") as ArrayList<String>
+        val days: ArrayList<String> = arguments?.getStringArrayList("list") as ArrayList<String>
         val dayOfWeek = arguments?.getInt("week", 0)
 
-        binding.back.setOnClickListener{
+        binding.back.setOnClickListener {
             findNavController().popBackStack()
         }
 
@@ -58,7 +53,7 @@ class LessonTableFragment : Fragment() {
         }
         var activeWeek: LinearLayout? = null
 
-        val weekClickListen = View.OnClickListener{
+        val weekClickListen = View.OnClickListener {
 
             if (activeWeek != it) {
                 when (it.id) {
@@ -90,7 +85,7 @@ class LessonTableFragment : Fragment() {
 
                 binding.rv.adapter = adapter
                 (it as LinearLayout).setBackgroundResource(R.drawable.back_style)
-                if (activeWeek!=null) {
+                if (activeWeek != null) {
                     activeWeek?.setBackgroundResource(R.color.purple_200)
                     (activeWeek?.getChildAt(0) as TextView).setTextColor(Color.GRAY)
                     (activeWeek?.getChildAt(1) as TextView).setTextColor(Color.BLACK)
@@ -142,9 +137,39 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("11:00", "13:00", "Java", "313-19", "4-201",R.drawable.news_image3, "Bektayev Asadbek"))
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
-        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.news_image2, "Bozorov Bobur"))
+        list.add(
+            Table(
+                "11:00",
+                "13:00",
+                "Java",
+                "313-19",
+                "4-201",
+                R.drawable.news_image3,
+                "Bektayev Asadbek"
+            )
+        )
+        list.add(
+            Table(
+                "15:00",
+                "17:00",
+                "Kotlin",
+                "312-18",
+                "2-200",
+                R.drawable.news_image1,
+                "Qosimov Shahrizod"
+            )
+        )
+        list.add(
+            Table(
+                "17:00",
+                "19:00",
+                "C++",
+                "310-17",
+                "4-208",
+                R.drawable.news_image2,
+                "Bozorov Bobur"
+            )
+        )
         return list
     }
 
@@ -152,11 +177,32 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
-        list.add(Table("17:00", "19:00", "C++", "310-17", "4-208",R.drawable.news_image2, "Bozorov Bobur"))
+        list.add(
+            Table(
+                "15:00",
+                "17:00",
+                "Kotlin",
+                "312-18",
+                "2-200",
+                R.drawable.news_image1,
+                "Qosimov Shahrizod"
+            )
+        )
+        list.add(
+            Table(
+                "17:00",
+                "19:00",
+                "C++",
+                "310-17",
+                "4-208",
+                R.drawable.news_image2,
+                "Bozorov Bobur"
+            )
+        )
 
         return list
     }
+
     private fun initList5(): ArrayList<Table> {
 
         list = ArrayList<Table>()
@@ -169,7 +215,17 @@ class LessonTableFragment : Fragment() {
 
         list = ArrayList<Table>()
 
-        list.add(Table("15:00", "17:00", "Kotlin", "312-18", "2-200",R.drawable.news_image1, "Qosimov Shahrizod"))
+        list.add(
+            Table(
+                "15:00",
+                "17:00",
+                "Kotlin",
+                "312-18",
+                "2-200",
+                R.drawable.news_image1,
+                "Qosimov Shahrizod"
+            )
+        )
         return list
     }
 

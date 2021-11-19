@@ -1,21 +1,16 @@
 package com.example.pointer.fragments.lessontable
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.core.graphics.green
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.databinding.FragmentCalendarBinding
-import com.example.pointer.models.mygroup.MyGroup
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 import java.text.DateFormat
@@ -45,7 +40,7 @@ class CalendarFragment : Fragment() {
             calendar.set(year, month, dayOfMonth)
             val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
             val days = arrayListOf<String>()
-            while (calendar.get(Calendar.DAY_OF_WEEK)!=2){
+            while (calendar.get(Calendar.DAY_OF_WEEK) != 2) {
                 calendar.add(Calendar.DAY_OF_MONTH, -1)
             }
             for (i in 0..6) {
@@ -57,7 +52,7 @@ class CalendarFragment : Fragment() {
             val bundle = Bundle()
             bundle.putStringArrayList("list", days)
             bundle.putInt("week", dayOfWeek)
-            findNavController().navigate(R.id.lessonTableFragment,bundle)
+            findNavController().navigate(R.id.lessonTableFragment, bundle)
         }
         return binding.root
     }
@@ -66,8 +61,6 @@ class CalendarFragment : Fragment() {
         super.onResume()
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.VISIBLE
     }
 
 

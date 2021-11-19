@@ -1,16 +1,11 @@
 package com.example.pointer.fragments.student
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.transition.ChangeBounds
-import android.view.*
-import android.widget.ImageView
-import android.widget.Toast
 import android.view.View
-import androidx.cardview.widget.CardView
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -23,8 +18,6 @@ import com.example.pointer.models.student.Course
 import com.example.pointer.models.student.StudentCourse
 import com.squareup.picasso.Picasso
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -53,8 +46,8 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
 
     private val binding by viewBinding(FragmentStudentInformationBinding::bind)
     lateinit var expansionCourseAdapter: ExpansionCourseAdapter
-    lateinit var listCourse:ArrayList<Course>
-    lateinit var listCourseChild:ArrayList<String>
+    lateinit var listCourse: ArrayList<Course>
+    lateinit var listCourseChild: ArrayList<String>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
@@ -64,8 +57,6 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             sharedElementEnterTransition = ChangeBounds()
             requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
             requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-            requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.GONE
-            requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.GONE
             requireActivity().window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             val studentCourse = arguments?.getSerializable("studentCource") as StudentCourse
@@ -77,32 +68,38 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
             teacherName.text = studentCourse.teacherName
             fullName.text = studentCourse.name
 
-            expansionCourseAdapter = ExpansionCourseAdapter(object:ExpansionCourseAdapter.OnItemClickListener{
-                override fun onItemExpansionClick(
-                    course: Course,
-                    position: Int,
-                    bool: Boolean,
-                    itemRvBinding: ItemRvBinding
-                ) {
-                if(bool){
-                    itemRvBinding.myLine.setBackgroundColor(Color.WHITE)
-                    itemRvBinding.name.setTextColor(Color.parseColor("#01D8D0"))
-                    itemRvBinding.iconP.setImageResource(R.drawable.ic_vector1)
-                }else{
-                    itemRvBinding.myLine.setBackgroundColor(Color.WHITE)
-                    itemRvBinding.name.setTextColor(Color.BLACK)
-                    itemRvBinding.iconP.setImageResource(R.drawable.ic_vector)
-                }
-                }
-            },object:ExpansionCourseAdapter.OnChildClick{
-                override fun onChildClick(str: String,childItemBinding: ChildItemBinding) {
-                    var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
-                        .addSharedElement(childItemBinding.childCard,"card")
-                        .build()
-                   var bundle = Bundle()
-                    findNavController().navigate(R.id.action_studentInformationFragment_to_courseFragment,null,null,extras)
-                }
-            })
+            expansionCourseAdapter =
+                ExpansionCourseAdapter(object : ExpansionCourseAdapter.OnItemClickListener {
+                    override fun onItemExpansionClick(
+                        course: Course,
+                        position: Int,
+                        bool: Boolean,
+                        itemRvBinding: ItemRvBinding
+                    ) {
+                        if (bool) {
+                            itemRvBinding.myLine.setBackgroundColor(Color.WHITE)
+                            itemRvBinding.name.setTextColor(Color.parseColor("#01D8D0"))
+                            itemRvBinding.iconP.setImageResource(R.drawable.ic_vector1)
+                        } else {
+                            itemRvBinding.myLine.setBackgroundColor(Color.WHITE)
+                            itemRvBinding.name.setTextColor(Color.BLACK)
+                            itemRvBinding.iconP.setImageResource(R.drawable.ic_vector)
+                        }
+                    }
+                }, object : ExpansionCourseAdapter.OnChildClick {
+                    override fun onChildClick(str: String, childItemBinding: ChildItemBinding) {
+                        var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
+                            .addSharedElement(childItemBinding.childCard, "card")
+                            .build()
+                        var bundle = Bundle()
+                        findNavController().navigate(
+                            R.id.action_studentInformationFragment_to_courseFragment,
+                            null,
+                            null,
+                            extras
+                        )
+                    }
+                })
             clouse.setOnClickListener {
                 findNavController().popBackStack()
             }
@@ -122,12 +119,12 @@ class StudentInformationFragment : Fragment(R.layout.fragment_student_informatio
 
     private fun loadCourse() {
         listCourse = ArrayList()
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
-        listCourse.add(Course("Androidga Kirish",listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
+        listCourse.add(Course("Androidga Kirish", listCourseChild))
     }
 
 

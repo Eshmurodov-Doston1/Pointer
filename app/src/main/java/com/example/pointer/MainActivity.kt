@@ -1,8 +1,8 @@
 package com.example.pointer
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,16 +10,17 @@ import android.view.View
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.viewpager2.widget.ViewPager2
 import at.markushi.ui.CircleButton
 import com.example.pointer.databinding.ActivityMainBinding
-import com.example.pointer.models.interfaceMy.ButtonClick
 import com.example.pointer.utils.SharedPref
 import java.util.*
 
+@SuppressLint("StaticFieldLeak")
 lateinit var navLine: ImageView
 lateinit var navButton: CircleButton
 
@@ -34,11 +35,11 @@ class MainActivity : AppCompatActivity() {
         mySharedPreference = SharedPref(this)
         setLocale()
 
-//        if (mySharedPreference.getBoolean() == true) {
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//        } else {
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//        }
+        if (mySharedPreference.getBoolean() == true) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         val overlay = binding.container
         overlay.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             mainMenuBtn.setOnClickListener {
                 val viewPager = findViewById<ViewPager2>(R.id.main_viewPager)
-                var handlerThread = Handler(Looper.getMainLooper())
+                val handlerThread = Handler(Looper.getMainLooper())
                 if (navigation.currentDestination?.id == R.id.mainFragment) {
                     handlerThread.postDelayed({
                         mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
@@ -164,6 +165,7 @@ class MainActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
     }
+
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
 //        if (hasFocus) {

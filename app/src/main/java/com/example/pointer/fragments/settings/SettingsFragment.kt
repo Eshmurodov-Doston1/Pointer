@@ -9,7 +9,6 @@ import android.os.Looper
 import android.view.View
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -31,6 +30,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         binding = FragmentSettingsBinding.bind(view)
         val handlerThread = Handler(Looper.getMainLooper())
         val mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
+        sharedElementEnterTransition = MaterialContainerTransform()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         handlerThread.postDelayed({
             mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
             mainMenuBtn.setPadding(0, 0, 0, 9)
@@ -47,9 +50,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         mainMenuBtn.startAnimation(rotateAnimation)
 
         mySharedPref = SharedPref(requireContext())
-        sharedElementEnterTransition = MaterialContainerTransform()
-        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
-        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
         binding.linearPersonInfo.setOnClickListener {
             findNavController().navigate(R.id.settings_to_info)
@@ -116,10 +116,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
     override fun onResume() {
         super.onResume()
-        if (  requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility ==View.GONE)
-        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
+        if (requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE)
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =
+                View.VISIBLE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.VISIBLE
     }
 }

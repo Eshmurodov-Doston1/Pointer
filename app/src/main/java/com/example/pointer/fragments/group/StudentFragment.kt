@@ -1,23 +1,19 @@
 package com.example.pointer.fragments.group
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.adapters.StudentHistoryAdapter
 import com.example.pointer.databinding.FragmentStudentBinding
 import com.example.pointer.models.mygroup.History
-import com.example.pointer.models.mygroup.MyGroup
-import java.util.ArrayList
+import java.util.*
 
 class StudentFragment : Fragment() {
 
@@ -30,8 +26,7 @@ class StudentFragment : Fragment() {
         binding = FragmentStudentBinding.inflate(inflater, container, false)
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
+
         binding.back.setOnClickListener {
             findNavController().popBackStack()
         }

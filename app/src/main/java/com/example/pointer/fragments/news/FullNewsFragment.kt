@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import at.markushi.ui.CircleButton
@@ -32,8 +30,6 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
 
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
         news2 = arguments?.getSerializable("news") as News2
 
 
@@ -48,7 +44,7 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
         binding.tvDesc.text = news2.news.description
         binding.tvToolbarTitle.text = news2.news.title
         imageList = news2.image
-      binding.bacKIcon.setOnClickListener {
+        binding.bacKIcon.setOnClickListener {
             findNavController().navigateUp()
         }
 
@@ -79,9 +75,9 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
 //                        binding.tvTitle.visibility = View.VISIBLE
 //                        binding.tvToolbarTitle.visibility = View.INVISIBLE
 //                    }
-                    State.IDLE->{
-                        binding.tvTitle.visibility=View.VISIBLE
-                        binding.tvToolbarTitle.visibility=View.INVISIBLE
+                    State.IDLE -> {
+                        binding.tvTitle.visibility = View.VISIBLE
+                        binding.tvToolbarTitle.visibility = View.INVISIBLE
                     }
                 }
             }

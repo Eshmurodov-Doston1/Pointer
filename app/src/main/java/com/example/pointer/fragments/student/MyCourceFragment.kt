@@ -1,28 +1,21 @@
 package com.example.pointer.fragments.student
 
-import android.app.ActivityOptions
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentContainer
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigation
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.CompositePageTransformer
+import at.markushi.ui.CircleButton
+import com.example.pointer.R
 import com.example.pointer.adapters.courseViewPager.CourseViewPagerAdapter
 import com.example.pointer.databinding.FragmentMyCourceBinding
 import com.example.pointer.databinding.ItemCourseStudentBinding
-
 import com.example.pointer.models.student.StudentCourse
-import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import androidx.navigation.fragment.FragmentNavigatorExtras
-import at.markushi.ui.CircleButton
-import com.example.pointer.R
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
+import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,7 +43,7 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
 
     private val binding by viewBinding(FragmentMyCourceBinding::bind)
     lateinit var courseViewPagerAdapter: CourseViewPagerAdapter
-    lateinit var listCource:ArrayList<StudentCourse>
+    lateinit var listCource: ArrayList<StudentCourse>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -60,31 +53,37 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
         binding.apply {
             loadCource()
 
-            courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),object:CourseViewPagerAdapter.OnItemClickListener{
-                override fun onItemClick(
-                    studentCourse: StudentCourse,
-                    position: Int,
-                    itemCourceStudentBinding: ItemCourseStudentBinding
-                ) {
-                    var extras:FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
-                        .addSharedElement(itemCourceStudentBinding.myCons,"my_image")
-                        .build()
-                    var bundle = Bundle()
-                    bundle.putSerializable("studentCource",studentCourse)
-                    findNavController().navigate(R.id.studentInformationFragment,bundle,null,extras)
-                }
+            courseViewPagerAdapter = CourseViewPagerAdapter(requireContext(),
+                object : CourseViewPagerAdapter.OnItemClickListener {
+                    override fun onItemClick(
+                        studentCourse: StudentCourse,
+                        position: Int,
+                        itemCourceStudentBinding: ItemCourseStudentBinding
+                    ) {
+                        var extras: FragmentNavigator.Extras = FragmentNavigator.Extras.Builder()
+                            .addSharedElement(itemCourceStudentBinding.myCons, "my_image")
+                            .build()
+                        var bundle = Bundle()
+                        bundle.putSerializable("studentCource", studentCourse)
+                        findNavController().navigate(
+                            R.id.studentInformationFragment,
+                            bundle,
+                            null,
+                            extras
+                        )
+                    }
 
-            })
+                })
             courseViewPagerAdapter.submitList(listCource)
             courceViewPager.adapter = courseViewPagerAdapter
 
-            courceViewPager.clipToPadding=false
-            courceViewPager.clipChildren=false
-            courceViewPager.offscreenPageLimit=listCource.size
+            courceViewPager.clipToPadding = false
+            courceViewPager.clipChildren = false
+            courceViewPager.offscreenPageLimit = listCource.size
             var transformer = CompositePageTransformer()
             transformer.addTransformer { page, position ->
-                var a= 1-Math.abs(position)
-                page.scaleY = 0.85F+a*0.1f
+                var a = 1 - Math.abs(position)
+                page.scaleY = 0.85F + a * 0.1f
             }
             courceViewPager.setPageTransformer(transformer)
 
@@ -93,24 +92,87 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
 
     private fun loadCource() {
         listCource = ArrayList()
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
-        listCource.add(StudentCourse("UI/UX darslari","https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88","https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13","Sanjar Suvonov","UI/UX",40))
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
+        listCource.add(
+            StudentCourse(
+                "UI/UX darslari",
+                "https://storage.myseldon.com/news_pict_CD/CDA66099E6144A1C0294E9BEE69A0D88",
+                "https://im0-tub-com.yandex.net/i?id=6cf5843522c5c3b4eb75f2b57f7957fe&n=13",
+                "Sanjar Suvonov",
+                "UI/UX",
+                40
+            )
+        )
     }
 
     override fun onResume() {
         super.onResume()
-        if (  requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE){
-        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
-        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.VISIBLE
+        if (requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE) {
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =
+                View.VISIBLE
+            requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
         }
     }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

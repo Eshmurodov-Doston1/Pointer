@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -13,10 +12,8 @@ import com.example.pointer.R
 import com.example.pointer.adapters.MyGroupAdapter
 import com.example.pointer.databinding.FragmentMyGroupBinding
 import com.example.pointer.models.mygroup.MyGroup
-import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
-import java.util.ArrayList
 import java.util.*
 
 class MyGroupFragment : Fragment() {
@@ -38,7 +35,8 @@ class MyGroupFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.rv.adapter = MyGroupAdapter(requireContext(), initList()) {
-            findNavController().navigate(R.id.studentFragment)        }
+            findNavController().navigate(R.id.studentFragment)
+        }
         return binding.root
     }
 
@@ -46,8 +44,7 @@ class MyGroupFragment : Fragment() {
 
         val list: ArrayList<MyGroup> = ArrayList()
 
-        for (i in 0..10)
-        {
+        for (i in 0..10) {
             list.add(
                 MyGroup("Asadbek Bektayev", R.drawable.news_image3, true)
             )
@@ -60,7 +57,5 @@ class MyGroupFragment : Fragment() {
         super.onResume()
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.VISIBLE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.VISIBLE
     }
 }

@@ -1,19 +1,14 @@
 package com.example.pointer.fragments.chat
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
 import com.example.pointer.adapters.chat.ChatMessagesAdapter
@@ -23,12 +18,6 @@ import com.example.pointer.navButton
 import com.example.pointer.navLine
 import com.example.pointer.utils.Convertor
 import com.example.pointer.utils.chat.DataConnector
-import android.content.Context.INPUT_METHOD_SERVICE
-import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat
-
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.navigation.fragment.findNavController
 
 
 class MessagesFragment : Fragment(R.layout.fragment_chat_messages) {
@@ -41,10 +30,6 @@ class MessagesFragment : Fragment(R.layout.fragment_chat_messages) {
 
         requireActivity().findViewById<ImageView>(R.id.line).visibility =View.GONE
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
-
-
 
         chat = ChatListItem(
             arguments?.getString("id1", "")!!,

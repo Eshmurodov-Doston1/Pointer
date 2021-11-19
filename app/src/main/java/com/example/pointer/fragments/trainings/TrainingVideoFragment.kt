@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -28,8 +27,6 @@ class TrainingVideoFragment : Fragment() {
         binding = FragmentTrainingVideoBinding.inflate(inflater, container, false)
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.GONE
-        requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.GONE
         binding.back.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -38,7 +35,7 @@ class TrainingVideoFragment : Fragment() {
         list.add(MediaItem(null, R.drawable.image20))
         list.add(MediaItem(null, R.drawable.my_image))
         list.add(MediaItem(null, R.drawable.payment))
-        val adapter = MediaAdapter(list,childFragmentManager)
+        val adapter = MediaAdapter(list, childFragmentManager)
 
         binding.viewPager.adapter = adapter
         binding.indicator.setupWithViewPager(binding.viewPager)
