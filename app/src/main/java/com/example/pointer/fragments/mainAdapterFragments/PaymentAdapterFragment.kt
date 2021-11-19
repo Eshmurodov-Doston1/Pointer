@@ -4,14 +4,14 @@ package com.example.pointer.fragments.mainAdapterFragments
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.animation.RotateAnimation
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.databinding.FragmentPaymiAdapterBinding
+import com.example.pointer.databinding.FragmentPaymentAdapterBinding
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -23,10 +23,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PaymiAdapterFragment.newInstance] factory method to
+ * Use the [PaymentAdapterFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
+class PaymentAdapterFragment : Fragment(R.layout.fragment_payment_adapter) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,7 +38,7 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    private val binding by viewBinding(FragmentPaymiAdapterBinding::bind)
+    private val binding by viewBinding(FragmentPaymentAdapterBinding::bind)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
@@ -58,8 +58,8 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
                     RotateAnimation.RELATIVE_TO_SELF,.5f)
                 rotateAnimation.duration = 450
                 mainMenuBtn.startAnimation(rotateAnimation)
-                val extras = FragmentNavigatorExtras(myCons1 to "payme")
-                findNavController().navigate(R.id.paymeFragment, null, null, extras)
+                val extras = FragmentNavigatorExtras(myCons1 to "payment")
+                findNavController().navigate(R.id.paymentFragment, null, null, extras)
             }
 
         }
@@ -77,7 +77,7 @@ class PaymiAdapterFragment : Fragment(R.layout.fragment_paymi_adapter) {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            PaymiAdapterFragment().apply {
+            PaymentAdapterFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

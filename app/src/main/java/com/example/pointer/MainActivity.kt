@@ -1,27 +1,19 @@
 package com.example.pointer
 
 import android.graphics.Color
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.view.animation.AnimationUtils
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.DialogFragment.STYLE_NORMAL
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import at.markushi.ui.CircleButton
 import com.example.pointer.databinding.ActivityMainBinding
-import com.example.pointer.models.interfaceMy.ButtonClick
 
 lateinit var navLine: ImageView
 lateinit var navButton: CircleButton
@@ -90,21 +82,21 @@ class MainActivity : AppCompatActivity() {
                             val extras = FragmentNavigatorExtras(myCard to "my_calendar")
                             navigation.navigate(R.id.calendarFragment, null, null, extras)
                         }
-                        6 -> {
-                            val myCard = findViewById<ConstraintLayout>(R.id.my_cons_chat)
-                            val extras = FragmentNavigatorExtras(myCard to "chat")
-                            navigation.navigate(R.id.chatListFragment, null, null, extras)
-                        }
-                        7 -> {
-                            val myCard = findViewById<ConstraintLayout>(R.id.my_cons1)
-                            val extras = FragmentNavigatorExtras(myCard to "payme")
-                            navigation.navigate(R.id.paymeFragment, null, null, extras)
-                        }
-                        8 -> {
-                            val myCard = findViewById<LinearLayout>(R.id.my_cons_settings)
-                            val extras = FragmentNavigatorExtras(myCard to "settings")
-                            navigation.navigate(R.id.settingsFragment, null, null, extras)
-                        }
+//                        6 -> {
+//                            val myCard = findViewById<ConstraintLayout>(R.id.my_cons_chat)
+//                            val extras = FragmentNavigatorExtras(myCard to "chat")
+//                            navigation.navigate(R.id.chatListFragment, null, null, extras)
+//                        }
+//                        7 -> {
+//                            val myCard = findViewById<ConstraintLayout>(R.id.my_cons1)
+//                            val extras = FragmentNavigatorExtras(myCard to "payme")
+//                            navigation.navigate(R.id.paymentFragment, null, null, extras)
+//                        }
+//                        8 -> {
+//                            val myCard = findViewById<LinearLayout>(R.id.my_cons_settings)
+//                            val extras = FragmentNavigatorExtras(myCard to "settings")
+//                            navigation.navigate(R.id.settingsFragment, null, null, extras)
+//                        }
 
                     }
                 } else {

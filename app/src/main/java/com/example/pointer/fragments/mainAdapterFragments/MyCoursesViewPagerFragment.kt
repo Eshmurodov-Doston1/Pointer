@@ -3,14 +3,14 @@ package com.example.pointer.fragments.mainAdapterFragments
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.animation.RotateAnimation
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
 import com.example.pointer.R
-import com.example.pointer.databinding.FragmentMyCourcesViewPagerBinding
+import com.example.pointer.databinding.FragmentMyCoursesViewPagerBinding
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,10 +20,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MyCourcesViewPagerFragment.newInstance] factory method to
+ * Use the [MyCoursesViewPagerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pager) {
+class MyCoursesViewPagerFragment : Fragment(R.layout.fragment_my_courses_view_pager) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pa
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    private val binding by viewBinding(FragmentMyCourcesViewPagerBinding::bind)
+    private val binding by viewBinding(FragmentMyCoursesViewPagerBinding::bind)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
@@ -70,7 +70,7 @@ class MyCourcesViewPagerFragment : Fragment(R.layout.fragment_my_cources_view_pa
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MyCourcesViewPagerFragment().apply {
+            MyCoursesViewPagerFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

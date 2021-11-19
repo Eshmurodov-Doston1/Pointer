@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_350sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.mainAdapterFragments.PaymiAdapterFragment">
+    tools:context=".fragments.mainAdapterFragments.PaymentAdapterFragment">
     <androidx.cardview.widget.CardView
         app:cardUseCompatPadding="true"
         app:cardCornerRadius="@dimen/_15sdp"

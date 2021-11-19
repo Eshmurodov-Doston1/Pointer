@@ -121,9 +121,9 @@
         tools:layout="@layout/fragment_lesson_table_main" />
     <fragment
         android:id="@+id/myCourcesViewPagerFragment"
-        android:name="com.example.pointer.fragments.mainAdapterFragments.MyCourcesViewPagerFragment"
+        android:name="com.example.pointer.fragments.mainAdapterFragments.MyCoursesViewPagerFragment"
         android:label="fragment_my_cources_view_pager"
-        tools:layout="@layout/fragment_my_cources_view_pager" />
+        tools:layout="@layout/fragment_my_courses_view_pager" />
     <fragment
         android:id="@+id/myMainGroupFragment"
         android:name="com.example.pointer.fragments.mainAdapterFragments.MyMainGroupFragment"
@@ -138,12 +138,14 @@
         android:id="@+id/videoCourseViewPagerFragment"
         android:name="com.example.pointer.fragments.mainAdapterFragments.VideoCourseViewPagerFragment"
         android:label="fragment_video_course_view_pager"
-        tools:layout="@layout/fragment_video_course_view_pager"></fragment>
+        tools:layout="@layout/fragment_video_course_view_pager">
+
+    </fragment>
     <fragment
-        android:id="@+id/paymeFragment"
-        android:name="com.example.pointer.fragments.payme.PaymeFragment"
-        android:label="fragment_payme"
-        tools:layout="@layout/fragment_payme" />
+        android:id="@+id/paymentFragment"
+        android:name="com.example.pointer.fragments.payment.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/createPDFFragment"
         android:name="com.example.pointer.fragments.student.CreatePDFFragment"

@@ -2,15 +2,13 @@ package com.example.pointer.fragments.mainFragment
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Toast
-import androidx.fragment.app.FragmentContainer
-import com.example.pointer.MainActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.example.pointer.R
 import com.example.pointer.adapters.mainAdapter.MainViewPagerAdapter
 import com.example.pointer.databinding.FragmentMainBinding
-import com.example.pointer.models.interfaceMy.ButtonClick
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -37,9 +35,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     private val binding by viewBinding(FragmentMainBinding::bind)
-    lateinit var mainViewPagerAdapter:MainViewPagerAdapter
-    lateinit var listLoad:ArrayList<String>
+    lateinit var mainViewPagerAdapter: MainViewPagerAdapter
+    lateinit var listLoad: ArrayList<String>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,17 +48,33 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             mainViewPagerAdapter = MainViewPagerAdapter(requireActivity())
             mainViewPager.adapter = mainViewPagerAdapter
 
-            mainViewPager.clipToPadding=false
-            mainViewPager.clipChildren=false
-            
+            mainViewPager.clipToPadding = false
+            mainViewPager.clipChildren = false
+
             exitTransition = Hold()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
 
             mainViewPager.offscreenPageLimit = 1
             mainViewPager.setPageTransformer { page, position ->
-                var a= 1-Math.abs(position)
-                page.scaleY = 0.85F+a*0.1f
+                var a = 1 - Math.abs(position)
+                page.scaleY = 0.85F + a * 0.1f
+            }
+
+            card1.setOnClickListener {
+                val extras = FragmentNavigatorExtras(card1 to "payment")
+                findNavController().navigate(R.id.paymentFragment, null, null, extras)
+
+            }
+
+            card2.setOnClickListener {
+                val extras = FragmentNavigatorExtras(card2 to "chat")
+                findNavController().navigate(R.id.chatListFragment, null, null, extras)
+            }
+
+            card3.setOnClickListener {
+                val extras = FragmentNavigatorExtras(card3 to "settings")
+                findNavController().navigate(R.id.settingsFragment, null, null, extras)
             }
         }
     }
@@ -72,9 +87,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         listLoad.add("Traninglar")
         listLoad.add("Mening guruhim")
         listLoad.add("Dars jadvali")
-        listLoad.add("Chat")
-        listLoad.add("Sozlamalar")
-        listLoad.add("To'lov")
+//        listLoad.add("Chat")
+//        listLoad.add("Sozlamalar")
+//        listLoad.add("To'lov")
     }
 
     companion object {

@@ -8,13 +8,13 @@ import com.example.pointer.fragments.mainAdapterFragments.*
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
-        return 9
+        return 6
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                MyCourcesViewPagerFragment()
+                MyCoursesViewPagerFragment()
             }
             1 -> {
                 VideoCourseViewPagerFragment()
@@ -31,15 +31,15 @@ class MainViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAd
             5 -> {
                 LessonTableMainFragment()
             }
-            6 -> {
-                ChatMainFragment()
-            }
-            7 -> {
-                PaymiAdapterFragment()
-            }
-            8 -> {
-                SettingsMainFragment()
-            }
+//            6 -> {
+//                ChatMainFragment()
+//            }
+//            7 -> {
+//                PaymentAdapterFragment()
+//            }
+//            8 -> {
+//                SettingsMainFragment()
+//            }
 
             else -> {
                 VideoCourseViewPagerFragment()

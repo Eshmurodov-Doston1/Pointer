@@ -4,7 +4,10 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -25,6 +28,23 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     @SuppressLint("InflateParams")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentSettingsBinding.bind(view)
+        val handlerThread = Handler(Looper.getMainLooper())
+        val mainMenuBtn = requireActivity().findViewById<CircleButton>(R.id.main_menu_btn)
+        handlerThread.postDelayed({
+            mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
+            mainMenuBtn.setPadding(0, 0, 0, 9)
+        }, 490)
+        val rotateAnimation = RotateAnimation(
+            0F,
+            180F,
+            RotateAnimation.RELATIVE_TO_SELF,
+            .5f,
+            RotateAnimation.RELATIVE_TO_SELF,
+            .5f
+        )
+        rotateAnimation.duration = 450
+        mainMenuBtn.startAnimation(rotateAnimation)
+
         mySharedPref = SharedPref(requireContext())
         sharedElementEnterTransition = MaterialContainerTransform()
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
