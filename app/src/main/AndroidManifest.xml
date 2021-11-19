@@ -14,10 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pointer">
         <activity
-            android:name=".PlayVideoActivity"
-            android:exported="true"
-            tools:ignore="MissingClass" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
 

@@ -5,6 +5,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.animation.RotateAnimation
+import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -41,10 +43,10 @@ class ChatListFragment : Fragment(R.layout.fragment_chat_list) {
         rotateAnimation.duration = 450
         mainMenuBtn.startAnimation(rotateAnimation)
         binding.apply {
+
             sharedElementEnterTransition = MaterialContainerTransform()
             enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
             returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false)
-
             navLine.visibility = View.VISIBLE
             navButton.visibility = View.VISIBLE
 
@@ -71,6 +73,16 @@ class ChatListFragment : Fragment(R.layout.fragment_chat_list) {
 
                 chatList.adapter = adapter
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (requireActivity().findViewById<ImageView>(R.id.line).visibility ==View.GONE){
+            requireActivity().findViewById<ImageView>(R.id.line).visibility =View.VISIBLE
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.VISIBLE
         }
     }
 }

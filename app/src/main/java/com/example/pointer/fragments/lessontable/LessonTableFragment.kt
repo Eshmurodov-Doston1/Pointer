@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -35,7 +36,8 @@ class LessonTableFragment : Fragment() {
         binding = FragmentLessonTableBinding.inflate(inflater, container, false)
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-
+        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
+        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
         val days:ArrayList<String> = arguments?.getStringArrayList("list") as ArrayList<String>
         val dayOfWeek = arguments?.getInt("week", 0)
 

@@ -187,6 +187,7 @@
         <entry key="app/src/main/res/layout/fragment_lesson_table.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_lesson_table_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_my_cource.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_my_cources_view_pager.xml" value="0.2962962962962963" />

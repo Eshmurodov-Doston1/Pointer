@@ -3,6 +3,7 @@ package com.example.pointer.fragments.news
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -103,7 +104,12 @@ class NewsFragment : Fragment(R.layout.fragment_news) {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
-        requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+        if ( requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE) {
+            requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility =
+                View.VISIBLE
+            requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.VISIBLE
+            requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.VISIBLE
+        }
     }
 }

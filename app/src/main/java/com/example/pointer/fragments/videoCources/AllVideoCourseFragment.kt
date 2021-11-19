@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -50,6 +51,8 @@ class AllVideoCourseFragment : Fragment(R.layout.fragment_all_video_course) {
         binding.apply {
             requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
             requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
+            requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.GONE
+            requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.GONE
             sharedElementEnterTransition = ChangeBounds()
             val videoCourse = arguments?.getSerializable("videoCourse") as VideoCourse
             clouse.setOnClickListener {

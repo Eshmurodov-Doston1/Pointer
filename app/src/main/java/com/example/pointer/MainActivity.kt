@@ -1,6 +1,8 @@
 package com.example.pointer
 
+import android.content.res.Configuration
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -14,16 +16,29 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.viewpager2.widget.ViewPager2
 import at.markushi.ui.CircleButton
 import com.example.pointer.databinding.ActivityMainBinding
+import com.example.pointer.models.interfaceMy.ButtonClick
+import com.example.pointer.utils.SharedPref
+import java.util.*
 
 lateinit var navLine: ImageView
 lateinit var navButton: CircleButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private lateinit var mySharedPreference: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mySharedPreference = SharedPref(this)
+        setLocale()
+
+//        if (mySharedPreference.getBoolean() == true) {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//        } else {
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        }
         val overlay = binding.container
         overlay.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -47,7 +62,14 @@ class MainActivity : AppCompatActivity() {
                         mainMenuBtn.setImageResource(R.drawable.ic_vector_3)
                         mainMenuBtn.setPadding(0, 0, 0, 9)
                     }, 490)
-                    var rotateAnimation = RotateAnimation(0F, 180F, RotateAnimation.RELATIVE_TO_SELF, .5f, RotateAnimation.RELATIVE_TO_SELF, .5f)
+                    var rotateAnimation = RotateAnimation(
+                        0F,
+                        180F,
+                        RotateAnimation.RELATIVE_TO_SELF,
+                        .5f,
+                        RotateAnimation.RELATIVE_TO_SELF,
+                        .5f
+                    )
                     rotateAnimation.duration = 450
                     mainMenuBtn.startAnimation(rotateAnimation)
 
@@ -106,7 +128,14 @@ class MainActivity : AppCompatActivity() {
                         mainMenuBtn.setImageResource(R.drawable.ic_group_4)
                         mainMenuBtn.setPadding(0, 0, 0, 0)
                     }, 490)
-                    var rotateAnimation = RotateAnimation(0F, 180F, RotateAnimation.RELATIVE_TO_SELF, .5f, RotateAnimation.RELATIVE_TO_SELF, .5f)
+                    var rotateAnimation = RotateAnimation(
+                        0F,
+                        180F,
+                        RotateAnimation.RELATIVE_TO_SELF,
+                        .5f,
+                        RotateAnimation.RELATIVE_TO_SELF,
+                        .5f
+                    )
                     rotateAnimation.duration = 450
                     mainMenuBtn.startAnimation(rotateAnimation)
 
@@ -116,10 +145,25 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun setLocale() {
+        val locale = Locale(mySharedPreference.getLang())
+        Locale.setDefault(locale)
+        val config: Configuration = resources.configuration
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
     override fun onNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp()
     }
 
+    override fun onResume() {
+        super.onResume()
+        val overlay = binding.container
+        overlay.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+    }
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
 //        if (hasFocus) {

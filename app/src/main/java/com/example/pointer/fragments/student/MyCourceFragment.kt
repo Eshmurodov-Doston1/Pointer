@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -70,7 +71,7 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
                         .build()
                     var bundle = Bundle()
                     bundle.putSerializable("studentCource",studentCourse)
-                    findNavController().navigate(R.id.action_myCourceFragment_to_studentInformationFragment,bundle,null,extras)
+                    findNavController().navigate(R.id.studentInformationFragment,bundle,null,extras)
                 }
 
             })
@@ -103,8 +104,12 @@ class MyCourceFragment : Fragment(R.layout.fragment_my_cource) {
 
     override fun onResume() {
         super.onResume()
+        if (  requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility == View.GONE){
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+        requireActivity().findViewById<CardView>(R.id.card_price).visibility = View.VISIBLE
+        requireActivity().findViewById<CardView>(R.id.card_chat).visibility = View.VISIBLE
+        }
     }
     companion object {
         /**

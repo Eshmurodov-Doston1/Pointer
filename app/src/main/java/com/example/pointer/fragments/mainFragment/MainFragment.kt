@@ -42,7 +42,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.apply {
             loadList()
             mainViewPagerAdapter = MainViewPagerAdapter(requireActivity())
@@ -91,6 +90,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 //        listLoad.add("Sozlamalar")
 //        listLoad.add("To'lov")
     }
+
 
     companion object {
         /**

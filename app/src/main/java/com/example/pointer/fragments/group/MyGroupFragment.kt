@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.markushi.ui.CircleButton
@@ -59,5 +60,7 @@ class MyGroupFragment : Fragment() {
         super.onResume()
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.VISIBLE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.VISIBLE
+        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.VISIBLE
+        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.VISIBLE
     }
 }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
@@ -31,8 +32,8 @@ class FullNewsFragment : Fragment(R.layout.fragment_full_news) {
 
         requireActivity().findViewById<CircleButton>(R.id.main_menu_btn).visibility = View.GONE
         requireActivity().findViewById<ImageView>(R.id.line).visibility = View.GONE
-
-
+        requireActivity().findViewById<CardView>(R.id.card_chat).visibility =View.GONE
+        requireActivity().findViewById<CardView>(R.id.card_price).visibility =View.GONE
         news2 = arguments?.getSerializable("news") as News2
 
 
